@@ -1,0 +1,961 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="16.5" version="16.5" Modules="professional" RootPath="." Language="en" Id="{B5408B9A-5529-4DAE-8EF6-5FB3C66E4494}">
+  <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
+    <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent;MsiJavaComponent;MsiDriverPackagesComponent;UserAccountsComponent;ScheduledTasksComponent;SqlConnectionComponent;AutorunComponent;FirewallExceptionComponent;GameUxComponent;MsiDirectEditorComponent;SharePointSlnComponent;SilverlightSlnComponent;MultipleInstancesComponent;SccmComponent;ActSyncAppComponent;FixupComponent"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_CF_SHARP_CORNERS" Value="0" MultiBuildValue="DefaultBuild:1" MsiKey="AI_CF_SHARP_CORNERS"/>
+    <ROW Property="AI_CF_SYS_BTNS_YPOS_FROM_FRAME" Value="0" MultiBuildValue="DefaultBuild:1" MsiKey="AI_CF_SYS_BTNS_YPOS_FROM_FRAME"/>
+    <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
+    <ROW Property="AI_FrameBtnsColor" Value="powderblue" MultiBuildValue="DefaultBuild:flatblue" MsiKey="AI_FrameBtnsColor"/>
+    <ROW Property="AI_FrameColor" Value="powderblue" MultiBuildValue="DefaultBuild:flatblue" MsiKey="AI_FrameColor"/>
+    <ROW Property="AI_ImagesColor" Value="powderblue" MultiBuildValue="DefaultBuild:flatblue" MsiKey="AI_ImagesColor"/>
+    <ROW Property="AI_PREDEF_LCONDS_PROPS" Value="AI_DETECTED_DOTNET_VERSION"/>
+    <ROW Property="AI_REQUIRED_DOTNET_DISPLAY" MultiBuildValue="DefaultBuild:4.0" ValueLocId="-"/>
+    <ROW Property="AI_REQUIRED_DOTNET_VERSION" MultiBuildValue="DefaultBuild:4.0.1" ValueLocId="-"/>
+    <ROW Property="AI_ThemeStyle" Value="default" MultiBuildValue="DefaultBuild:flat" MsiKey="AI_ThemeStyle"/>
+    <ROW Property="ALLUSERS" Value="1"/>
+    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="ARPNOREPAIR" MultiBuildValue="DefaultBuild:1"/>
+    <ROW Property="ARPPRODUCTICON" Value="app.exe" Type="8"/>
+    <ROW Property="Manufacturer" Value="ZChanger"/>
+    <ROW Property="ProductCode" Value="1033:{800C21AC-DCEC-4E09-803B-F72BCD8B35E3} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="ZChangerMMO"/>
+    <ROW Property="ProductVersion" Value="1.0.0" Type="32"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
+    <ROW Property="UpgradeCode" Value="{F9E6B0C3-2C7F-44B5-B035-C03F3B088F61}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003 RTM, Windows XP/2003 SP1, Windows XP SP2 x86" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003 RTM, Windows XP/2003 SP1, Windows XP SP2 x86" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="BackupProfiles_Dir" Directory_Parent="APPDIR" DefaultDir="BACKUP~1|BackupProfiles"/>
+    <ROW Directory="Browser_Dir" Directory_Parent="APPDIR" DefaultDir="Browser"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
+    <ROW Directory="MEIPreload_Dir" Directory_Parent="Browser_Dir" DefaultDir="MEIPRE~1|MEIPreload"/>
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="ZC_AutomationProfile_Dir" Directory_Parent="BackupProfiles_Dir" DefaultDir="ZC_AUT~1|ZC_AutomationProfile"/>
+    <ROW Directory="ZC_tranloi_Dir" Directory_Parent="BackupProfiles_Dir" DefaultDir="ZC_TRA~1|ZC_tranloi"/>
+    <ROW Directory="ZChangerData_Dir" Directory_Parent="APPDIR" DefaultDir="ZCHANG~1|ZChangerData"/>
+    <ROW Directory="de_Dir" Directory_Parent="APPDIR" DefaultDir="de"/>
+    <ROW Directory="es_Dir" Directory_Parent="APPDIR" DefaultDir="es"/>
+    <ROW Directory="extensions_Dir" Directory_Parent="Browser_Dir" DefaultDir="EXTENS~1|extensions"/>
+    <ROW Directory="ja_Dir" Directory_Parent="APPDIR" DefaultDir="ja"/>
+    <ROW Directory="locales_Dir" Directory_Parent="Browser_Dir" DefaultDir="locales"/>
+    <ROW Directory="native_1_Dir" Directory_Parent="winx64_Dir" DefaultDir="native"/>
+    <ROW Directory="native_2_Dir" Directory_Parent="winx86_Dir" DefaultDir="native"/>
+    <ROW Directory="native_Dir" Directory_Parent="winarm_Dir" DefaultDir="native"/>
+    <ROW Directory="ru_Dir" Directory_Parent="APPDIR" DefaultDir="ru"/>
+    <ROW Directory="runtimes_Dir" Directory_Parent="APPDIR" DefaultDir="runtimes"/>
+    <ROW Directory="swiftshader_Dir" Directory_Parent="Browser_Dir" DefaultDir="SWIFTS~1|swiftshader"/>
+    <ROW Directory="winarm_Dir" Directory_Parent="runtimes_Dir" DefaultDir="win-arm"/>
+    <ROW Directory="winx64_Dir" Directory_Parent="runtimes_Dir" DefaultDir="win-x64"/>
+    <ROW Directory="winx86_Dir" Directory_Parent="runtimes_Dir" DefaultDir="win-x86"/>
+    <ROW Directory="x64_Dir" Directory_Parent="APPDIR" DefaultDir="x64"/>
+    <ROW Directory="x86_Dir" Directory_Parent="APPDIR" DefaultDir="x86"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="AI_ExePath" ComponentId="{3BA18B8A-0D83-4454-B67B-A9E0AFD0320D}" Directory_="APPDIR" Attributes="4" KeyPath="AI_ExePath"/>
+    <ROW Component="APPDIR" ComponentId="{7E3340E9-70E2-4A4D-82EA-FA6474F08C79}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="Browser" ComponentId="{279464AF-5CB3-4412-BD12-5156CF50E495}" Directory_="APPDIR" Attributes="4" KeyPath="Browser"/>
+    <ROW Component="DevExpress.Data.v19.2.dll" ComponentId="{6A225F1E-7CEE-4204-A572-D4B42BD8A52A}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Data.v19.2.dll"/>
+    <ROW Component="DevExpress.Data.v19.2.resources.dll" ComponentId="{410F2E0F-4C81-43E4-A077-79FD453556F6}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Data.v19.2.resources.dll"/>
+    <ROW Component="DevExpress.Data.v19.2.resources.dll_1" ComponentId="{B8A093A4-5A86-47FD-98B2-DEAC2B3CAE01}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Data.v19.2.resources.dll_1"/>
+    <ROW Component="DevExpress.Data.v19.2.resources.dll_2" ComponentId="{3D1EE4F4-182D-4BA1-B23E-E8276019F44B}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Data.v19.2.resources.dll_2"/>
+    <ROW Component="DevExpress.Data.v19.2.resources.dll_3" ComponentId="{15AEDEB4-F0A9-4824-B1AA-B1C3A8E3C7DC}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Data.v19.2.resources.dll_3"/>
+    <ROW Component="DevExpress.Data.v19.2.xml" ComponentId="{89A8B9E6-B92A-4F09-9ECE-96202472D54D}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Data.v19.2.xml" Type="0"/>
+    <ROW Component="DevExpress.Images.v19.2.dll" ComponentId="{018ECB8B-9543-4B63-B274-18137058593A}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Images.v19.2.dll"/>
+    <ROW Component="DevExpress.Mvvm.v19.2.DataModel.EF6.dll" ComponentId="{2503467C-98ED-4AAD-9EBB-A71C5EA55193}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Mvvm.v19.2.DataModel.EF6.dll"/>
+    <ROW Component="DevExpress.Mvvm.v19.2.DataModel.dll" ComponentId="{4D31A82F-601B-4EDC-A77A-8A56795F325E}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Mvvm.v19.2.DataModel.dll"/>
+    <ROW Component="DevExpress.Mvvm.v19.2.DataModel.resources.dll" ComponentId="{333193D1-9CBF-4401-88DE-68EB7D46961A}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Mvvm.v19.2.DataModel.resources.dll"/>
+    <ROW Component="DevExpress.Mvvm.v19.2.DataModel.resources.dll_1" ComponentId="{C2C0D7E6-7BD4-46A5-ABB1-1C27833EA8FB}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Mvvm.v19.2.DataModel.resources.dll_1"/>
+    <ROW Component="DevExpress.Mvvm.v19.2.DataModel.resources.dll_2" ComponentId="{4EC3D3FD-439D-4FEF-960A-FAEFCF8BE1A3}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Mvvm.v19.2.DataModel.resources.dll_2"/>
+    <ROW Component="DevExpress.Mvvm.v19.2.DataModel.resources.dll_3" ComponentId="{581F9124-F16B-49D5-A6DC-A0A785A8AC2B}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Mvvm.v19.2.DataModel.resources.dll_3"/>
+    <ROW Component="DevExpress.Mvvm.v19.2.ViewModel.dll" ComponentId="{12DB1995-E737-4511-89C2-F5C4117535DB}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Mvvm.v19.2.ViewModel.dll"/>
+    <ROW Component="DevExpress.Mvvm.v19.2.dll" ComponentId="{098A37CA-A722-4BCB-8FA1-17AB549DCA8B}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Mvvm.v19.2.dll"/>
+    <ROW Component="DevExpress.Office.v19.2.Core.dll" ComponentId="{1DC2F8C4-3FE0-41AE-AB33-9A3283639D9E}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Office.v19.2.Core.dll"/>
+    <ROW Component="DevExpress.Office.v19.2.Core.resources.dll" ComponentId="{FB5D9F65-8C60-4810-AA32-70379611CE73}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Office.v19.2.Core.resources.dll"/>
+    <ROW Component="DevExpress.Office.v19.2.Core.resources.dll_1" ComponentId="{0DFB89F6-7933-4D58-ACA3-93461B2BB881}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Office.v19.2.Core.resources.dll_1"/>
+    <ROW Component="DevExpress.Office.v19.2.Core.resources.dll_2" ComponentId="{F4782F69-C201-4A3F-8750-7AD06A97D885}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Office.v19.2.Core.resources.dll_2"/>
+    <ROW Component="DevExpress.Office.v19.2.Core.resources.dll_3" ComponentId="{A2F39E72-8A3D-4008-A688-73586CE54E6D}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Office.v19.2.Core.resources.dll_3"/>
+    <ROW Component="DevExpress.Pdf.v19.2.Core.dll" ComponentId="{0E615119-535F-47C8-AA0D-4A79D075DDD5}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Pdf.v19.2.Core.dll"/>
+    <ROW Component="DevExpress.Pdf.v19.2.Core.resources.dll" ComponentId="{81FC2FA3-D127-4959-95CF-ACA9D066D977}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Pdf.v19.2.Core.resources.dll"/>
+    <ROW Component="DevExpress.Pdf.v19.2.Core.resources.dll_1" ComponentId="{5F22B1CC-D252-4E44-B1EB-8F49D4EE58A2}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Pdf.v19.2.Core.resources.dll_1"/>
+    <ROW Component="DevExpress.Pdf.v19.2.Core.resources.dll_2" ComponentId="{F442BD8D-AAA7-4530-81C7-4673F42D884E}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Pdf.v19.2.Core.resources.dll_2"/>
+    <ROW Component="DevExpress.Pdf.v19.2.Core.resources.dll_3" ComponentId="{75FB2E9E-6D3E-49BB-9906-CC809E151F4B}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Pdf.v19.2.Core.resources.dll_3"/>
+    <ROW Component="DevExpress.Printing.v19.2.Core.dll" ComponentId="{98DC3BBB-723E-4BE8-B049-9B1484A919E4}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Printing.v19.2.Core.dll"/>
+    <ROW Component="DevExpress.Printing.v19.2.Core.resources.dll" ComponentId="{289D19F9-9CCA-4812-A9B7-540F5890F0E1}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Printing.v19.2.Core.resources.dll"/>
+    <ROW Component="DevExpress.Printing.v19.2.Core.resources.dll_1" ComponentId="{2985E79E-41D2-4CA2-BCC1-31BC63D4537F}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Printing.v19.2.Core.resources.dll_1"/>
+    <ROW Component="DevExpress.Printing.v19.2.Core.resources.dll_2" ComponentId="{EE03053E-D78E-475F-B49F-E17D4C5A6DB8}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Printing.v19.2.Core.resources.dll_2"/>
+    <ROW Component="DevExpress.Printing.v19.2.Core.resources.dll_3" ComponentId="{1333A398-E64A-4DEE-8B63-08A377B3117C}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Printing.v19.2.Core.resources.dll_3"/>
+    <ROW Component="DevExpress.RichEdit.v19.2.Core.dll" ComponentId="{66B35AD7-7ED8-4775-AE42-53159B5FCA8E}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.RichEdit.v19.2.Core.dll"/>
+    <ROW Component="DevExpress.RichEdit.v19.2.Core.resources.dll" ComponentId="{F8283032-96B2-4A9D-9E45-A16B61805A1C}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.RichEdit.v19.2.Core.resources.dll"/>
+    <ROW Component="DevExpress.RichEdit.v19.2.Core.resources.dll_1" ComponentId="{4E312CF8-F179-430D-AE71-4FB1867380BC}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.RichEdit.v19.2.Core.resources.dll_1"/>
+    <ROW Component="DevExpress.RichEdit.v19.2.Core.resources.dll_2" ComponentId="{16078EFD-3364-4D89-9002-39D55A24643E}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.RichEdit.v19.2.Core.resources.dll_2"/>
+    <ROW Component="DevExpress.RichEdit.v19.2.Core.resources.dll_3" ComponentId="{CBFFB420-3C83-4EC6-A713-A8AE69942A96}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.RichEdit.v19.2.Core.resources.dll_3"/>
+    <ROW Component="DevExpress.Sparkline.v19.2.Core.dll" ComponentId="{33B15FE0-2B64-4D10-B6CC-4AF62556CEBA}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Sparkline.v19.2.Core.dll"/>
+    <ROW Component="DevExpress.Sparkline.v19.2.Core.resources.dll" ComponentId="{909BB384-1136-433E-815D-8D32A1A6520C}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Sparkline.v19.2.Core.resources.dll"/>
+    <ROW Component="DevExpress.Sparkline.v19.2.Core.resources.dll_1" ComponentId="{378CDF73-B1BC-4E64-BE16-5FBB91B06091}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Sparkline.v19.2.Core.resources.dll_1"/>
+    <ROW Component="DevExpress.Sparkline.v19.2.Core.resources.dll_2" ComponentId="{90CBFF8C-A96C-4645-9C92-9B0E109133FF}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Sparkline.v19.2.Core.resources.dll_2"/>
+    <ROW Component="DevExpress.Sparkline.v19.2.Core.resources.dll_3" ComponentId="{1966F9C8-E890-4451-A28A-3A9277847B42}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Sparkline.v19.2.Core.resources.dll_3"/>
+    <ROW Component="DevExpress.Utils.v19.2.dll" ComponentId="{6D31BF5D-43B3-475A-8879-BB6C273BD7A6}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Utils.v19.2.dll"/>
+    <ROW Component="DevExpress.Utils.v19.2.resources.dll" ComponentId="{C1DD1B0A-12C9-40AA-87A2-61E087EE50D8}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Utils.v19.2.resources.dll"/>
+    <ROW Component="DevExpress.Utils.v19.2.resources.dll_1" ComponentId="{6FE5BE28-54D3-4096-9EEA-7DDF234FA243}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Utils.v19.2.resources.dll_1"/>
+    <ROW Component="DevExpress.Utils.v19.2.resources.dll_2" ComponentId="{1D3C7C08-3E6F-4FF3-AC01-E24F6FF6807C}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Utils.v19.2.resources.dll_2"/>
+    <ROW Component="DevExpress.Utils.v19.2.resources.dll_3" ComponentId="{5DDA865F-AF04-46CD-9362-83D7B5AEA617}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Utils.v19.2.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraBars.v19.2.dll" ComponentId="{876FDB37-1B8A-4A9E-A332-045C058A4947}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraBars.v19.2.dll"/>
+    <ROW Component="DevExpress.XtraBars.v19.2.resources.dll" ComponentId="{D863D451-0583-4958-8045-466E3B4C4511}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraBars.v19.2.resources.dll"/>
+    <ROW Component="DevExpress.XtraBars.v19.2.resources.dll_1" ComponentId="{5D9932CB-8896-4EB7-9F9D-8A6D725906DF}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraBars.v19.2.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraBars.v19.2.resources.dll_2" ComponentId="{3F5A9B3F-0800-4B13-ACA9-7A32D29B4FB9}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraBars.v19.2.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraBars.v19.2.resources.dll_3" ComponentId="{B1AA9E8A-6276-4753-8A8C-7380AA513263}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraBars.v19.2.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraEditors.v19.2.dll" ComponentId="{A6BCFE24-F0F7-4AF7-9882-45D3687AF386}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraEditors.v19.2.dll"/>
+    <ROW Component="DevExpress.XtraEditors.v19.2.resources.dll" ComponentId="{62046D21-F89F-4E83-95EF-57F3CD025ECE}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraEditors.v19.2.resources.dll"/>
+    <ROW Component="DevExpress.XtraEditors.v19.2.resources.dll_1" ComponentId="{AC19E64F-726D-48E1-B1E9-AA44BDE4F277}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraEditors.v19.2.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraEditors.v19.2.resources.dll_2" ComponentId="{9E00E4A0-FB2E-4C6F-BBFA-17CA1C5FC99B}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraEditors.v19.2.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraEditors.v19.2.resources.dll_3" ComponentId="{51B6CB80-5F42-41C5-AD3D-7E21A1DB7836}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraEditors.v19.2.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraGrid.v19.2.dll" ComponentId="{5EA28023-59B1-49C0-9ED8-DB6DEE1CCA91}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraGrid.v19.2.dll"/>
+    <ROW Component="DevExpress.XtraGrid.v19.2.resources.dll" ComponentId="{598FE025-ED2D-46BE-8A04-EB0FA92F4842}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraGrid.v19.2.resources.dll"/>
+    <ROW Component="DevExpress.XtraGrid.v19.2.resources.dll_1" ComponentId="{41FA387C-8806-4D91-B356-207004BBC95B}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraGrid.v19.2.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraGrid.v19.2.resources.dll_2" ComponentId="{339A8D08-7E95-4654-8B32-476FA4F65D8D}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraGrid.v19.2.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraGrid.v19.2.resources.dll_3" ComponentId="{15EEC628-FEB5-4B67-AA06-2D53B3811F08}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraGrid.v19.2.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraLayout.v19.2.dll" ComponentId="{F2171D63-CB26-43F5-89B3-6C79B1F869D8}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraLayout.v19.2.dll"/>
+    <ROW Component="DevExpress.XtraLayout.v19.2.resources.dll" ComponentId="{CC395FFB-AEC3-449D-89D8-7D8A9F64091F}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraLayout.v19.2.resources.dll"/>
+    <ROW Component="DevExpress.XtraLayout.v19.2.resources.dll_1" ComponentId="{B42C0ADB-4DC5-4E01-8B31-FD03297435F0}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraLayout.v19.2.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraLayout.v19.2.resources.dll_2" ComponentId="{FF455727-4DF4-4A49-B03E-006382384C90}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraLayout.v19.2.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraLayout.v19.2.resources.dll_3" ComponentId="{2224FB31-BA0B-4216-A5BB-E7FD5C501589}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraLayout.v19.2.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraPrinting.v19.2.dll" ComponentId="{049C62B2-12BF-4029-B170-5B1201BE5B9A}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraPrinting.v19.2.dll"/>
+    <ROW Component="DevExpress.XtraPrinting.v19.2.resources.dll" ComponentId="{F49EBECB-0258-47EE-B4F1-365B1EBFE042}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraPrinting.v19.2.resources.dll"/>
+    <ROW Component="DevExpress.XtraPrinting.v19.2.resources.dll_1" ComponentId="{FABCD36D-DE2B-4983-B7D1-C8365722BFBC}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraPrinting.v19.2.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraPrinting.v19.2.resources.dll_2" ComponentId="{04FD4A3B-7884-46E0-8094-329CDF661A4A}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraPrinting.v19.2.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraPrinting.v19.2.resources.dll_3" ComponentId="{4027A4F4-47E8-4F0C-9A97-0F04BC5A772D}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraPrinting.v19.2.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraTreeList.v19.2.dll" ComponentId="{E09C85AC-E7D6-4AC0-B347-FE5991E6A8AD}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraTreeList.v19.2.dll"/>
+    <ROW Component="DevExpress.XtraTreeList.v19.2.resources.dll" ComponentId="{229BD3B3-4C9F-479C-B67E-C740191CFF99}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraTreeList.v19.2.resources.dll"/>
+    <ROW Component="DevExpress.XtraTreeList.v19.2.resources.dll_1" ComponentId="{2D7E88FF-2832-4C7E-94C9-0D12E6F6A751}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraTreeList.v19.2.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraTreeList.v19.2.resources.dll_2" ComponentId="{C407F86F-600F-4815-A29F-57EAB133A013}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraTreeList.v19.2.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraTreeList.v19.2.resources.dll_3" ComponentId="{CE2EA10E-335A-49F1-A13D-67AB94A62AF9}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraTreeList.v19.2.resources.dll_3"/>
+    <ROW Component="DotNetZip.dll" ComponentId="{D361E870-444D-42CA-93C7-59C9A64D00E9}" Directory_="APPDIR" Attributes="0" KeyPath="DotNetZip.dll"/>
+    <ROW Component="EntityFramework.dll" ComponentId="{19A83460-F65B-4747-95F5-82617C0B2CC5}" Directory_="APPDIR" Attributes="0" KeyPath="EntityFramework.dll"/>
+    <ROW Component="Enums.NET.dll" ComponentId="{C31AAECE-4ECA-4896-8907-F7B41D34791A}" Directory_="APPDIR" Attributes="0" KeyPath="Enums.NET.dll"/>
+    <ROW Component="FluentCommandLineParser.dll" ComponentId="{02D7EF71-8C8C-4D6A-B3DB-9739B9023C4E}" Directory_="APPDIR" Attributes="0" KeyPath="FluentCommandLineParser.dll"/>
+    <ROW Component="Microsoft.Data.Sqlite.dll" ComponentId="{A5B63F66-7940-482B-BBE6-FB5512306FBC}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Data.Sqlite.dll"/>
+    <ROW Component="Newtonsoft.Json.dll" ComponentId="{C17E7A72-666E-4CD3-8CFC-0F9D46317ABB}" Directory_="APPDIR" Attributes="0" KeyPath="Newtonsoft.Json.dll"/>
+    <ROW Component="ProductInformation" ComponentId="{3CF32C6A-09B3-4DB6-916D-983D3B451450}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="Profile.db" ComponentId="{2ECD1626-13AD-4F8D-89A0-E18FB360D2B6}" Directory_="ZChangerData_Dir" Attributes="0" KeyPath="Profile.db" Type="0"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{08491BCA-C9AE-4811-9E00-D2D8B1C2074B}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="SQLite.CodeFirst.dll" ComponentId="{945CE39C-AB92-42C6-A72A-448FADC49BE7}" Directory_="APPDIR" Attributes="0" KeyPath="SQLite.CodeFirst.dll"/>
+    <ROW Component="SQLite.Interop.dll" ComponentId="{2525AB6D-8666-4F67-9261-00CD8DDEAA3F}" Directory_="x64_Dir" Attributes="256" KeyPath="SQLite.Interop.dll"/>
+    <ROW Component="SQLite.Interop.dll_1" ComponentId="{07B544DB-1781-4A16-9B5F-AE0C10CE6192}" Directory_="x86_Dir" Attributes="0" KeyPath="SQLite.Interop.dll_1"/>
+    <ROW Component="SQLitePCLRaw.batteries_v2.dll" ComponentId="{FC982186-DA37-48E0-A7DB-37DD2E3BE879}" Directory_="APPDIR" Attributes="0" KeyPath="SQLitePCLRaw.batteries_v2.dll"/>
+    <ROW Component="SQLitePCLRaw.core.dll" ComponentId="{1EEABADD-F5F4-44B9-ACD8-BDB63D690DEB}" Directory_="APPDIR" Attributes="0" KeyPath="SQLitePCLRaw.core.dll"/>
+    <ROW Component="SQLitePCLRaw.nativelibrary.dll" ComponentId="{75E0E004-0BAE-40B9-A17D-28B4AAC36AE0}" Directory_="APPDIR" Attributes="0" KeyPath="SQLitePCLRaw.nativelibrary.dll"/>
+    <ROW Component="SQLitePCLRaw.provider.dynamic_cdecl.dll" ComponentId="{83D01439-70D3-4B01-9F1D-22C26386929B}" Directory_="APPDIR" Attributes="0" KeyPath="SQLitePCLRaw.provider.dynamic_cdecl.dll"/>
+    <ROW Component="System.Buffers.dll" ComponentId="{7899F47D-8898-4BBF-B5F7-DAFE0CF3A903}" Directory_="APPDIR" Attributes="0" KeyPath="System.Buffers.dll"/>
+    <ROW Component="System.ComponentModel.Annotations.dll" ComponentId="{77006421-688E-4952-9D3B-FF30EAA5CB37}" Directory_="APPDIR" Attributes="0" KeyPath="System.ComponentModel.Annotations.dll"/>
+    <ROW Component="System.Data.SQLite.EF6.dll" ComponentId="{9C2CDB77-151E-4611-9B85-6E4B33471604}" Directory_="APPDIR" Attributes="0" KeyPath="System.Data.SQLite.EF6.dll"/>
+    <ROW Component="System.Data.SQLite.Linq.dll" ComponentId="{0B9CFD6D-7CD5-41AC-81ED-06DD5DF9C105}" Directory_="APPDIR" Attributes="0" KeyPath="System.Data.SQLite.Linq.dll"/>
+    <ROW Component="System.Data.SQLite.dll" ComponentId="{D93F14E7-3F90-497A-AD3C-38BC00FC1DF0}" Directory_="APPDIR" Attributes="0" KeyPath="System.Data.SQLite.dll"/>
+    <ROW Component="System.Memory.dll" ComponentId="{B5CE1613-7EF8-40CC-965A-D69911C4B5D4}" Directory_="APPDIR" Attributes="0" KeyPath="System.Memory.dll"/>
+    <ROW Component="System.Numerics.Vectors.dll" ComponentId="{D010E052-320D-4513-B4BD-21F4E2ED6ACD}" Directory_="APPDIR" Attributes="0" KeyPath="System.Numerics.Vectors.dll"/>
+    <ROW Component="System.Runtime.CompilerServices.Unsafe.dll" ComponentId="{1D7DFC74-8474-4C8C-848C-74FBA3833761}" Directory_="APPDIR" Attributes="0" KeyPath="System.Runtime.CompilerServices.Unsafe.dll"/>
+    <ROW Component="VkICD_mock_icd.dll" ComponentId="{853F30DB-52B3-479C-8320-08E44869DD59}" Directory_="Browser_Dir" Attributes="256" KeyPath="VkICD_mock_icd.dll"/>
+    <ROW Component="VkLayer_khronos_validation.dll" ComponentId="{822E1E33-B30F-4425-A698-FFB36AB2CA44}" Directory_="Browser_Dir" Attributes="256" KeyPath="VkLayer_khronos_validation.dll"/>
+    <ROW Component="ZC_AutomationProfile" ComponentId="{8B365C85-AE73-421C-A971-3060D12A3165}" Directory_="ZC_AutomationProfile_Dir" Attributes="0"/>
+    <ROW Component="ZC_tranloi" ComponentId="{6229E172-1004-4F72-8475-110C03129C31}" Directory_="ZC_tranloi_Dir" Attributes="0"/>
+    <ROW Component="ZChangerMMO.exe" ComponentId="{5099E302-9F4C-4730-9087-7E9DEA224328}" Directory_="APPDIR" Attributes="0" KeyPath="ZChangerMMO.exe"/>
+    <ROW Component="ZChangerMMOHost.exe" ComponentId="{F0E5C07D-C22B-47C9-8E2B-667C03E25360}" Directory_="APPDIR" Attributes="0" KeyPath="ZChangerMMOHost.exe"/>
+    <ROW Component="am.pak" ComponentId="{A8C77038-B413-482C-87A8-E06E8350908C}" Directory_="locales_Dir" Attributes="0" KeyPath="am.pak" Type="0"/>
+    <ROW Component="apimswincoreconsolel110.dll" ComponentId="{B55924E9-269A-40AB-AD70-F723BE40BCDD}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincoreconsolel110.dll"/>
+    <ROW Component="apimswincoreconsolel120.dll" ComponentId="{F28E0CE8-DAA8-4A62-8739-FC14C2D388F9}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincoreconsolel120.dll"/>
+    <ROW Component="apimswincoredatetimel110.dll" ComponentId="{E2D872A1-4D39-4511-82CA-B6D243D233B1}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincoredatetimel110.dll"/>
+    <ROW Component="apimswincoredebugl110.dll" ComponentId="{3474ABDC-3F18-4E9F-B609-108C1BA8025E}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincoredebugl110.dll"/>
+    <ROW Component="apimswincoreerrorhandlingl110.dll" ComponentId="{189DF06E-87E3-4245-A098-B3F346406A9E}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincoreerrorhandlingl110.dll"/>
+    <ROW Component="apimswincorefilel110.dll" ComponentId="{492CDDC6-73FC-4A81-9078-E7BE48DC5DFD}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincorefilel110.dll"/>
+    <ROW Component="apimswincorefilel120.dll" ComponentId="{12004A7B-6612-480D-BB14-3F804E3E9FD2}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincorefilel120.dll"/>
+    <ROW Component="apimswincorefilel210.dll" ComponentId="{130D865B-3E6A-4B38-81E6-5B102E3D8171}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincorefilel210.dll"/>
+    <ROW Component="apimswincorehandlel110.dll" ComponentId="{70E8D83F-B413-43C9-B9BA-DF7B56CF6B2F}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincorehandlel110.dll"/>
+    <ROW Component="apimswincoreheapl110.dll" ComponentId="{3AF7619A-D42B-47C1-9BA7-86F527B4EC1B}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincoreheapl110.dll"/>
+    <ROW Component="apimswincoreinterlockedl110.dll" ComponentId="{6364C85A-958F-44C4-B7BE-336B48457EFC}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincoreinterlockedl110.dll"/>
+    <ROW Component="apimswincorelibraryloaderl110.dll" ComponentId="{0D59C7EF-6062-4197-857B-8075F39C6419}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincorelibraryloaderl110.dll"/>
+    <ROW Component="apimswincorelocalizationl120.dll" ComponentId="{921620E4-4EA3-4625-8316-6302761E0F15}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincorelocalizationl120.dll"/>
+    <ROW Component="apimswincorememoryl110.dll" ComponentId="{6E0F2748-FC02-4AB1-BCFA-519C6E6AD4C9}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincorememoryl110.dll"/>
+    <ROW Component="apimswincorenamedpipel110.dll" ComponentId="{3212FC8F-00B1-4F79-9A2A-201D1BC58BEC}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincorenamedpipel110.dll"/>
+    <ROW Component="apimswincoreprocessenvironmentl110.dll" ComponentId="{07404B8B-C019-4183-BA1F-5A92FDB6426D}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincoreprocessenvironmentl110.dll"/>
+    <ROW Component="apimswincoreprocessthreadsl110.dll" ComponentId="{79108C7C-61DA-476B-92D5-5BD0D9136043}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincoreprocessthreadsl110.dll"/>
+    <ROW Component="apimswincoreprocessthreadsl111.dll" ComponentId="{B94C3B4F-E645-49A3-BA5B-74613A8AE97C}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincoreprocessthreadsl111.dll"/>
+    <ROW Component="apimswincoreprofilel110.dll" ComponentId="{165978F4-E702-4B2A-B777-640C3B2213BA}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincoreprofilel110.dll"/>
+    <ROW Component="apimswincorertlsupportl110.dll" ComponentId="{84103FD4-F21D-46BA-A5A0-DE786D0F411C}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincorertlsupportl110.dll"/>
+    <ROW Component="apimswincorestringl110.dll" ComponentId="{D70435C3-069E-471A-ABB2-7FABF84268D2}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincorestringl110.dll"/>
+    <ROW Component="apimswincoresynchl110.dll" ComponentId="{B66F6260-847C-4E5E-BAD6-88FC4676FD3A}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincoresynchl110.dll"/>
+    <ROW Component="apimswincoresynchl120.dll" ComponentId="{E06977C4-279E-4886-BA33-20B2708B6C6E}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincoresynchl120.dll"/>
+    <ROW Component="apimswincoresysinfol110.dll" ComponentId="{C2FDDF75-B396-425C-8773-20DF0CA9E74A}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincoresysinfol110.dll"/>
+    <ROW Component="apimswincoretimezonel110.dll" ComponentId="{ABCAB213-C990-4AD7-8078-48AE4E346F7B}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincoretimezonel110.dll"/>
+    <ROW Component="apimswincoreutill110.dll" ComponentId="{BD47E34F-D773-4F6F-8022-ACDF6D78A39F}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincoreutill110.dll"/>
+    <ROW Component="apimswincrtconiol110.dll" ComponentId="{AE13F978-1458-4736-AD33-A8FBEEF3B1F6}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincrtconiol110.dll"/>
+    <ROW Component="apimswincrtconvertl110.dll" ComponentId="{EF79F165-2A3F-4E9B-A50B-9AACF5356439}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincrtconvertl110.dll"/>
+    <ROW Component="apimswincrtenvironmentl110.dll" ComponentId="{49813B0B-36E0-4935-A229-4A2F7FE77414}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincrtenvironmentl110.dll"/>
+    <ROW Component="apimswincrtfilesysteml110.dll" ComponentId="{67D51249-AB05-4904-9EBB-AC78EF27B6A1}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincrtfilesysteml110.dll"/>
+    <ROW Component="apimswincrtheapl110.dll" ComponentId="{5C92CFF4-EDAE-4308-B47A-9121F945D2EA}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincrtheapl110.dll"/>
+    <ROW Component="apimswincrtlocalel110.dll" ComponentId="{65F4A2BB-987A-438D-B36F-BE9B12140B65}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincrtlocalel110.dll"/>
+    <ROW Component="apimswincrtmathl110.dll" ComponentId="{D711953B-87CF-4E09-AB87-2C6F7C7DFFCC}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincrtmathl110.dll"/>
+    <ROW Component="apimswincrtmultibytel110.dll" ComponentId="{41A2CDF4-34E3-4A7E-8973-87370E21ACC1}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincrtmultibytel110.dll"/>
+    <ROW Component="apimswincrtprivatel110.dll" ComponentId="{0B66B4D0-8780-439A-A161-38FDA4DD8DC9}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincrtprivatel110.dll"/>
+    <ROW Component="apimswincrtprocessl110.dll" ComponentId="{427ECCDC-D2C7-4982-8749-AC282E1A277E}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincrtprocessl110.dll"/>
+    <ROW Component="apimswincrtruntimel110.dll" ComponentId="{05A3EBDB-598D-42DE-B6C1-64B39393D90D}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincrtruntimel110.dll"/>
+    <ROW Component="apimswincrtstdiol110.dll" ComponentId="{F9DA69A3-FA7D-4685-A1F7-AB5CF3D19449}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincrtstdiol110.dll"/>
+    <ROW Component="apimswincrtstringl110.dll" ComponentId="{40BBF946-7B9A-4D24-9088-B6947077F587}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincrtstringl110.dll"/>
+    <ROW Component="apimswincrttimel110.dll" ComponentId="{F87BDE1F-50DD-45E2-B19D-75A5CDF5E6E6}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincrttimel110.dll"/>
+    <ROW Component="apimswincrtutilityl110.dll" ComponentId="{F436214D-FFD7-4B33-92AA-C0C4B8DB921C}" Directory_="Browser_Dir" Attributes="256" KeyPath="apimswincrtutilityl110.dll"/>
+    <ROW Component="chrome.dll" ComponentId="{EDD6436E-EAE2-467C-8CD8-0E8C10C37323}" Directory_="Browser_Dir" Attributes="256" KeyPath="chrome.dll"/>
+    <ROW Component="chrome.exe" ComponentId="{4924731B-F944-447B-ACF3-75F3F900281C}" Directory_="Browser_Dir" Attributes="256" KeyPath="chrome.exe"/>
+    <ROW Component="chrome_elf.dll" ComponentId="{BAE79529-A860-4D9F-99E8-885C8163991A}" Directory_="Browser_Dir" Attributes="256" KeyPath="chrome_elf.dll"/>
+    <ROW Component="chrome_proxy.exe" ComponentId="{B61E22AF-9727-4B51-BD5C-3FABAECBA22A}" Directory_="Browser_Dir" Attributes="256" KeyPath="chrome_proxy.exe"/>
+    <ROW Component="d3dcompiler_47.dll" ComponentId="{55E7F58E-BE90-454A-891C-C7F771DB8060}" Directory_="Browser_Dir" Attributes="256" KeyPath="d3dcompiler_47.dll"/>
+    <ROW Component="dbgcore.dll" ComponentId="{DF9EB7E9-6AE6-407A-AE67-C7353B4125D1}" Directory_="Browser_Dir" Attributes="256" KeyPath="dbgcore.dll"/>
+    <ROW Component="dbghelp.dll" ComponentId="{7AEFD2DA-2A36-4C71-89CC-00344EDB0CAE}" Directory_="Browser_Dir" Attributes="256" KeyPath="dbghelp.dll"/>
+    <ROW Component="e_sqlite3.dll" ComponentId="{A884D440-74BA-456B-AD82-34C1EB2A4B51}" Directory_="native_Dir" Attributes="0" KeyPath="e_sqlite3.dll"/>
+    <ROW Component="e_sqlite3.dll_1" ComponentId="{E23C1214-08DA-4867-A1AD-FE411AFFBF0A}" Directory_="native_1_Dir" Attributes="256" KeyPath="e_sqlite3.dll_1"/>
+    <ROW Component="e_sqlite3.dll_2" ComponentId="{61AC4A53-D941-4229-A2E1-59FE46767BB5}" Directory_="native_2_Dir" Attributes="0" KeyPath="e_sqlite3.dll_2"/>
+    <ROW Component="elevation_service.exe.pdb" ComponentId="{5E9E1EEF-981E-4B93-BE35-97CAB396F338}" Directory_="Browser_Dir" Attributes="0" KeyPath="elevation_service.exe.pdb" Type="4"/>
+    <ROW Component="eventlog_provider.dll" ComponentId="{91213853-A7AB-4CD0-BCA0-F4C77C801257}" Directory_="Browser_Dir" Attributes="256" KeyPath="eventlog_provider.dll"/>
+    <ROW Component="external_extensions.json" ComponentId="{7AA5B1EB-5395-4379-A5B9-1B2332AD52B5}" Directory_="extensions_Dir" Attributes="0" KeyPath="external_extensions.json" Type="0"/>
+    <ROW Component="libEGL.dll" ComponentId="{CEC52E0A-7588-4682-8388-971E05CBEAA2}" Directory_="Browser_Dir" Attributes="256" KeyPath="libEGL.dll"/>
+    <ROW Component="libEGL.dll.lib" ComponentId="{5947C892-568A-4D0A-AA7D-CF6828560417}" Directory_="swiftshader_Dir" Attributes="0" KeyPath="libEGL.dll.lib" Type="0"/>
+    <ROW Component="libEGL.dll.pdb" ComponentId="{7351315C-1A8D-40E1-BBD6-9236F82CAA8C}" Directory_="swiftshader_Dir" Attributes="0" KeyPath="libEGL.dll.pdb" Type="4"/>
+    <ROW Component="libEGL.dll_1" ComponentId="{26BD3EE6-E3F3-4D11-AE05-405AA8576605}" Directory_="swiftshader_Dir" Attributes="256" KeyPath="libEGL.dll_1"/>
+    <ROW Component="libGLESv2.dll" ComponentId="{EC95615A-54DB-40A0-9808-1F3A8ED76DE6}" Directory_="Browser_Dir" Attributes="256" KeyPath="libGLESv2.dll"/>
+    <ROW Component="libGLESv2.dll_1" ComponentId="{9B7F8684-1A29-4041-94D1-F99B1B006952}" Directory_="swiftshader_Dir" Attributes="256" KeyPath="libGLESv2.dll_1"/>
+    <ROW Component="manifest" ComponentId="{C6231F89-91D8-4FA7-BF61-FFB3DB401B23}" Directory_="Browser_Dir" Attributes="0" KeyPath="manifest" Type="0"/>
+    <ROW Component="manifest.json" ComponentId="{461FC7C1-62BE-443A-8778-831C4F4C851B}" Directory_="MEIPreload_Dir" Attributes="0" KeyPath="manifest.json" Type="0"/>
+    <ROW Component="mojo_core.dll" ComponentId="{85B1F91A-3688-41EC-8323-20B071674EC2}" Directory_="Browser_Dir" Attributes="256" KeyPath="mojo_core.dll"/>
+    <ROW Component="msvcp140.dll" ComponentId="{02F1A991-1873-469E-B562-6685F2E54814}" Directory_="Browser_Dir" Attributes="256" KeyPath="msvcp140.dll"/>
+    <ROW Component="notification_helper.exe" ComponentId="{51356CD8-837F-4C39-BDB9-A04B71BAD0F3}" Directory_="Browser_Dir" Attributes="256" KeyPath="notification_helper.exe"/>
+    <ROW Component="ucrtbase.dll" ComponentId="{424F35C8-79B9-4485-A20F-D11326156E71}" Directory_="Browser_Dir" Attributes="256" KeyPath="ucrtbase.dll"/>
+    <ROW Component="vccorlib140.dll" ComponentId="{DD5B6D1A-E391-42C8-A5F4-FBAA0FA16685}" Directory_="Browser_Dir" Attributes="256" KeyPath="vccorlib140.dll"/>
+    <ROW Component="vcruntime140.dll" ComponentId="{08B040AC-3FB9-48CF-AA15-BEB28E749970}" Directory_="Browser_Dir" Attributes="256" KeyPath="vcruntime140.dll"/>
+    <ROW Component="vk_swiftshader.dll" ComponentId="{DA9D24EF-C837-46EA-9174-2C9268B962BD}" Directory_="Browser_Dir" Attributes="256" KeyPath="vk_swiftshader.dll"/>
+    <ROW Component="vulkan1.dll" ComponentId="{1902098B-29E9-4FA6-9B22-4AB7498E2D08}" Directory_="Browser_Dir" Attributes="256" KeyPath="vulkan1.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="manifest" Component_="manifest" FileName="840413~1.MAN|84.0.4137.0.manifest" Attributes="0" SourcePath="bin\Debug\Browser\84.0.4137.0.manifest" SelfReg="false"/>
+    <ROW File="apimswincoreconsolel110.dll" Component_="apimswincoreconsolel110.dll" FileName="API-MS~1.DLL|api-ms-win-core-console-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-console-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincoreconsolel120.dll" Component_="apimswincoreconsolel120.dll" FileName="API-MS~2.DLL|api-ms-win-core-console-l1-2-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-console-l1-2-0.dll" SelfReg="false"/>
+    <ROW File="apimswincoredatetimel110.dll" Component_="apimswincoredatetimel110.dll" FileName="API-MS~3.DLL|api-ms-win-core-datetime-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-datetime-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincoredebugl110.dll" Component_="apimswincoredebugl110.dll" FileName="API-MS~4.DLL|api-ms-win-core-debug-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-debug-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincoreerrorhandlingl110.dll" Component_="apimswincoreerrorhandlingl110.dll" FileName="API-MS~5.DLL|api-ms-win-core-errorhandling-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-errorhandling-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincorefilel110.dll" Component_="apimswincorefilel110.dll" FileName="API-MS~6.DLL|api-ms-win-core-file-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-file-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincorefilel120.dll" Component_="apimswincorefilel120.dll" FileName="API-MS~7.DLL|api-ms-win-core-file-l1-2-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-file-l1-2-0.dll" SelfReg="false"/>
+    <ROW File="apimswincorefilel210.dll" Component_="apimswincorefilel210.dll" FileName="API-MS~8.DLL|api-ms-win-core-file-l2-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-file-l2-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincorehandlel110.dll" Component_="apimswincorehandlel110.dll" FileName="API-MS~9.DLL|api-ms-win-core-handle-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-handle-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincoreheapl110.dll" Component_="apimswincoreheapl110.dll" FileName="API-M~10.DLL|api-ms-win-core-heap-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-heap-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincoreinterlockedl110.dll" Component_="apimswincoreinterlockedl110.dll" FileName="API-M~11.DLL|api-ms-win-core-interlocked-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-interlocked-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincorelibraryloaderl110.dll" Component_="apimswincorelibraryloaderl110.dll" FileName="API-M~12.DLL|api-ms-win-core-libraryloader-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-libraryloader-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincorelocalizationl120.dll" Component_="apimswincorelocalizationl120.dll" FileName="API-M~13.DLL|api-ms-win-core-localization-l1-2-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-localization-l1-2-0.dll" SelfReg="false"/>
+    <ROW File="apimswincorememoryl110.dll" Component_="apimswincorememoryl110.dll" FileName="API-M~14.DLL|api-ms-win-core-memory-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-memory-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincorenamedpipel110.dll" Component_="apimswincorenamedpipel110.dll" FileName="API-M~15.DLL|api-ms-win-core-namedpipe-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-namedpipe-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincoreprocessenvironmentl110.dll" Component_="apimswincoreprocessenvironmentl110.dll" FileName="API-M~16.DLL|api-ms-win-core-processenvironment-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-processenvironment-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincoreprocessthreadsl110.dll" Component_="apimswincoreprocessthreadsl110.dll" FileName="API-M~17.DLL|api-ms-win-core-processthreads-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-processthreads-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincoreprocessthreadsl111.dll" Component_="apimswincoreprocessthreadsl111.dll" FileName="API-M~18.DLL|api-ms-win-core-processthreads-l1-1-1.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-processthreads-l1-1-1.dll" SelfReg="false"/>
+    <ROW File="apimswincoreprofilel110.dll" Component_="apimswincoreprofilel110.dll" FileName="API-M~19.DLL|api-ms-win-core-profile-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-profile-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincorertlsupportl110.dll" Component_="apimswincorertlsupportl110.dll" FileName="API-M~20.DLL|api-ms-win-core-rtlsupport-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-rtlsupport-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincorestringl110.dll" Component_="apimswincorestringl110.dll" FileName="API-M~21.DLL|api-ms-win-core-string-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-string-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincoresynchl110.dll" Component_="apimswincoresynchl110.dll" FileName="API-M~22.DLL|api-ms-win-core-synch-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-synch-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincoresynchl120.dll" Component_="apimswincoresynchl120.dll" FileName="API-M~23.DLL|api-ms-win-core-synch-l1-2-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-synch-l1-2-0.dll" SelfReg="false"/>
+    <ROW File="apimswincoresysinfol110.dll" Component_="apimswincoresysinfol110.dll" FileName="API-M~24.DLL|api-ms-win-core-sysinfo-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-sysinfo-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincoretimezonel110.dll" Component_="apimswincoretimezonel110.dll" FileName="API-M~25.DLL|api-ms-win-core-timezone-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-timezone-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincoreutill110.dll" Component_="apimswincoreutill110.dll" FileName="API-M~26.DLL|api-ms-win-core-util-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-core-util-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincrtconiol110.dll" Component_="apimswincrtconiol110.dll" FileName="API-M~27.DLL|api-ms-win-crt-conio-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-crt-conio-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincrtconvertl110.dll" Component_="apimswincrtconvertl110.dll" FileName="API-M~28.DLL|api-ms-win-crt-convert-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-crt-convert-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincrtenvironmentl110.dll" Component_="apimswincrtenvironmentl110.dll" FileName="API-M~29.DLL|api-ms-win-crt-environment-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-crt-environment-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincrtfilesysteml110.dll" Component_="apimswincrtfilesysteml110.dll" FileName="API-M~30.DLL|api-ms-win-crt-filesystem-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-crt-filesystem-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincrtheapl110.dll" Component_="apimswincrtheapl110.dll" FileName="API-M~31.DLL|api-ms-win-crt-heap-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-crt-heap-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincrtlocalel110.dll" Component_="apimswincrtlocalel110.dll" FileName="API-M~32.DLL|api-ms-win-crt-locale-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-crt-locale-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincrtmathl110.dll" Component_="apimswincrtmathl110.dll" FileName="API-M~33.DLL|api-ms-win-crt-math-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-crt-math-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincrtmultibytel110.dll" Component_="apimswincrtmultibytel110.dll" FileName="API-M~34.DLL|api-ms-win-crt-multibyte-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-crt-multibyte-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincrtprivatel110.dll" Component_="apimswincrtprivatel110.dll" FileName="API-M~35.DLL|api-ms-win-crt-private-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-crt-private-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincrtprocessl110.dll" Component_="apimswincrtprocessl110.dll" FileName="API-M~36.DLL|api-ms-win-crt-process-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-crt-process-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincrtruntimel110.dll" Component_="apimswincrtruntimel110.dll" FileName="API-M~37.DLL|api-ms-win-crt-runtime-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-crt-runtime-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincrtstdiol110.dll" Component_="apimswincrtstdiol110.dll" FileName="API-M~38.DLL|api-ms-win-crt-stdio-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-crt-stdio-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincrtstringl110.dll" Component_="apimswincrtstringl110.dll" FileName="API-M~39.DLL|api-ms-win-crt-string-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-crt-string-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincrttimel110.dll" Component_="apimswincrttimel110.dll" FileName="API-M~40.DLL|api-ms-win-crt-time-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-crt-time-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="apimswincrtutilityl110.dll" Component_="apimswincrtutilityl110.dll" FileName="API-M~41.DLL|api-ms-win-crt-utility-l1-1-0.dll" Attributes="0" SourcePath="bin\Debug\Browser\api-ms-win-crt-utility-l1-1-0.dll" SelfReg="false"/>
+    <ROW File="chrome.dll" Component_="chrome.dll" FileName="chrome.dll" Attributes="0" SourcePath="bin\Debug\Browser\chrome.dll" SelfReg="false"/>
+    <ROW File="chrome.exe" Component_="chrome.exe" FileName="chrome.exe" Attributes="0" SourcePath="bin\Debug\Browser\chrome.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="chrome_100_percent.pak" Component_="manifest" FileName="CHROME~1.PAK|chrome_100_percent.pak" Attributes="0" SourcePath="bin\Debug\Browser\chrome_100_percent.pak" SelfReg="false"/>
+    <ROW File="chrome_200_percent.pak" Component_="manifest" FileName="CHROME~2.PAK|chrome_200_percent.pak" Attributes="0" SourcePath="bin\Debug\Browser\chrome_200_percent.pak" SelfReg="false"/>
+    <ROW File="chrome_elf.dll" Component_="chrome_elf.dll" FileName="CHROME~1.DLL|chrome_elf.dll" Attributes="0" SourcePath="bin\Debug\Browser\chrome_elf.dll" SelfReg="false"/>
+    <ROW File="chrome_proxy.exe" Component_="chrome_proxy.exe" FileName="CHROME~1.EXE|chrome_proxy.exe" Attributes="0" SourcePath="bin\Debug\Browser\chrome_proxy.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="d3dcompiler_47.dll" Component_="d3dcompiler_47.dll" FileName="D3DCOM~1.DLL|d3dcompiler_47.dll" Attributes="0" SourcePath="bin\Debug\Browser\d3dcompiler_47.dll" SelfReg="false"/>
+    <ROW File="dbgcore.dll" Component_="dbgcore.dll" FileName="dbgcore.dll" Attributes="0" SourcePath="bin\Debug\Browser\dbgcore.dll" SelfReg="false"/>
+    <ROW File="dbghelp.dll" Component_="dbghelp.dll" FileName="dbghelp.dll" Attributes="0" SourcePath="bin\Debug\Browser\dbghelp.dll" SelfReg="false"/>
+    <ROW File="elevation_service.exe.pdb" Component_="elevation_service.exe.pdb" FileName="ELEVAT~1.PDB|elevation_service.exe.pdb" Attributes="0" SourcePath="bin\Debug\Browser\elevation_service.exe.pdb" SelfReg="false"/>
+    <ROW File="eventlog_provider.dll" Component_="eventlog_provider.dll" FileName="EVENTL~1.DLL|eventlog_provider.dll" Attributes="0" SourcePath="bin\Debug\Browser\eventlog_provider.dll" SelfReg="false"/>
+    <ROW File="external_extensions.json" Component_="external_extensions.json" FileName="EXTERN~1.JSO|external_extensions.json" Attributes="0" SourcePath="bin\Debug\Browser\extensions\external_extensions.json" SelfReg="false"/>
+    <ROW File="zchangerextensionrelease.crx" Component_="external_extensions.json" FileName="ZCHANG~1.CRX|zchanger-extension-release.crx" Attributes="0" SourcePath="bin\Debug\Browser\extensions\zchanger-extension-release.crx" SelfReg="false"/>
+    <ROW File="FirstRun" Component_="manifest" FileName="FIRSTR~1|First Run" Attributes="0" SourcePath="bin\Debug\Browser\First Run" SelfReg="false"/>
+    <ROW File="icon.ico" Component_="manifest" FileName="icon.ico" Attributes="0" SourcePath="bin\Debug\Browser\icon.ico" SelfReg="false"/>
+    <ROW File="icudtl.dat" Component_="manifest" FileName="icudtl.dat" Attributes="0" SourcePath="bin\Debug\Browser\icudtl.dat" SelfReg="false"/>
+    <ROW File="libEGL.dll" Component_="libEGL.dll" FileName="libEGL.dll" Attributes="0" SourcePath="bin\Debug\Browser\libEGL.dll" SelfReg="false"/>
+    <ROW File="libGLESv2.dll" Component_="libGLESv2.dll" FileName="LIBGLE~1.DLL|libGLESv2.dll" Attributes="0" SourcePath="bin\Debug\Browser\libGLESv2.dll" SelfReg="false"/>
+    <ROW File="am.pak" Component_="am.pak" FileName="am.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\am.pak" SelfReg="false"/>
+    <ROW File="am.pak.info" Component_="am.pak" FileName="AMPAK~1.INF|am.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\am.pak.info" SelfReg="false"/>
+    <ROW File="ar.pak" Component_="am.pak" FileName="ar.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\ar.pak" SelfReg="false"/>
+    <ROW File="ar.pak.info" Component_="am.pak" FileName="ARPAK~1.INF|ar.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\ar.pak.info" SelfReg="false"/>
+    <ROW File="bg.pak" Component_="am.pak" FileName="bg.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\bg.pak" SelfReg="false"/>
+    <ROW File="bg.pak.info" Component_="am.pak" FileName="BGPAK~1.INF|bg.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\bg.pak.info" SelfReg="false"/>
+    <ROW File="bn.pak" Component_="am.pak" FileName="bn.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\bn.pak" SelfReg="false"/>
+    <ROW File="bn.pak.info" Component_="am.pak" FileName="BNPAK~1.INF|bn.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\bn.pak.info" SelfReg="false"/>
+    <ROW File="ca.pak" Component_="am.pak" FileName="ca.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\ca.pak" SelfReg="false"/>
+    <ROW File="ca.pak.info" Component_="am.pak" FileName="CAPAK~1.INF|ca.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\ca.pak.info" SelfReg="false"/>
+    <ROW File="cs.pak" Component_="am.pak" FileName="cs.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\cs.pak" SelfReg="false"/>
+    <ROW File="cs.pak.info" Component_="am.pak" FileName="CSPAK~1.INF|cs.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\cs.pak.info" SelfReg="false"/>
+    <ROW File="da.pak" Component_="am.pak" FileName="da.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\da.pak" SelfReg="false"/>
+    <ROW File="da.pak.info" Component_="am.pak" FileName="DAPAK~1.INF|da.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\da.pak.info" SelfReg="false"/>
+    <ROW File="de.pak" Component_="am.pak" FileName="de.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\de.pak" SelfReg="false"/>
+    <ROW File="de.pak.info" Component_="am.pak" FileName="DEPAK~1.INF|de.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\de.pak.info" SelfReg="false"/>
+    <ROW File="el.pak" Component_="am.pak" FileName="el.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\el.pak" SelfReg="false"/>
+    <ROW File="el.pak.info" Component_="am.pak" FileName="ELPAK~1.INF|el.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\el.pak.info" SelfReg="false"/>
+    <ROW File="enGB.pak" Component_="am.pak" FileName="en-GB.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\en-GB.pak" SelfReg="false"/>
+    <ROW File="enGB.pak.info" Component_="am.pak" FileName="EN-GBP~1.INF|en-GB.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\en-GB.pak.info" SelfReg="false"/>
+    <ROW File="enUS.pak" Component_="am.pak" FileName="en-US.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\en-US.pak" SelfReg="false"/>
+    <ROW File="enUS.pak.info" Component_="am.pak" FileName="EN-USP~1.INF|en-US.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\en-US.pak.info" SelfReg="false"/>
+    <ROW File="es419.pak" Component_="am.pak" FileName="es-419.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\es-419.pak" SelfReg="false"/>
+    <ROW File="es419.pak.info" Component_="am.pak" FileName="ES-419~1.INF|es-419.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\es-419.pak.info" SelfReg="false"/>
+    <ROW File="es.pak" Component_="am.pak" FileName="es.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\es.pak" SelfReg="false"/>
+    <ROW File="es.pak.info" Component_="am.pak" FileName="ESPAK~1.INF|es.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\es.pak.info" SelfReg="false"/>
+    <ROW File="et.pak" Component_="am.pak" FileName="et.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\et.pak" SelfReg="false"/>
+    <ROW File="et.pak.info" Component_="am.pak" FileName="ETPAK~1.INF|et.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\et.pak.info" SelfReg="false"/>
+    <ROW File="fa.pak" Component_="am.pak" FileName="fa.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\fa.pak" SelfReg="false"/>
+    <ROW File="fa.pak.info" Component_="am.pak" FileName="FAPAK~1.INF|fa.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\fa.pak.info" SelfReg="false"/>
+    <ROW File="fi.pak" Component_="am.pak" FileName="fi.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\fi.pak" SelfReg="false"/>
+    <ROW File="fi.pak.info" Component_="am.pak" FileName="FIPAK~1.INF|fi.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\fi.pak.info" SelfReg="false"/>
+    <ROW File="fil.pak" Component_="am.pak" FileName="fil.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\fil.pak" SelfReg="false"/>
+    <ROW File="fil.pak.info" Component_="am.pak" FileName="FILPAK~1.INF|fil.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\fil.pak.info" SelfReg="false"/>
+    <ROW File="fr.pak" Component_="am.pak" FileName="fr.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\fr.pak" SelfReg="false"/>
+    <ROW File="fr.pak.info" Component_="am.pak" FileName="FRPAK~1.INF|fr.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\fr.pak.info" SelfReg="false"/>
+    <ROW File="gu.pak" Component_="am.pak" FileName="gu.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\gu.pak" SelfReg="false"/>
+    <ROW File="gu.pak.info" Component_="am.pak" FileName="GUPAK~1.INF|gu.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\gu.pak.info" SelfReg="false"/>
+    <ROW File="he.pak" Component_="am.pak" FileName="he.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\he.pak" SelfReg="false"/>
+    <ROW File="he.pak.info" Component_="am.pak" FileName="HEPAK~1.INF|he.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\he.pak.info" SelfReg="false"/>
+    <ROW File="hi.pak" Component_="am.pak" FileName="hi.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\hi.pak" SelfReg="false"/>
+    <ROW File="hi.pak.info" Component_="am.pak" FileName="HIPAK~1.INF|hi.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\hi.pak.info" SelfReg="false"/>
+    <ROW File="hr.pak" Component_="am.pak" FileName="hr.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\hr.pak" SelfReg="false"/>
+    <ROW File="hr.pak.info" Component_="am.pak" FileName="HRPAK~1.INF|hr.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\hr.pak.info" SelfReg="false"/>
+    <ROW File="hu.pak" Component_="am.pak" FileName="hu.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\hu.pak" SelfReg="false"/>
+    <ROW File="hu.pak.info" Component_="am.pak" FileName="HUPAK~1.INF|hu.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\hu.pak.info" SelfReg="false"/>
+    <ROW File="id.pak" Component_="am.pak" FileName="id.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\id.pak" SelfReg="false"/>
+    <ROW File="id.pak.info" Component_="am.pak" FileName="IDPAK~1.INF|id.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\id.pak.info" SelfReg="false"/>
+    <ROW File="it.pak" Component_="am.pak" FileName="it.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\it.pak" SelfReg="false"/>
+    <ROW File="it.pak.info" Component_="am.pak" FileName="ITPAK~1.INF|it.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\it.pak.info" SelfReg="false"/>
+    <ROW File="ja.pak" Component_="am.pak" FileName="ja.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\ja.pak" SelfReg="false"/>
+    <ROW File="ja.pak.info" Component_="am.pak" FileName="JAPAK~1.INF|ja.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\ja.pak.info" SelfReg="false"/>
+    <ROW File="kn.pak" Component_="am.pak" FileName="kn.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\kn.pak" SelfReg="false"/>
+    <ROW File="kn.pak.info" Component_="am.pak" FileName="KNPAK~1.INF|kn.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\kn.pak.info" SelfReg="false"/>
+    <ROW File="ko.pak" Component_="am.pak" FileName="ko.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\ko.pak" SelfReg="false"/>
+    <ROW File="ko.pak.info" Component_="am.pak" FileName="KOPAK~1.INF|ko.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\ko.pak.info" SelfReg="false"/>
+    <ROW File="lt.pak" Component_="am.pak" FileName="lt.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\lt.pak" SelfReg="false"/>
+    <ROW File="lt.pak.info" Component_="am.pak" FileName="LTPAK~1.INF|lt.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\lt.pak.info" SelfReg="false"/>
+    <ROW File="lv.pak" Component_="am.pak" FileName="lv.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\lv.pak" SelfReg="false"/>
+    <ROW File="lv.pak.info" Component_="am.pak" FileName="LVPAK~1.INF|lv.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\lv.pak.info" SelfReg="false"/>
+    <ROW File="ml.pak" Component_="am.pak" FileName="ml.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\ml.pak" SelfReg="false"/>
+    <ROW File="ml.pak.info" Component_="am.pak" FileName="MLPAK~1.INF|ml.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\ml.pak.info" SelfReg="false"/>
+    <ROW File="mr.pak" Component_="am.pak" FileName="mr.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\mr.pak" SelfReg="false"/>
+    <ROW File="mr.pak.info" Component_="am.pak" FileName="MRPAK~1.INF|mr.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\mr.pak.info" SelfReg="false"/>
+    <ROW File="ms.pak" Component_="am.pak" FileName="ms.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\ms.pak" SelfReg="false"/>
+    <ROW File="ms.pak.info" Component_="am.pak" FileName="MSPAK~1.INF|ms.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\ms.pak.info" SelfReg="false"/>
+    <ROW File="nb.pak" Component_="am.pak" FileName="nb.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\nb.pak" SelfReg="false"/>
+    <ROW File="nb.pak.info" Component_="am.pak" FileName="NBPAK~1.INF|nb.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\nb.pak.info" SelfReg="false"/>
+    <ROW File="nl.pak" Component_="am.pak" FileName="nl.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\nl.pak" SelfReg="false"/>
+    <ROW File="nl.pak.info" Component_="am.pak" FileName="NLPAK~1.INF|nl.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\nl.pak.info" SelfReg="false"/>
+    <ROW File="pl.pak" Component_="am.pak" FileName="pl.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\pl.pak" SelfReg="false"/>
+    <ROW File="pl.pak.info" Component_="am.pak" FileName="PLPAK~1.INF|pl.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\pl.pak.info" SelfReg="false"/>
+    <ROW File="ptBR.pak" Component_="am.pak" FileName="pt-BR.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\pt-BR.pak" SelfReg="false"/>
+    <ROW File="ptBR.pak.info" Component_="am.pak" FileName="PT-BRP~1.INF|pt-BR.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\pt-BR.pak.info" SelfReg="false"/>
+    <ROW File="ptPT.pak" Component_="am.pak" FileName="pt-PT.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\pt-PT.pak" SelfReg="false"/>
+    <ROW File="ptPT.pak.info" Component_="am.pak" FileName="PT-PTP~1.INF|pt-PT.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\pt-PT.pak.info" SelfReg="false"/>
+    <ROW File="ro.pak" Component_="am.pak" FileName="ro.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\ro.pak" SelfReg="false"/>
+    <ROW File="ro.pak.info" Component_="am.pak" FileName="ROPAK~1.INF|ro.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\ro.pak.info" SelfReg="false"/>
+    <ROW File="ru.pak" Component_="am.pak" FileName="ru.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\ru.pak" SelfReg="false"/>
+    <ROW File="ru.pak.info" Component_="am.pak" FileName="RUPAK~1.INF|ru.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\ru.pak.info" SelfReg="false"/>
+    <ROW File="sk.pak" Component_="am.pak" FileName="sk.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\sk.pak" SelfReg="false"/>
+    <ROW File="sk.pak.info" Component_="am.pak" FileName="SKPAK~1.INF|sk.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\sk.pak.info" SelfReg="false"/>
+    <ROW File="sl.pak" Component_="am.pak" FileName="sl.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\sl.pak" SelfReg="false"/>
+    <ROW File="sl.pak.info" Component_="am.pak" FileName="SLPAK~1.INF|sl.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\sl.pak.info" SelfReg="false"/>
+    <ROW File="sr.pak" Component_="am.pak" FileName="sr.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\sr.pak" SelfReg="false"/>
+    <ROW File="sr.pak.info" Component_="am.pak" FileName="SRPAK~1.INF|sr.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\sr.pak.info" SelfReg="false"/>
+    <ROW File="sv.pak" Component_="am.pak" FileName="sv.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\sv.pak" SelfReg="false"/>
+    <ROW File="sv.pak.info" Component_="am.pak" FileName="SVPAK~1.INF|sv.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\sv.pak.info" SelfReg="false"/>
+    <ROW File="sw.pak" Component_="am.pak" FileName="sw.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\sw.pak" SelfReg="false"/>
+    <ROW File="sw.pak.info" Component_="am.pak" FileName="SWPAK~1.INF|sw.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\sw.pak.info" SelfReg="false"/>
+    <ROW File="ta.pak" Component_="am.pak" FileName="ta.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\ta.pak" SelfReg="false"/>
+    <ROW File="ta.pak.info" Component_="am.pak" FileName="TAPAK~1.INF|ta.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\ta.pak.info" SelfReg="false"/>
+    <ROW File="te.pak" Component_="am.pak" FileName="te.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\te.pak" SelfReg="false"/>
+    <ROW File="te.pak.info" Component_="am.pak" FileName="TEPAK~1.INF|te.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\te.pak.info" SelfReg="false"/>
+    <ROW File="th.pak" Component_="am.pak" FileName="th.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\th.pak" SelfReg="false"/>
+    <ROW File="th.pak.info" Component_="am.pak" FileName="THPAK~1.INF|th.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\th.pak.info" SelfReg="false"/>
+    <ROW File="tr.pak" Component_="am.pak" FileName="tr.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\tr.pak" SelfReg="false"/>
+    <ROW File="tr.pak.info" Component_="am.pak" FileName="TRPAK~1.INF|tr.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\tr.pak.info" SelfReg="false"/>
+    <ROW File="uk.pak" Component_="am.pak" FileName="uk.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\uk.pak" SelfReg="false"/>
+    <ROW File="uk.pak.info" Component_="am.pak" FileName="UKPAK~1.INF|uk.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\uk.pak.info" SelfReg="false"/>
+    <ROW File="vi.pak" Component_="am.pak" FileName="vi.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\vi.pak" SelfReg="false"/>
+    <ROW File="vi.pak.info" Component_="am.pak" FileName="VIPAK~1.INF|vi.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\vi.pak.info" SelfReg="false"/>
+    <ROW File="zhCN.pak" Component_="am.pak" FileName="zh-CN.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\zh-CN.pak" SelfReg="false"/>
+    <ROW File="zhCN.pak.info" Component_="am.pak" FileName="ZH-CNP~1.INF|zh-CN.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\zh-CN.pak.info" SelfReg="false"/>
+    <ROW File="zhTW.pak" Component_="am.pak" FileName="zh-TW.pak" Attributes="0" SourcePath="bin\Debug\Browser\locales\zh-TW.pak" SelfReg="false"/>
+    <ROW File="zhTW.pak.info" Component_="am.pak" FileName="ZH-TWP~1.INF|zh-TW.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\locales\zh-TW.pak.info" SelfReg="false"/>
+    <ROW File="manifest.json" Component_="manifest.json" FileName="MANIFE~1.JSO|manifest.json" Attributes="0" SourcePath="bin\Debug\Browser\MEIPreload\manifest.json" SelfReg="false"/>
+    <ROW File="preloaded_data.pb" Component_="manifest.json" FileName="PRELOA~1.PB|preloaded_data.pb" Attributes="0" SourcePath="bin\Debug\Browser\MEIPreload\preloaded_data.pb" SelfReg="false"/>
+    <ROW File="mojo_core.dll" Component_="mojo_core.dll" FileName="MOJO_C~1.DLL|mojo_core.dll" Attributes="0" SourcePath="bin\Debug\Browser\mojo_core.dll" SelfReg="false"/>
+    <ROW File="msvcp140.dll" Component_="msvcp140.dll" FileName="msvcp140.dll" Attributes="0" SourcePath="bin\Debug\Browser\msvcp140.dll" SelfReg="false"/>
+    <ROW File="nacl_irt_x86_64.nexe" Component_="manifest" FileName="NACL_I~1.NEX|nacl_irt_x86_64.nexe" Attributes="0" SourcePath="bin\Debug\Browser\nacl_irt_x86_64.nexe" SelfReg="false"/>
+    <ROW File="notification_helper.exe" Component_="notification_helper.exe" FileName="NOTIFI~1.EXE|notification_helper.exe" Attributes="0" SourcePath="bin\Debug\Browser\notification_helper.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="resources.pak" Component_="manifest" FileName="RESOUR~1.PAK|resources.pak" Attributes="0" SourcePath="bin\Debug\Browser\resources.pak" SelfReg="false"/>
+    <ROW File="resources.pak.info" Component_="manifest" FileName="RESOUR~1.INF|resources.pak.info" Attributes="0" SourcePath="bin\Debug\Browser\resources.pak.info" SelfReg="false"/>
+    <ROW File="libEGL.dll_1" Component_="libEGL.dll_1" FileName="libEGL.dll" Attributes="0" SourcePath="bin\Debug\Browser\swiftshader\libEGL.dll" SelfReg="false"/>
+    <ROW File="libEGL.dll.lib" Component_="libEGL.dll.lib" FileName="LIBEGL~1.LIB|libEGL.dll.lib" Attributes="0" SourcePath="bin\Debug\Browser\swiftshader\libEGL.dll.lib" SelfReg="false"/>
+    <ROW File="libEGL.dll.pdb" Component_="libEGL.dll.pdb" FileName="LIBEGL~1.PDB|libEGL.dll.pdb" Attributes="0" SourcePath="bin\Debug\Browser\swiftshader\libEGL.dll.pdb" SelfReg="false"/>
+    <ROW File="libGLESv2.dll_1" Component_="libGLESv2.dll_1" FileName="LIBGLE~1.DLL|libGLESv2.dll" Attributes="0" SourcePath="bin\Debug\Browser\swiftshader\libGLESv2.dll" SelfReg="false"/>
+    <ROW File="libGLESv2.dll.lib" Component_="libEGL.dll.lib" FileName="LIBGLE~1.LIB|libGLESv2.dll.lib" Attributes="0" SourcePath="bin\Debug\Browser\swiftshader\libGLESv2.dll.lib" SelfReg="false"/>
+    <ROW File="libGLESv2.dll.pdb" Component_="libEGL.dll.pdb" FileName="LIBGLE~1.PDB|libGLESv2.dll.pdb" Attributes="0" SourcePath="bin\Debug\Browser\swiftshader\libGLESv2.dll.pdb" SelfReg="false"/>
+    <ROW File="ucrtbase.dll" Component_="ucrtbase.dll" FileName="ucrtbase.dll" Attributes="0" SourcePath="bin\Debug\Browser\ucrtbase.dll" SelfReg="false"/>
+    <ROW File="v8_context_snapshot.bin" Component_="manifest" FileName="V8_CON~1.BIN|v8_context_snapshot.bin" Attributes="0" SourcePath="bin\Debug\Browser\v8_context_snapshot.bin" SelfReg="false"/>
+    <ROW File="vccorlib140.dll" Component_="vccorlib140.dll" FileName="VCCORL~1.DLL|vccorlib140.dll" Attributes="0" SourcePath="bin\Debug\Browser\vccorlib140.dll" SelfReg="false"/>
+    <ROW File="vcruntime140.dll" Component_="vcruntime140.dll" FileName="VCRUNT~1.DLL|vcruntime140.dll" Attributes="0" SourcePath="bin\Debug\Browser\vcruntime140.dll" SelfReg="false"/>
+    <ROW File="VkICD_mock_icd.dll" Component_="VkICD_mock_icd.dll" FileName="VKICD_~1.DLL|VkICD_mock_icd.dll" Attributes="0" SourcePath="bin\Debug\Browser\VkICD_mock_icd.dll" SelfReg="false"/>
+    <ROW File="VkLayer_khronos_validation.dll" Component_="VkLayer_khronos_validation.dll" FileName="VKLAYE~1.DLL|VkLayer_khronos_validation.dll" Attributes="0" SourcePath="bin\Debug\Browser\VkLayer_khronos_validation.dll" SelfReg="false"/>
+    <ROW File="vk_swiftshader.dll" Component_="vk_swiftshader.dll" FileName="VK_SWI~1.DLL|vk_swiftshader.dll" Attributes="0" SourcePath="bin\Debug\Browser\vk_swiftshader.dll" SelfReg="false"/>
+    <ROW File="vulkan1.dll" Component_="vulkan1.dll" FileName="vulkan-1.dll" Attributes="0" SourcePath="bin\Debug\Browser\vulkan-1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v19.2.resources.dll" Component_="DevExpress.Data.v19.2.resources.dll" FileName="DEVEXP~1.DLL|DevExpress.Data.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\de\DevExpress.Data.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Mvvm.v19.2.DataModel.resources.dll" Component_="DevExpress.Mvvm.v19.2.DataModel.resources.dll" FileName="DEVEXP~2.DLL|DevExpress.Mvvm.v19.2.DataModel.resources.dll" Attributes="0" SourcePath="bin\Debug\de\DevExpress.Mvvm.v19.2.DataModel.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Office.v19.2.Core.resources.dll" Component_="DevExpress.Office.v19.2.Core.resources.dll" FileName="DEVEXP~3.DLL|DevExpress.Office.v19.2.Core.resources.dll" Attributes="0" SourcePath="bin\Debug\de\DevExpress.Office.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Pdf.v19.2.Core.resources.dll" Component_="DevExpress.Pdf.v19.2.Core.resources.dll" FileName="DEVEXP~4.DLL|DevExpress.Pdf.v19.2.Core.resources.dll" Attributes="0" SourcePath="bin\Debug\de\DevExpress.Pdf.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v19.2.Core.resources.dll" Component_="DevExpress.Printing.v19.2.Core.resources.dll" FileName="DEVEXP~5.DLL|DevExpress.Printing.v19.2.Core.resources.dll" Attributes="0" SourcePath="bin\Debug\de\DevExpress.Printing.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v19.2.Core.resources.dll" Component_="DevExpress.RichEdit.v19.2.Core.resources.dll" FileName="DEVEXP~6.DLL|DevExpress.RichEdit.v19.2.Core.resources.dll" Attributes="0" SourcePath="bin\Debug\de\DevExpress.RichEdit.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Sparkline.v19.2.Core.resources.dll" Component_="DevExpress.Sparkline.v19.2.Core.resources.dll" FileName="DEVEXP~7.DLL|DevExpress.Sparkline.v19.2.Core.resources.dll" Attributes="0" SourcePath="bin\Debug\de\DevExpress.Sparkline.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v19.2.resources.dll" Component_="DevExpress.Utils.v19.2.resources.dll" FileName="DEVEXP~8.DLL|DevExpress.Utils.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\de\DevExpress.Utils.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraBars.v19.2.resources.dll" Component_="DevExpress.XtraBars.v19.2.resources.dll" FileName="DEVEXP~9.DLL|DevExpress.XtraBars.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\de\DevExpress.XtraBars.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraEditors.v19.2.resources.dll" Component_="DevExpress.XtraEditors.v19.2.resources.dll" FileName="DEVEX~10.DLL|DevExpress.XtraEditors.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\de\DevExpress.XtraEditors.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGrid.v19.2.resources.dll" Component_="DevExpress.XtraGrid.v19.2.resources.dll" FileName="DEVEX~11.DLL|DevExpress.XtraGrid.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\de\DevExpress.XtraGrid.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraLayout.v19.2.resources.dll" Component_="DevExpress.XtraLayout.v19.2.resources.dll" FileName="DEVEX~12.DLL|DevExpress.XtraLayout.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\de\DevExpress.XtraLayout.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPrinting.v19.2.resources.dll" Component_="DevExpress.XtraPrinting.v19.2.resources.dll" FileName="DEVEX~13.DLL|DevExpress.XtraPrinting.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\de\DevExpress.XtraPrinting.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraTreeList.v19.2.resources.dll" Component_="DevExpress.XtraTreeList.v19.2.resources.dll" FileName="DEVEX~14.DLL|DevExpress.XtraTreeList.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\de\DevExpress.XtraTreeList.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v19.2.dll" Component_="DevExpress.Data.v19.2.dll" FileName="DEVEXP~1.DLL|DevExpress.Data.v19.2.dll" Attributes="0" SourcePath="bin\Debug\DevExpress.Data.v19.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v19.2.xml" Component_="DevExpress.Data.v19.2.xml" FileName="DEVEXP~1.XML|DevExpress.Data.v19.2.xml" Attributes="0" SourcePath="bin\Debug\DevExpress.Data.v19.2.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Images.v19.2.dll" Component_="DevExpress.Images.v19.2.dll" FileName="DEVEXP~2.DLL|DevExpress.Images.v19.2.dll" Attributes="0" SourcePath="bin\Debug\DevExpress.Images.v19.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Mvvm.v19.2.DataModel.dll" Component_="DevExpress.Mvvm.v19.2.DataModel.dll" FileName="DEVEXP~3.DLL|DevExpress.Mvvm.v19.2.DataModel.dll" Attributes="0" SourcePath="bin\Debug\DevExpress.Mvvm.v19.2.DataModel.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Mvvm.v19.2.DataModel.EF6.dll" Component_="DevExpress.Mvvm.v19.2.DataModel.EF6.dll" FileName="DEVEXP~4.DLL|DevExpress.Mvvm.v19.2.DataModel.EF6.dll" Attributes="0" SourcePath="bin\Debug\DevExpress.Mvvm.v19.2.DataModel.EF6.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Mvvm.v19.2.DataModel.EF6.xml" Component_="DevExpress.Data.v19.2.xml" FileName="DEVEXP~2.XML|DevExpress.Mvvm.v19.2.DataModel.EF6.xml" Attributes="0" SourcePath="bin\Debug\DevExpress.Mvvm.v19.2.DataModel.EF6.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Mvvm.v19.2.DataModel.xml" Component_="DevExpress.Data.v19.2.xml" FileName="DEVEXP~3.XML|DevExpress.Mvvm.v19.2.DataModel.xml" Attributes="0" SourcePath="bin\Debug\DevExpress.Mvvm.v19.2.DataModel.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Mvvm.v19.2.dll" Component_="DevExpress.Mvvm.v19.2.dll" FileName="DEVEXP~5.DLL|DevExpress.Mvvm.v19.2.dll" Attributes="0" SourcePath="bin\Debug\DevExpress.Mvvm.v19.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Mvvm.v19.2.ViewModel.dll" Component_="DevExpress.Mvvm.v19.2.ViewModel.dll" FileName="DEVEXP~6.DLL|DevExpress.Mvvm.v19.2.ViewModel.dll" Attributes="0" SourcePath="bin\Debug\DevExpress.Mvvm.v19.2.ViewModel.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Mvvm.v19.2.ViewModel.xml" Component_="DevExpress.Data.v19.2.xml" FileName="DEVEXP~4.XML|DevExpress.Mvvm.v19.2.ViewModel.xml" Attributes="0" SourcePath="bin\Debug\DevExpress.Mvvm.v19.2.ViewModel.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Mvvm.v19.2.xml" Component_="DevExpress.Data.v19.2.xml" FileName="DEVEXP~5.XML|DevExpress.Mvvm.v19.2.xml" Attributes="0" SourcePath="bin\Debug\DevExpress.Mvvm.v19.2.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Office.v19.2.Core.dll" Component_="DevExpress.Office.v19.2.Core.dll" FileName="DEVEXP~7.DLL|DevExpress.Office.v19.2.Core.dll" Attributes="0" SourcePath="bin\Debug\DevExpress.Office.v19.2.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Office.v19.2.Core.xml" Component_="DevExpress.Data.v19.2.xml" FileName="DEVEXP~6.XML|DevExpress.Office.v19.2.Core.xml" Attributes="0" SourcePath="bin\Debug\DevExpress.Office.v19.2.Core.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Pdf.v19.2.Core.dll" Component_="DevExpress.Pdf.v19.2.Core.dll" FileName="DEVEXP~8.DLL|DevExpress.Pdf.v19.2.Core.dll" Attributes="0" SourcePath="bin\Debug\DevExpress.Pdf.v19.2.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Pdf.v19.2.Core.xml" Component_="DevExpress.Data.v19.2.xml" FileName="DEVEXP~7.XML|DevExpress.Pdf.v19.2.Core.xml" Attributes="0" SourcePath="bin\Debug\DevExpress.Pdf.v19.2.Core.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v19.2.Core.dll" Component_="DevExpress.Printing.v19.2.Core.dll" FileName="DEVEXP~9.DLL|DevExpress.Printing.v19.2.Core.dll" Attributes="0" SourcePath="bin\Debug\DevExpress.Printing.v19.2.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v19.2.Core.xml" Component_="DevExpress.Data.v19.2.xml" FileName="DEVEXP~8.XML|DevExpress.Printing.v19.2.Core.xml" Attributes="0" SourcePath="bin\Debug\DevExpress.Printing.v19.2.Core.xml" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v19.2.Core.dll" Component_="DevExpress.RichEdit.v19.2.Core.dll" FileName="DEVEX~10.DLL|DevExpress.RichEdit.v19.2.Core.dll" Attributes="0" SourcePath="bin\Debug\DevExpress.RichEdit.v19.2.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v19.2.Core.xml" Component_="DevExpress.Data.v19.2.xml" FileName="DEVEXP~9.XML|DevExpress.RichEdit.v19.2.Core.xml" Attributes="0" SourcePath="bin\Debug\DevExpress.RichEdit.v19.2.Core.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Sparkline.v19.2.Core.dll" Component_="DevExpress.Sparkline.v19.2.Core.dll" FileName="DEVEX~11.DLL|DevExpress.Sparkline.v19.2.Core.dll" Attributes="0" SourcePath="bin\Debug\DevExpress.Sparkline.v19.2.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Sparkline.v19.2.Core.xml" Component_="DevExpress.Data.v19.2.xml" FileName="DEVEX~10.XML|DevExpress.Sparkline.v19.2.Core.xml" Attributes="0" SourcePath="bin\Debug\DevExpress.Sparkline.v19.2.Core.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v19.2.dll" Component_="DevExpress.Utils.v19.2.dll" FileName="DEVEX~12.DLL|DevExpress.Utils.v19.2.dll" Attributes="0" SourcePath="bin\Debug\DevExpress.Utils.v19.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v19.2.xml" Component_="DevExpress.Data.v19.2.xml" FileName="DEVEX~11.XML|DevExpress.Utils.v19.2.xml" Attributes="0" SourcePath="bin\Debug\DevExpress.Utils.v19.2.xml" SelfReg="false"/>
+    <ROW File="DevExpress.XtraBars.v19.2.dll" Component_="DevExpress.XtraBars.v19.2.dll" FileName="DEVEX~13.DLL|DevExpress.XtraBars.v19.2.dll" Attributes="0" SourcePath="bin\Debug\DevExpress.XtraBars.v19.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraBars.v19.2.xml" Component_="DevExpress.Data.v19.2.xml" FileName="DEVEX~12.XML|DevExpress.XtraBars.v19.2.xml" Attributes="0" SourcePath="bin\Debug\DevExpress.XtraBars.v19.2.xml" SelfReg="false"/>
+    <ROW File="DevExpress.XtraEditors.v19.2.dll" Component_="DevExpress.XtraEditors.v19.2.dll" FileName="DEVEX~14.DLL|DevExpress.XtraEditors.v19.2.dll" Attributes="0" SourcePath="bin\Debug\DevExpress.XtraEditors.v19.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraEditors.v19.2.xml" Component_="DevExpress.Data.v19.2.xml" FileName="DEVEX~13.XML|DevExpress.XtraEditors.v19.2.xml" Attributes="0" SourcePath="bin\Debug\DevExpress.XtraEditors.v19.2.xml" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGrid.v19.2.dll" Component_="DevExpress.XtraGrid.v19.2.dll" FileName="DEVEX~15.DLL|DevExpress.XtraGrid.v19.2.dll" Attributes="0" SourcePath="bin\Debug\DevExpress.XtraGrid.v19.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGrid.v19.2.xml" Component_="DevExpress.Data.v19.2.xml" FileName="DEVEX~14.XML|DevExpress.XtraGrid.v19.2.xml" Attributes="0" SourcePath="bin\Debug\DevExpress.XtraGrid.v19.2.xml" SelfReg="false"/>
+    <ROW File="DevExpress.XtraLayout.v19.2.dll" Component_="DevExpress.XtraLayout.v19.2.dll" FileName="DEVEX~16.DLL|DevExpress.XtraLayout.v19.2.dll" Attributes="0" SourcePath="bin\Debug\DevExpress.XtraLayout.v19.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraLayout.v19.2.xml" Component_="DevExpress.Data.v19.2.xml" FileName="DEVEX~15.XML|DevExpress.XtraLayout.v19.2.xml" Attributes="0" SourcePath="bin\Debug\DevExpress.XtraLayout.v19.2.xml" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPrinting.v19.2.dll" Component_="DevExpress.XtraPrinting.v19.2.dll" FileName="DEVEX~17.DLL|DevExpress.XtraPrinting.v19.2.dll" Attributes="0" SourcePath="bin\Debug\DevExpress.XtraPrinting.v19.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPrinting.v19.2.xml" Component_="DevExpress.Data.v19.2.xml" FileName="DEVEX~16.XML|DevExpress.XtraPrinting.v19.2.xml" Attributes="0" SourcePath="bin\Debug\DevExpress.XtraPrinting.v19.2.xml" SelfReg="false"/>
+    <ROW File="DevExpress.XtraTreeList.v19.2.dll" Component_="DevExpress.XtraTreeList.v19.2.dll" FileName="DEVEX~18.DLL|DevExpress.XtraTreeList.v19.2.dll" Attributes="0" SourcePath="bin\Debug\DevExpress.XtraTreeList.v19.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraTreeList.v19.2.xml" Component_="DevExpress.Data.v19.2.xml" FileName="DEVEX~17.XML|DevExpress.XtraTreeList.v19.2.xml" Attributes="0" SourcePath="bin\Debug\DevExpress.XtraTreeList.v19.2.xml" SelfReg="false"/>
+    <ROW File="DotNetZip.dll" Component_="DotNetZip.dll" FileName="DOTNET~1.DLL|DotNetZip.dll" Attributes="0" SourcePath="bin\Debug\DotNetZip.dll" SelfReg="false"/>
+    <ROW File="DotNetZip.pdb" Component_="DotNetZip.dll" FileName="DOTNET~1.PDB|DotNetZip.pdb" Attributes="0" SourcePath="bin\Debug\DotNetZip.pdb" SelfReg="false"/>
+    <ROW File="DotNetZip.xml" Component_="DevExpress.Data.v19.2.xml" FileName="DOTNET~1.XML|DotNetZip.xml" Attributes="0" SourcePath="bin\Debug\DotNetZip.xml" SelfReg="false"/>
+    <ROW File="EntityFramework.dll" Component_="EntityFramework.dll" FileName="ENTITY~1.DLL|EntityFramework.dll" Attributes="0" SourcePath="bin\Debug\EntityFramework.dll" SelfReg="false"/>
+    <ROW File="EntityFramework.xml" Component_="DevExpress.Data.v19.2.xml" FileName="ENTITY~1.XML|EntityFramework.xml" Attributes="0" SourcePath="bin\Debug\EntityFramework.xml" SelfReg="false"/>
+    <ROW File="Enums.NET.dll" Component_="Enums.NET.dll" FileName="ENUMSN~1.DLL|Enums.NET.dll" Attributes="0" SourcePath="bin\Debug\Enums.NET.dll" SelfReg="false"/>
+    <ROW File="Enums.NET.pdb" Component_="Enums.NET.dll" FileName="ENUMSN~1.PDB|Enums.NET.pdb" Attributes="0" SourcePath="bin\Debug\Enums.NET.pdb" SelfReg="false"/>
+    <ROW File="Enums.NET.xml" Component_="DevExpress.Data.v19.2.xml" FileName="ENUMSN~1.XML|Enums.NET.xml" Attributes="0" SourcePath="bin\Debug\Enums.NET.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v19.2.resources.dll_1" Component_="DevExpress.Data.v19.2.resources.dll_1" FileName="DEVEXP~1.DLL|DevExpress.Data.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\es\DevExpress.Data.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Mvvm.v19.2.DataModel.resources.dll_1" Component_="DevExpress.Mvvm.v19.2.DataModel.resources.dll_1" FileName="DEVEXP~2.DLL|DevExpress.Mvvm.v19.2.DataModel.resources.dll" Attributes="0" SourcePath="bin\Debug\es\DevExpress.Mvvm.v19.2.DataModel.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Office.v19.2.Core.resources.dll_1" Component_="DevExpress.Office.v19.2.Core.resources.dll_1" FileName="DEVEXP~3.DLL|DevExpress.Office.v19.2.Core.resources.dll" Attributes="0" SourcePath="bin\Debug\es\DevExpress.Office.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Pdf.v19.2.Core.resources.dll_1" Component_="DevExpress.Pdf.v19.2.Core.resources.dll_1" FileName="DEVEXP~4.DLL|DevExpress.Pdf.v19.2.Core.resources.dll" Attributes="0" SourcePath="bin\Debug\es\DevExpress.Pdf.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v19.2.Core.resources.dll_1" Component_="DevExpress.Printing.v19.2.Core.resources.dll_1" FileName="DEVEXP~5.DLL|DevExpress.Printing.v19.2.Core.resources.dll" Attributes="0" SourcePath="bin\Debug\es\DevExpress.Printing.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v19.2.Core.resources.dll_1" Component_="DevExpress.RichEdit.v19.2.Core.resources.dll_1" FileName="DEVEXP~6.DLL|DevExpress.RichEdit.v19.2.Core.resources.dll" Attributes="0" SourcePath="bin\Debug\es\DevExpress.RichEdit.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Sparkline.v19.2.Core.resources.dll_1" Component_="DevExpress.Sparkline.v19.2.Core.resources.dll_1" FileName="DEVEXP~7.DLL|DevExpress.Sparkline.v19.2.Core.resources.dll" Attributes="0" SourcePath="bin\Debug\es\DevExpress.Sparkline.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v19.2.resources.dll_1" Component_="DevExpress.Utils.v19.2.resources.dll_1" FileName="DEVEXP~8.DLL|DevExpress.Utils.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\es\DevExpress.Utils.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraBars.v19.2.resources.dll_1" Component_="DevExpress.XtraBars.v19.2.resources.dll_1" FileName="DEVEXP~9.DLL|DevExpress.XtraBars.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\es\DevExpress.XtraBars.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraEditors.v19.2.resources.dll_1" Component_="DevExpress.XtraEditors.v19.2.resources.dll_1" FileName="DEVEX~10.DLL|DevExpress.XtraEditors.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\es\DevExpress.XtraEditors.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGrid.v19.2.resources.dll_1" Component_="DevExpress.XtraGrid.v19.2.resources.dll_1" FileName="DEVEX~11.DLL|DevExpress.XtraGrid.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\es\DevExpress.XtraGrid.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraLayout.v19.2.resources.dll_1" Component_="DevExpress.XtraLayout.v19.2.resources.dll_1" FileName="DEVEX~12.DLL|DevExpress.XtraLayout.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\es\DevExpress.XtraLayout.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPrinting.v19.2.resources.dll_1" Component_="DevExpress.XtraPrinting.v19.2.resources.dll_1" FileName="DEVEX~13.DLL|DevExpress.XtraPrinting.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\es\DevExpress.XtraPrinting.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraTreeList.v19.2.resources.dll_1" Component_="DevExpress.XtraTreeList.v19.2.resources.dll_1" FileName="DEVEX~14.DLL|DevExpress.XtraTreeList.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\es\DevExpress.XtraTreeList.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="FluentCommandLineParser.dll" Component_="FluentCommandLineParser.dll" FileName="FLUENT~1.DLL|FluentCommandLineParser.dll" Attributes="0" SourcePath="bin\Debug\FluentCommandLineParser.dll" SelfReg="false"/>
+    <ROW File="FluentCommandLineParser.pdb" Component_="FluentCommandLineParser.dll" FileName="FLUENT~1.PDB|FluentCommandLineParser.pdb" Attributes="0" SourcePath="bin\Debug\FluentCommandLineParser.pdb" SelfReg="false"/>
+    <ROW File="FluentCommandLineParser.xml" Component_="DevExpress.Data.v19.2.xml" FileName="FLUENT~1.XML|FluentCommandLineParser.xml" Attributes="0" SourcePath="bin\Debug\FluentCommandLineParser.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v19.2.resources.dll_2" Component_="DevExpress.Data.v19.2.resources.dll_2" FileName="DEVEXP~1.DLL|DevExpress.Data.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\ja\DevExpress.Data.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Mvvm.v19.2.DataModel.resources.dll_2" Component_="DevExpress.Mvvm.v19.2.DataModel.resources.dll_2" FileName="DEVEXP~2.DLL|DevExpress.Mvvm.v19.2.DataModel.resources.dll" Attributes="0" SourcePath="bin\Debug\ja\DevExpress.Mvvm.v19.2.DataModel.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Office.v19.2.Core.resources.dll_2" Component_="DevExpress.Office.v19.2.Core.resources.dll_2" FileName="DEVEXP~3.DLL|DevExpress.Office.v19.2.Core.resources.dll" Attributes="0" SourcePath="bin\Debug\ja\DevExpress.Office.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Pdf.v19.2.Core.resources.dll_2" Component_="DevExpress.Pdf.v19.2.Core.resources.dll_2" FileName="DEVEXP~4.DLL|DevExpress.Pdf.v19.2.Core.resources.dll" Attributes="0" SourcePath="bin\Debug\ja\DevExpress.Pdf.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v19.2.Core.resources.dll_2" Component_="DevExpress.Printing.v19.2.Core.resources.dll_2" FileName="DEVEXP~5.DLL|DevExpress.Printing.v19.2.Core.resources.dll" Attributes="0" SourcePath="bin\Debug\ja\DevExpress.Printing.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v19.2.Core.resources.dll_2" Component_="DevExpress.RichEdit.v19.2.Core.resources.dll_2" FileName="DEVEXP~6.DLL|DevExpress.RichEdit.v19.2.Core.resources.dll" Attributes="0" SourcePath="bin\Debug\ja\DevExpress.RichEdit.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Sparkline.v19.2.Core.resources.dll_2" Component_="DevExpress.Sparkline.v19.2.Core.resources.dll_2" FileName="DEVEXP~7.DLL|DevExpress.Sparkline.v19.2.Core.resources.dll" Attributes="0" SourcePath="bin\Debug\ja\DevExpress.Sparkline.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v19.2.resources.dll_2" Component_="DevExpress.Utils.v19.2.resources.dll_2" FileName="DEVEXP~8.DLL|DevExpress.Utils.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\ja\DevExpress.Utils.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraBars.v19.2.resources.dll_2" Component_="DevExpress.XtraBars.v19.2.resources.dll_2" FileName="DEVEXP~9.DLL|DevExpress.XtraBars.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\ja\DevExpress.XtraBars.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraEditors.v19.2.resources.dll_2" Component_="DevExpress.XtraEditors.v19.2.resources.dll_2" FileName="DEVEX~10.DLL|DevExpress.XtraEditors.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\ja\DevExpress.XtraEditors.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGrid.v19.2.resources.dll_2" Component_="DevExpress.XtraGrid.v19.2.resources.dll_2" FileName="DEVEX~11.DLL|DevExpress.XtraGrid.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\ja\DevExpress.XtraGrid.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraLayout.v19.2.resources.dll_2" Component_="DevExpress.XtraLayout.v19.2.resources.dll_2" FileName="DEVEX~12.DLL|DevExpress.XtraLayout.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\ja\DevExpress.XtraLayout.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPrinting.v19.2.resources.dll_2" Component_="DevExpress.XtraPrinting.v19.2.resources.dll_2" FileName="DEVEX~13.DLL|DevExpress.XtraPrinting.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\ja\DevExpress.XtraPrinting.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraTreeList.v19.2.resources.dll_2" Component_="DevExpress.XtraTreeList.v19.2.resources.dll_2" FileName="DEVEX~14.DLL|DevExpress.XtraTreeList.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\ja\DevExpress.XtraTreeList.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Data.Sqlite.dll" Component_="Microsoft.Data.Sqlite.dll" FileName="MICROS~1.DLL|Microsoft.Data.Sqlite.dll" Attributes="0" SourcePath="bin\Debug\Microsoft.Data.Sqlite.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Data.Sqlite.xml" Component_="DevExpress.Data.v19.2.xml" FileName="MICROS~1.XML|Microsoft.Data.Sqlite.xml" Attributes="0" SourcePath="bin\Debug\Microsoft.Data.Sqlite.xml" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.dll" Component_="Newtonsoft.Json.dll" FileName="NEWTON~1.DLL|Newtonsoft.Json.dll" Attributes="0" SourcePath="bin\Debug\Newtonsoft.Json.dll" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.xml" Component_="DevExpress.Data.v19.2.xml" FileName="NEWTON~1.XML|Newtonsoft.Json.xml" Attributes="0" SourcePath="bin\Debug\Newtonsoft.Json.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v19.2.resources.dll_3" Component_="DevExpress.Data.v19.2.resources.dll_3" FileName="DEVEXP~1.DLL|DevExpress.Data.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\ru\DevExpress.Data.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Mvvm.v19.2.DataModel.resources.dll_3" Component_="DevExpress.Mvvm.v19.2.DataModel.resources.dll_3" FileName="DEVEXP~2.DLL|DevExpress.Mvvm.v19.2.DataModel.resources.dll" Attributes="0" SourcePath="bin\Debug\ru\DevExpress.Mvvm.v19.2.DataModel.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Office.v19.2.Core.resources.dll_3" Component_="DevExpress.Office.v19.2.Core.resources.dll_3" FileName="DEVEXP~3.DLL|DevExpress.Office.v19.2.Core.resources.dll" Attributes="0" SourcePath="bin\Debug\ru\DevExpress.Office.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Pdf.v19.2.Core.resources.dll_3" Component_="DevExpress.Pdf.v19.2.Core.resources.dll_3" FileName="DEVEXP~4.DLL|DevExpress.Pdf.v19.2.Core.resources.dll" Attributes="0" SourcePath="bin\Debug\ru\DevExpress.Pdf.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v19.2.Core.resources.dll_3" Component_="DevExpress.Printing.v19.2.Core.resources.dll_3" FileName="DEVEXP~5.DLL|DevExpress.Printing.v19.2.Core.resources.dll" Attributes="0" SourcePath="bin\Debug\ru\DevExpress.Printing.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v19.2.Core.resources.dll_3" Component_="DevExpress.RichEdit.v19.2.Core.resources.dll_3" FileName="DEVEXP~6.DLL|DevExpress.RichEdit.v19.2.Core.resources.dll" Attributes="0" SourcePath="bin\Debug\ru\DevExpress.RichEdit.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Sparkline.v19.2.Core.resources.dll_3" Component_="DevExpress.Sparkline.v19.2.Core.resources.dll_3" FileName="DEVEXP~7.DLL|DevExpress.Sparkline.v19.2.Core.resources.dll" Attributes="0" SourcePath="bin\Debug\ru\DevExpress.Sparkline.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v19.2.resources.dll_3" Component_="DevExpress.Utils.v19.2.resources.dll_3" FileName="DEVEXP~8.DLL|DevExpress.Utils.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\ru\DevExpress.Utils.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraBars.v19.2.resources.dll_3" Component_="DevExpress.XtraBars.v19.2.resources.dll_3" FileName="DEVEXP~9.DLL|DevExpress.XtraBars.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\ru\DevExpress.XtraBars.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraEditors.v19.2.resources.dll_3" Component_="DevExpress.XtraEditors.v19.2.resources.dll_3" FileName="DEVEX~10.DLL|DevExpress.XtraEditors.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\ru\DevExpress.XtraEditors.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGrid.v19.2.resources.dll_3" Component_="DevExpress.XtraGrid.v19.2.resources.dll_3" FileName="DEVEX~11.DLL|DevExpress.XtraGrid.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\ru\DevExpress.XtraGrid.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraLayout.v19.2.resources.dll_3" Component_="DevExpress.XtraLayout.v19.2.resources.dll_3" FileName="DEVEX~12.DLL|DevExpress.XtraLayout.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\ru\DevExpress.XtraLayout.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPrinting.v19.2.resources.dll_3" Component_="DevExpress.XtraPrinting.v19.2.resources.dll_3" FileName="DEVEX~13.DLL|DevExpress.XtraPrinting.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\ru\DevExpress.XtraPrinting.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraTreeList.v19.2.resources.dll_3" Component_="DevExpress.XtraTreeList.v19.2.resources.dll_3" FileName="DEVEX~14.DLL|DevExpress.XtraTreeList.v19.2.resources.dll" Attributes="0" SourcePath="bin\Debug\ru\DevExpress.XtraTreeList.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="e_sqlite3.dll" Component_="e_sqlite3.dll" FileName="E_SQLI~1.DLL|e_sqlite3.dll" Attributes="0" SourcePath="bin\Debug\runtimes\win-arm\native\e_sqlite3.dll" SelfReg="false"/>
+    <ROW File="e_sqlite3.dll_1" Component_="e_sqlite3.dll_1" FileName="E_SQLI~1.DLL|e_sqlite3.dll" Attributes="0" SourcePath="bin\Debug\runtimes\win-x64\native\e_sqlite3.dll" SelfReg="false"/>
+    <ROW File="e_sqlite3.dll_2" Component_="e_sqlite3.dll_2" FileName="E_SQLI~1.DLL|e_sqlite3.dll" Attributes="0" SourcePath="bin\Debug\runtimes\win-x86\native\e_sqlite3.dll" SelfReg="false"/>
+    <ROW File="SQLite.CodeFirst.dll" Component_="SQLite.CodeFirst.dll" FileName="SQLITE~1.DLL|SQLite.CodeFirst.dll" Attributes="0" SourcePath="bin\Debug\SQLite.CodeFirst.dll" SelfReg="false"/>
+    <ROW File="SQLitePCLRaw.batteries_v2.dll" Component_="SQLitePCLRaw.batteries_v2.dll" FileName="SQLITE~2.DLL|SQLitePCLRaw.batteries_v2.dll" Attributes="0" SourcePath="bin\Debug\SQLitePCLRaw.batteries_v2.dll" SelfReg="false"/>
+    <ROW File="SQLitePCLRaw.core.dll" Component_="SQLitePCLRaw.core.dll" FileName="SQLITE~3.DLL|SQLitePCLRaw.core.dll" Attributes="0" SourcePath="bin\Debug\SQLitePCLRaw.core.dll" SelfReg="false"/>
+    <ROW File="SQLitePCLRaw.nativelibrary.dll" Component_="SQLitePCLRaw.nativelibrary.dll" FileName="SQLITE~4.DLL|SQLitePCLRaw.nativelibrary.dll" Attributes="0" SourcePath="bin\Debug\SQLitePCLRaw.nativelibrary.dll" SelfReg="false"/>
+    <ROW File="SQLitePCLRaw.provider.dynamic_cdecl.dll" Component_="SQLitePCLRaw.provider.dynamic_cdecl.dll" FileName="SQLITE~5.DLL|SQLitePCLRaw.provider.dynamic_cdecl.dll" Attributes="0" SourcePath="bin\Debug\SQLitePCLRaw.provider.dynamic_cdecl.dll" SelfReg="false"/>
+    <ROW File="System.Buffers.dll" Component_="System.Buffers.dll" FileName="SYSTEM~1.DLL|System.Buffers.dll" Attributes="0" SourcePath="bin\Debug\System.Buffers.dll" SelfReg="false"/>
+    <ROW File="System.Buffers.xml" Component_="DevExpress.Data.v19.2.xml" FileName="SYSTEM~1.XML|System.Buffers.xml" Attributes="0" SourcePath="bin\Debug\System.Buffers.xml" SelfReg="false"/>
+    <ROW File="System.ComponentModel.Annotations.dll" Component_="System.ComponentModel.Annotations.dll" FileName="SYSTEM~2.DLL|System.ComponentModel.Annotations.dll" Attributes="0" SourcePath="bin\Debug\System.ComponentModel.Annotations.dll" SelfReg="false"/>
+    <ROW File="System.Data.SQLite.dll" Component_="System.Data.SQLite.dll" FileName="SYSTEM~3.DLL|System.Data.SQLite.dll" Attributes="0" SourcePath="bin\Debug\System.Data.SQLite.dll" SelfReg="false"/>
+    <ROW File="System.Data.SQLite.dll.config" Component_="DevExpress.Data.v19.2.xml" FileName="SYSTEM~1.CON|System.Data.SQLite.dll.config" Attributes="0" SourcePath="bin\Debug\System.Data.SQLite.dll.config" SelfReg="false"/>
+    <ROW File="System.Data.SQLite.EF6.dll" Component_="System.Data.SQLite.EF6.dll" FileName="SYSTEM~4.DLL|System.Data.SQLite.EF6.dll" Attributes="0" SourcePath="bin\Debug\System.Data.SQLite.EF6.dll" SelfReg="false"/>
+    <ROW File="System.Data.SQLite.Linq.dll" Component_="System.Data.SQLite.Linq.dll" FileName="SYSTEM~5.DLL|System.Data.SQLite.Linq.dll" Attributes="0" SourcePath="bin\Debug\System.Data.SQLite.Linq.dll" SelfReg="false"/>
+    <ROW File="System.Data.SQLite.xml" Component_="DevExpress.Data.v19.2.xml" FileName="SYSTEM~2.XML|System.Data.SQLite.xml" Attributes="0" SourcePath="bin\Debug\System.Data.SQLite.xml" SelfReg="false"/>
+    <ROW File="System.Memory.dll" Component_="System.Memory.dll" FileName="SYSTEM~6.DLL|System.Memory.dll" Attributes="0" SourcePath="bin\Debug\System.Memory.dll" SelfReg="false"/>
+    <ROW File="System.Memory.xml" Component_="DevExpress.Data.v19.2.xml" FileName="SYSTEM~3.XML|System.Memory.xml" Attributes="0" SourcePath="bin\Debug\System.Memory.xml" SelfReg="false"/>
+    <ROW File="System.Numerics.Vectors.dll" Component_="System.Numerics.Vectors.dll" FileName="SYSTEM~7.DLL|System.Numerics.Vectors.dll" Attributes="0" SourcePath="bin\Debug\System.Numerics.Vectors.dll" SelfReg="false"/>
+    <ROW File="System.Numerics.Vectors.xml" Component_="DevExpress.Data.v19.2.xml" FileName="SYSTEM~4.XML|System.Numerics.Vectors.xml" Attributes="0" SourcePath="bin\Debug\System.Numerics.Vectors.xml" SelfReg="false"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.dll" Component_="System.Runtime.CompilerServices.Unsafe.dll" FileName="SYSTEM~8.DLL|System.Runtime.CompilerServices.Unsafe.dll" Attributes="0" SourcePath="bin\Debug\System.Runtime.CompilerServices.Unsafe.dll" SelfReg="false"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.xml" Component_="DevExpress.Data.v19.2.xml" FileName="SYSTEM~5.XML|System.Runtime.CompilerServices.Unsafe.xml" Attributes="0" SourcePath="bin\Debug\System.Runtime.CompilerServices.Unsafe.xml" SelfReg="false"/>
+    <ROW File="SQLite.Interop.dll" Component_="SQLite.Interop.dll" FileName="SQLITE~1.DLL|SQLite.Interop.dll" Attributes="0" SourcePath="bin\Debug\x64\SQLite.Interop.dll" SelfReg="false"/>
+    <ROW File="SQLite.Interop.dll_1" Component_="SQLite.Interop.dll_1" FileName="SQLITE~1.DLL|SQLite.Interop.dll" Attributes="0" SourcePath="bin\Debug\x86\SQLite.Interop.dll" SelfReg="false"/>
+    <ROW File="zchanger.commanifest.json" Component_="DevExpress.Data.v19.2.xml" FileName="ZCHANG~1.JSO|zchanger.com-manifest.json" Attributes="0" SourcePath="bin\Debug\zchanger.com-manifest.json" SelfReg="false"/>
+    <ROW File="Profile.db" Component_="Profile.db" FileName="Profile.db" Attributes="0" SourcePath="bin\Debug\ZChangerData\Profile.db" SelfReg="false"/>
+    <ROW File="ZChangerMMO.exe" Component_="ZChangerMMO.exe" FileName="ZCHANG~1.EXE|ZChangerMMO.exe" Attributes="0" SourcePath="bin\Debug\ZChangerMMO.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="ZChangerMMO.exe.config" Component_="DevExpress.Data.v19.2.xml" FileName="ZCHANG~1.CON|ZChangerMMO.exe.config" Attributes="0" SourcePath="bin\Debug\ZChangerMMO.exe.config" SelfReg="false"/>
+    <ROW File="ZChangerMMO.pdb" Component_="ZChangerMMO.exe" FileName="ZCHANG~1.PDB|ZChangerMMO.pdb" Attributes="0" SourcePath="bin\Debug\ZChangerMMO.pdb" SelfReg="false"/>
+    <ROW File="ZChangerMMOHost.exe" Component_="ZChangerMMOHost.exe" FileName="ZCHANG~2.EXE|ZChangerMMOHost.exe" Attributes="0" SourcePath="bin\Debug\ZChangerMMOHost.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="ZChangerMMOHost.exe.config" Component_="DevExpress.Data.v19.2.xml" FileName="ZCHANG~2.CON|ZChangerMMOHost.exe.config" Attributes="0" SourcePath="bin\Debug\ZChangerMMOHost.exe.config" SelfReg="false"/>
+    <ROW File="ZChangerMMOHost.pdb" Component_="ZChangerMMOHost.exe" FileName="ZCHANG~2.PDB|ZChangerMMOHost.pdb" Attributes="0" SourcePath="bin\Debug\ZChangerMMOHost.pdb" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
+    <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrapperUISequenceComponent">
+    <ROW Action="AI_DetectSoftware" Sequence="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="C:\Users\Kien (Karl) T. TRINH\Documents\Advanced Installer\Projects\ZChangerMMO\Setup Files" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DigCertStoreComponent">
+    <ROW TimeStampUrl="http://timestamp.digicert.com" SignerDescription="[|ProductName]" SignOptions="0" SignTool="0" UseSha256="1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;air\fragments\FolderDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;air\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;air\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="PreparePrereqDlg.aip" Path="&lt;AI_THEMES&gt;air\fragments\PreparePrereqDlg.aip"/>
+    <ROW Fragment="PrerequisitesDlg.aip" Path="&lt;AI_THEMES&gt;air\fragments\PrerequisitesDlg.aip"/>
+    <ROW Fragment="ProgressPrereqDlg.aip" Path="&lt;AI_THEMES&gt;air\fragments\ProgressPrereqDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;air\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="SetupTypeDlg.aip" Path="&lt;AI_THEMES&gt;air\fragments\SetupTypeDlg.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;air\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;air\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;air\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;air\fragments\WelcomeDlg.aip"/>
+    <ROW Fragment="WelcomePrereqDlg.aip" Path="&lt;AI_THEMES&gt;air\fragments\WelcomePrereqDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
+    <ROW Action="AI_DeleteLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_DeleteRLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractFiles" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractLzma" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiAppSearchComponent">
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_LM" Builds="DefaultBuild"/>
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_CU" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
+    <ROW Name="SoftwareDetector.dll" SourcePath="&lt;AI_CUSTACTS&gt;SoftwareDetector.dll"/>
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+    <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
+    <ROW Dialog_="PreparePrereqDlg" Control="Cancel" Type="PushButton" X="304" Y="235" Width="50" Height="17" Attributes="2" Text="[ButtonText_Cancel]" Order="100" TextLocId="-" MsiKey="PreparePrereqDlg#Cancel"/>
+    <ROW Dialog_="PreparePrereqDlg" Control="Next" Type="PushButton" X="249" Y="235" Width="50" Height="17" Attributes="0" Text="[ButtonText_Next]" Order="200" TextLocId="-" MsiKey="PreparePrereqDlg#Next"/>
+    <ROW Dialog_="PreparePrereqDlg" Control="Back" Type="PushButton" X="189" Y="235" Width="48" Height="17" Attributes="0" Text="[ButtonText_Back]" Order="300" TextLocId="-" MsiKey="PreparePrereqDlg#Back"/>
+    <ROW Dialog_="PreparePrereqDlg" Control="IntroManufacturer" Type="Text" X="16" Y="116" Width="338" Height="24" Attributes="196611" Text="[Manufacturer]" TextStyle="Manufacturer" Order="400" TextLocId="Modern.Control.Text.Dlg#Manufacturer" MsiKey="PreparePrereqDlg#IntroManufacturer"/>
+    <ROW Dialog_="PreparePrereqDlg" Control="IntroProductName" Type="Text" X="16" Y="140" Width="338" Height="33" Attributes="196611" Text="[ProductName]" TextStyle="ProductName" Order="500" TextLocId="Modern.Control.Text.Dlg#AppName" MsiKey="PreparePrereqDlg#IntroProductName"/>
+    <ROW Dialog_="PreparePrereqDlg" Control="ActionText" Type="Text" X="30" Y="168" Width="305" Height="20" Attributes="196611" Order="600" MsiKey="PreparePrereqDlg#ActionText"/>
+    <ROW Dialog_="PreparePrereqDlg" Control="Description" Type="Text" X="7" Y="281" Width="210" Height="11" Attributes="196611" Text="Please wait while the setup initializes." TextStyle="ImageButton" Order="700" TextLocId="Air.Control.Text.PrepareDlg#Description" MsiKey="PreparePrereqDlg#Description"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="WelcomePrereqDlg" Control_="Next" Event="NewDialog" Argument="PrerequisitesDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+    <ROW Dialog_="PrerequisitesDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+    <ROW Dialog_="PrerequisitesDlg" Control_="Back" Event="NewDialog" Argument="WelcomePrereqDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="SetupTypeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="SetupTypeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="SetupTypeDlg" Control_="TypicalButton" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="299"/>
+    <ROW Dialog_="SetupTypeDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="102"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL AND InstallMode=InstallModeCustom" Ordering="101"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_INSTALL AND InstallMode=InstallModeCustom" Ordering="2"/>
+    <ROW Dialog_="SetupTypeDlg" Control_="CustomButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_INSTALL AND InstallMode=InstallModeCustom" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="SetupTypeDlg" Condition="AI_INSTALL AND InstallMode=InstallModeCustom" Ordering="1"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="102"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="2"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="399" Options="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
+    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
+    <ROW Directory_="ZC_AutomationProfile_Dir" Component_="ZC_AutomationProfile" ManualDelete="false"/>
+    <ROW Directory_="ZC_tranloi_Dir" Component_="ZC_tranloi" ManualDelete="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_AppSearchEx" Type="1" Source="Prereq.dll" Target="DoAppSearchEx"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DATA_SETTER" Type="51" Source="AI_ExtractFiles" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DeleteCadLzma" Type="51" Source="AI_DeleteLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteLzma" Type="1025" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DeleteRCadLzma" Type="51" Source="AI_DeleteRLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteRLzma" Type="1281" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DetectSoftware" Type="257" Source="SoftwareDetector.dll" Target="OnDetectSoftware"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_EstimateExtractFiles" Type="1" Source="Prereq.dll" Target="EstimateExtractFiles"/>
+    <ROW Action="AI_ExtractCadLzma" Type="51" Source="AI_ExtractLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_ExtractFiles" Type="1025" Source="Prereq.dll" Target="ExtractSourceFiles" AdditionalSeq="AI_DATA_SETTER"/>
+    <ROW Action="AI_ExtractLzma" Type="1025" Source="lzmaextractor.dll" Target="ExtractLZMAFiles"/>
+    <ROW Action="AI_FindExeLzma" Type="1" Source="lzmaextractor.dll" Target="FindEXE"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH" Target="[AI_SETUPEXEPATH_ORIGINAL]"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
+    <ROW Feature_="MainFeature" Component_="APPDIR"/>
+    <ROW Feature_="MainFeature" Component_="ProductInformation"/>
+    <ROW Feature_="MainFeature" Component_="manifest"/>
+    <ROW Feature_="MainFeature" Component_="apimswincoreconsolel110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincoreconsolel120.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincoredatetimel110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincoredebugl110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincoreerrorhandlingl110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincorefilel110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincorefilel120.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincorefilel210.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincorehandlel110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincoreheapl110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincoreinterlockedl110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincorelibraryloaderl110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincorelocalizationl120.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincorememoryl110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincorenamedpipel110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincoreprocessenvironmentl110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincoreprocessthreadsl110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincoreprocessthreadsl111.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincoreprofilel110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincorertlsupportl110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincorestringl110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincoresynchl110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincoresynchl120.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincoresysinfol110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincoretimezonel110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincoreutill110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincrtconiol110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincrtconvertl110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincrtenvironmentl110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincrtfilesysteml110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincrtheapl110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincrtlocalel110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincrtmathl110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincrtmultibytel110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincrtprivatel110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincrtprocessl110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincrtruntimel110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincrtstdiol110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincrtstringl110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincrttimel110.dll"/>
+    <ROW Feature_="MainFeature" Component_="apimswincrtutilityl110.dll"/>
+    <ROW Feature_="MainFeature" Component_="chrome.dll"/>
+    <ROW Feature_="MainFeature" Component_="chrome.exe"/>
+    <ROW Feature_="MainFeature" Component_="chrome_elf.dll"/>
+    <ROW Feature_="MainFeature" Component_="chrome_proxy.exe"/>
+    <ROW Feature_="MainFeature" Component_="d3dcompiler_47.dll"/>
+    <ROW Feature_="MainFeature" Component_="dbgcore.dll"/>
+    <ROW Feature_="MainFeature" Component_="dbghelp.dll"/>
+    <ROW Feature_="MainFeature" Component_="elevation_service.exe.pdb"/>
+    <ROW Feature_="MainFeature" Component_="eventlog_provider.dll"/>
+    <ROW Feature_="MainFeature" Component_="external_extensions.json"/>
+    <ROW Feature_="MainFeature" Component_="libEGL.dll"/>
+    <ROW Feature_="MainFeature" Component_="libGLESv2.dll"/>
+    <ROW Feature_="MainFeature" Component_="am.pak"/>
+    <ROW Feature_="MainFeature" Component_="manifest.json"/>
+    <ROW Feature_="MainFeature" Component_="mojo_core.dll"/>
+    <ROW Feature_="MainFeature" Component_="msvcp140.dll"/>
+    <ROW Feature_="MainFeature" Component_="notification_helper.exe"/>
+    <ROW Feature_="MainFeature" Component_="libEGL.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="libEGL.dll.lib"/>
+    <ROW Feature_="MainFeature" Component_="libEGL.dll.pdb"/>
+    <ROW Feature_="MainFeature" Component_="libGLESv2.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="ucrtbase.dll"/>
+    <ROW Feature_="MainFeature" Component_="vccorlib140.dll"/>
+    <ROW Feature_="MainFeature" Component_="vcruntime140.dll"/>
+    <ROW Feature_="MainFeature" Component_="VkICD_mock_icd.dll"/>
+    <ROW Feature_="MainFeature" Component_="VkLayer_khronos_validation.dll"/>
+    <ROW Feature_="MainFeature" Component_="vk_swiftshader.dll"/>
+    <ROW Feature_="MainFeature" Component_="vulkan1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.v19.2.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Mvvm.v19.2.DataModel.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Office.v19.2.Core.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Pdf.v19.2.Core.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Printing.v19.2.Core.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.RichEdit.v19.2.Core.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Sparkline.v19.2.Core.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v19.2.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraBars.v19.2.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraEditors.v19.2.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraGrid.v19.2.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraLayout.v19.2.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPrinting.v19.2.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraTreeList.v19.2.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.v19.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.v19.2.xml"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Images.v19.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Mvvm.v19.2.DataModel.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Mvvm.v19.2.DataModel.EF6.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Mvvm.v19.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Mvvm.v19.2.ViewModel.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Office.v19.2.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Pdf.v19.2.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Printing.v19.2.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.RichEdit.v19.2.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Sparkline.v19.2.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v19.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraBars.v19.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraEditors.v19.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraGrid.v19.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraLayout.v19.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPrinting.v19.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraTreeList.v19.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="DotNetZip.dll"/>
+    <ROW Feature_="MainFeature" Component_="EntityFramework.dll"/>
+    <ROW Feature_="MainFeature" Component_="Enums.NET.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.v19.2.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Mvvm.v19.2.DataModel.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Office.v19.2.Core.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Pdf.v19.2.Core.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Printing.v19.2.Core.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.RichEdit.v19.2.Core.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Sparkline.v19.2.Core.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v19.2.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraBars.v19.2.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraEditors.v19.2.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraGrid.v19.2.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraLayout.v19.2.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPrinting.v19.2.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraTreeList.v19.2.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="FluentCommandLineParser.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.v19.2.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Mvvm.v19.2.DataModel.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Office.v19.2.Core.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Pdf.v19.2.Core.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Printing.v19.2.Core.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.RichEdit.v19.2.Core.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Sparkline.v19.2.Core.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v19.2.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraBars.v19.2.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraEditors.v19.2.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraGrid.v19.2.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraLayout.v19.2.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPrinting.v19.2.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraTreeList.v19.2.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Data.Sqlite.dll"/>
+    <ROW Feature_="MainFeature" Component_="Newtonsoft.Json.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.v19.2.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Mvvm.v19.2.DataModel.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Office.v19.2.Core.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Pdf.v19.2.Core.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Printing.v19.2.Core.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.RichEdit.v19.2.Core.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Sparkline.v19.2.Core.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v19.2.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraBars.v19.2.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraEditors.v19.2.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraGrid.v19.2.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraLayout.v19.2.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPrinting.v19.2.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraTreeList.v19.2.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="e_sqlite3.dll"/>
+    <ROW Feature_="MainFeature" Component_="e_sqlite3.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="e_sqlite3.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="SQLite.CodeFirst.dll"/>
+    <ROW Feature_="MainFeature" Component_="SQLitePCLRaw.batteries_v2.dll"/>
+    <ROW Feature_="MainFeature" Component_="SQLitePCLRaw.core.dll"/>
+    <ROW Feature_="MainFeature" Component_="SQLitePCLRaw.nativelibrary.dll"/>
+    <ROW Feature_="MainFeature" Component_="SQLitePCLRaw.provider.dynamic_cdecl.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Buffers.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.ComponentModel.Annotations.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Data.SQLite.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Data.SQLite.EF6.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Data.SQLite.Linq.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Memory.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Numerics.Vectors.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Runtime.CompilerServices.Unsafe.dll"/>
+    <ROW Feature_="MainFeature" Component_="SQLite.Interop.dll"/>
+    <ROW Feature_="MainFeature" Component_="SQLite.Interop.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="Profile.db"/>
+    <ROW Feature_="MainFeature" Component_="ZChangerMMO.exe"/>
+    <ROW Feature_="MainFeature" Component_="ZChangerMMOHost.exe"/>
+    <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
+    <ROW Feature_="MainFeature" Component_="AI_ExePath"/>
+    <ROW Feature_="MainFeature" Component_="Browser"/>
+    <ROW Feature_="MainFeature" Component_="ZC_AutomationProfile"/>
+    <ROW Feature_="MainFeature" Component_="ZC_tranloi"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="app.exe" SourcePath="app.ico" Index="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_DetectSoftware" Sequence="103"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99" Builds="DefaultBuild"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="102" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="199" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="198" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="197" Builds="DefaultBuild"/>
+    <ROW Action="AI_FindExeLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="196" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1549" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1548" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="6599" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractFiles" Sequence="3998" Builds="DefaultBuild"/>
+    <ROW Action="AI_DATA_SETTER" Sequence="3997"/>
+    <ROW Action="AI_EstimateExtractFiles" Sequence="3999" Builds="DefaultBuild"/>
+    <ROW Action="AI_AppSearchEx" Sequence="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="54"/>
+    <ROW Action="AI_DpiContentScale" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_DetectSoftware" Sequence="103"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="102"/>
+    <ROW Action="AI_AppSearchEx" Sequence="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] cannot be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT64 OR ((VersionNT &lt;&gt; 501) OR (ServicePackLevel = 3))) AND ((VersionNT &lt;&gt; 502) OR (ServicePackLevel = 2))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="AI_DETECTED_DOTNET_VERSION &gt;= AI_REQUIRED_DOTNET_VERSION" Description="[ProductName] cannot be installed on systems with .NET Framework version lower than [AI_REQUIRED_DOTNET_DISPLAY]." DescriptionLocId="AI.LaunchCondition.DotNET" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="SETUPEXEDIR OR (REMOVE=&quot;ALL&quot;)" Description="This package can only be run from a bootstrapper." DescriptionLocId="AI.LaunchCondition.RequireBootstrapper" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegLocatorComponent">
+    <ROW Signature_="AI_EXE_PATH_CU" Root="1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+    <ROW Signature_="AI_EXE_PATH_LM" Root="2" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="AI_ExePath" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Value="[AI_SETUPEXEPATH]" Component_="AI_ExePath"/>
+    <ROW Registry="Browser" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Browser" Value="[Browser_Dir]" Component_="Browser"/>
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="ZChangerMMO.exe" Directory_="SHORTCUTDIR" Name="ZCHANG~1.EXE|ZChangerMMO.exe" Component_="ZChangerMMO.exe" Target="[#ZChangerMMO.exe]" Description="ZChangerMMO.exe" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="ZChangerMMO.exe_1" Directory_="DesktopFolder" Name="ZCHANG~1.EXE|ZChangerMMO.exe" Component_="ZChangerMMO.exe" Target="[#ZChangerMMO.exe]" Description="ZChangerMMO.exe" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="air"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
+    <ROW PrereqKey="B96F93FA27E74B02866727AAE83982D0" DisplayName=".NET Framework 4.8" SetupFileUrl="https://download.visualstudio.microsoft.com/download/pr/7afca223-55d2-470a-8edc-6a1739ae3252/abd170b4b0ec15ad0222a809b761a036/ndp48-x86-x64-allos-enu.exe" Location="1" ExactSize="72721568" WinNTVersions="Windows XP SP3 x86, Windows Server 2003 SP2 x86, Windows Vista x86, Windows Server 2008 x86, Windows 7 RTM x86, Windows 8 x86, Windows 10 version 1507 x86, Windows 10 version 1511 x86, Windows 10 version 1903 x86" WinNT64Versions="Windows XP SP2 x64, Windows Server 2003 SP2 x64, Windows Vista x64, Windows Server 2008 x64, Windows 7 RTM x64, Windows Server 2008 R2 RTM x64, Windows 8 x64, Windows 10 version 1507 x64, Windows 10 version 1511 x64, Windows 10 version 1903 x64" Operator="1" NoUiComLine="/q /norestart" Options="xy" MD5="4e7a8586d06ce1f8cebac0d4bc379e16" TargetName=".NET Framework 4.8"/>
+    <ATTRIBUTE name="PrereqsOrder" value="B96F93FA27E74B02866727AAE83982D0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqSearchComponent">
+    <ROW SearchKey="B96F93FA27E74B02866727AAE83982D0Release" Prereq="B96F93FA27E74B02866727AAE83982D0" SearchType="9" SearchString="HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\Release" RefContent="G528048" Order="1" Property="PreReqSearch_B96F93FA27E74B02866727"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.SynchronizedFolderComponent">
+    <ROW Directory_="APPDIR" SourcePath="bin\Debug" Feature="MainFeature" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6"/>
+  </COMPONENT>
+</DOCUMENT>

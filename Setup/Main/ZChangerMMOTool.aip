@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="17.1.1" version="17.1.1" Modules="enterprise" RootPath="." Language="en" Id="{8FD99300-A0C3-4D4E-8D91-309556733CF8}">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_EXTERNALUIUNINSTALLERNAME" MultiBuildValue="DefaultBuild:aiui"/>
+    <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
+    <ROW Property="AI_PREDEF_LCONDS_PROPS" Value="AI_DETECTED_INTERNET_CONNECTION;AI_DETECTED_SCREEN_RESOLUTION_X;AI_DETECTED_SCREEN_RESOLUTION_Y;AI_DETECTED_COLOR_QUALITY;AI_DETECTED_PHYSICAL_MEMORY"/>
+    <ROW Property="AI_PRODUCTNAME_ARP" Value="ZChangerMMO"/>
+    <ROW Property="AI_REQUIRED_COLOR_QUALITY" MultiBuildValue="DefaultBuild:32" ValueLocId="-"/>
+    <ROW Property="AI_REQUIRED_PHYSICAL_MEMORY" MultiBuildValue="DefaultBuild:512" ValueLocId="-"/>
+    <ROW Property="AI_REQUIRED_SCREEN_RESOLUTION_X" MultiBuildValue="DefaultBuild:1280" ValueLocId="-"/>
+    <ROW Property="AI_REQUIRED_SCREEN_RESOLUTION_Y" MultiBuildValue="DefaultBuild:1024" ValueLocId="-"/>
+    <ROW Property="AI_ThemeStyle" Value="aero" MsiKey="AI_ThemeStyle"/>
+    <ROW Property="AI_UNINSTALLER" Value="msiexec.exe"/>
+    <ROW Property="ALLUSERS" Value="1"/>
+    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="ARPCONTACT" Value="Connor"/>
+    <ROW Property="ARPHELPLINK" Value="www.vilasvietnam.com/help"/>
+    <ROW Property="ARPHELPTELEPHONE" Value="+84 236 899 6654"/>
+    <ROW Property="ARPNOREPAIR" Value="1" MultiBuildValue="DefaultBuild:1"/>
+    <ROW Property="ARPSYSTEMCOMPONENT" Value="1"/>
+    <ROW Property="ARPURLINFOABOUT" Value="www.vilasvietnam.com/support"/>
+    <ROW Property="ARPURLUPDATEINFO" Value="www.vilasvietnam.com/update"/>
+    <ROW Property="Manufacturer" Value="Vilas Vietnam"/>
+    <ROW Property="ProductCode" Value="1033:{5A092382-570D-43AC-B672-50A01ACE38BE} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="ZChangerMMO"/>
+    <ROW Property="ProductVersion" Value="2" Type="32"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
+    <ROW Property="UpgradeCode" Value="{02BCA99B-41EB-4457-9467-23A66ECC6B54}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="BackupProfiles_Dir" Directory_Parent="APPDIR" DefaultDir="BACKUP~1|BackupProfiles"/>
+    <ROW Directory="CommonAppDataFolder" Directory_Parent="TARGETDIR" DefaultDir="COMMON~1|CommonAppDataFolder" IsPseudoRoot="1"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
+    <ROW Directory="ProgramMenuFolder" Directory_Parent="TARGETDIR" DefaultDir="PROGRA~1|ProgramMenuFolder" IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="ZChangerData_Dir" Directory_Parent="APPDIR" DefaultDir="ZCHANG~1|ZChangerData"/>
+    <ROW Directory="de_Dir" Directory_Parent="APPDIR" DefaultDir="de"/>
+    <ROW Directory="es_Dir" Directory_Parent="APPDIR" DefaultDir="es"/>
+    <ROW Directory="ja_Dir" Directory_Parent="APPDIR" DefaultDir="ja"/>
+    <ROW Directory="native_3_Dir" Directory_Parent="winx64_Dir" DefaultDir="native"/>
+    <ROW Directory="native_4_Dir" Directory_Parent="winx86_Dir" DefaultDir="native"/>
+    <ROW Directory="native_Dir" Directory_Parent="winarm_Dir" DefaultDir="native"/>
+    <ROW Directory="regid.199509.com.example_Dir" Directory_Parent="CommonAppDataFolder" DefaultDir="REGID1~1.EXA|regid.1995-09.com.example"/>
+    <ROW Directory="ru_Dir" Directory_Parent="APPDIR" DefaultDir="ru"/>
+    <ROW Directory="runtimes_Dir" Directory_Parent="APPDIR" DefaultDir="runtimes"/>
+    <ROW Directory="winarm_Dir" Directory_Parent="runtimes_Dir" DefaultDir="win-arm"/>
+    <ROW Directory="winx64_Dir" Directory_Parent="runtimes_Dir" DefaultDir="win-x64"/>
+    <ROW Directory="winx86_Dir" Directory_Parent="runtimes_Dir" DefaultDir="win-x86"/>
+    <ROW Directory="x64_Dir" Directory_Parent="APPDIR" DefaultDir="x64"/>
+    <ROW Directory="x86_Dir" Directory_Parent="APPDIR" DefaultDir="x86"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="AI_CustomARPName" ComponentId="{66343389-A72A-473F-ACF0-46EA6E05475A}" Directory_="APPDIR" Attributes="4" KeyPath="DisplayName" Options="1"/>
+    <ROW Component="AI_ExePath" ComponentId="{467F5C74-539C-4916-B319-0662971D5D79}" Directory_="APPDIR" Attributes="4" KeyPath="AI_ExePath"/>
+    <ROW Component="APPDIR" ComponentId="{49D9DE7A-4236-4D2B-94A5-8A0ABE4002BB}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="BackupProfiles" ComponentId="{D202A6D5-8026-4F6A-A70D-7F8C55B99970}" Directory_="BackupProfiles_Dir" Attributes="128"/>
+    <ROW Component="DevExpress.Data.v19.2.dll" ComponentId="{93EF3125-81C3-48B3-882D-2CD75CC49056}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Data.v19.2.dll"/>
+    <ROW Component="DevExpress.Data.v19.2.resources.dll" ComponentId="{A1B8FD51-A4EC-45D7-B8B6-052D59F53AF1}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Data.v19.2.resources.dll"/>
+    <ROW Component="DevExpress.Data.v19.2.resources.dll_4" ComponentId="{F07DD9B1-A1EA-470A-BDA0-98E174B584B3}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Data.v19.2.resources.dll_4"/>
+    <ROW Component="DevExpress.Data.v19.2.resources.dll_5" ComponentId="{BA7BF684-B139-4D64-877C-50A3FD44D366}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Data.v19.2.resources.dll_5"/>
+    <ROW Component="DevExpress.Data.v19.2.resources.dll_6" ComponentId="{0E125425-7AF2-4298-A92F-D5E87D0F7E58}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Data.v19.2.resources.dll_6"/>
+    <ROW Component="DevExpress.Images.v19.2.dll" ComponentId="{AF9A54BF-F77F-496E-A850-E6ED8C301FAF}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Images.v19.2.dll"/>
+    <ROW Component="DevExpress.Mvvm.v19.2.DataModel.EF6.dll" ComponentId="{8BFE672D-2D78-49B6-B6AE-0D4C1CDF55AE}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Mvvm.v19.2.DataModel.EF6.dll"/>
+    <ROW Component="DevExpress.Mvvm.v19.2.DataModel.dll" ComponentId="{69B6F64E-C36E-4CA7-8B9D-4597367F27B1}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Mvvm.v19.2.DataModel.dll"/>
+    <ROW Component="DevExpress.Mvvm.v19.2.DataModel.resources.dll" ComponentId="{581083FC-76E6-49A0-B48E-0C37AE67BE7E}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Mvvm.v19.2.DataModel.resources.dll"/>
+    <ROW Component="DevExpress.Mvvm.v19.2.DataModel.resources.dll_4" ComponentId="{6CBC6231-0780-4122-889E-C360EFB4EFAB}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Mvvm.v19.2.DataModel.resources.dll_4"/>
+    <ROW Component="DevExpress.Mvvm.v19.2.DataModel.resources.dll_5" ComponentId="{084B82B0-D061-46EE-B36E-74E1D1B7D877}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Mvvm.v19.2.DataModel.resources.dll_5"/>
+    <ROW Component="DevExpress.Mvvm.v19.2.DataModel.resources.dll_6" ComponentId="{7821EA9F-E687-4CEF-B4DE-BFF0F00BDB68}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Mvvm.v19.2.DataModel.resources.dll_6"/>
+    <ROW Component="DevExpress.Mvvm.v19.2.ViewModel.dll" ComponentId="{20194F0A-DF37-487F-9F60-BC1A0FF770E9}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Mvvm.v19.2.ViewModel.dll"/>
+    <ROW Component="DevExpress.Mvvm.v19.2.dll" ComponentId="{6DFF9D7B-F9FC-439A-9C6A-158107DA8FA6}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Mvvm.v19.2.dll"/>
+    <ROW Component="DevExpress.Office.v19.2.Core.dll" ComponentId="{40745E49-B112-4909-9857-53A60865F5A0}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Office.v19.2.Core.dll"/>
+    <ROW Component="DevExpress.Office.v19.2.Core.resources.dll" ComponentId="{541DEBF9-1079-42C6-93A8-A7A9E9AF28C2}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Office.v19.2.Core.resources.dll"/>
+    <ROW Component="DevExpress.Office.v19.2.Core.resources.dll_4" ComponentId="{A13FF3F2-410F-4786-A9FC-DCD00E6D51AC}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Office.v19.2.Core.resources.dll_4"/>
+    <ROW Component="DevExpress.Office.v19.2.Core.resources.dll_5" ComponentId="{AD2119DE-448D-48AE-9D0A-4262EF515FEA}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Office.v19.2.Core.resources.dll_5"/>
+    <ROW Component="DevExpress.Office.v19.2.Core.resources.dll_6" ComponentId="{DD58D773-5299-4F99-9DAE-05A9AD9CB02D}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Office.v19.2.Core.resources.dll_6"/>
+    <ROW Component="DevExpress.Pdf.v19.2.Core.dll" ComponentId="{70AEF3D5-E9FE-434D-BA43-C26E98A6F936}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Pdf.v19.2.Core.dll"/>
+    <ROW Component="DevExpress.Pdf.v19.2.Core.resources.dll" ComponentId="{5A3FC255-53EA-44B0-ADB9-3F9F21D042C0}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Pdf.v19.2.Core.resources.dll"/>
+    <ROW Component="DevExpress.Pdf.v19.2.Core.resources.dll_4" ComponentId="{CD66A75F-1280-41CF-8773-9A3F653FF255}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Pdf.v19.2.Core.resources.dll_4"/>
+    <ROW Component="DevExpress.Pdf.v19.2.Core.resources.dll_5" ComponentId="{9C0D0288-C242-4202-8BB4-FCD2113353F3}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Pdf.v19.2.Core.resources.dll_5"/>
+    <ROW Component="DevExpress.Pdf.v19.2.Core.resources.dll_6" ComponentId="{E584C9E2-DEE7-4965-95F5-3343108FD72D}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Pdf.v19.2.Core.resources.dll_6"/>
+    <ROW Component="DevExpress.Printing.v19.2.Core.dll" ComponentId="{7AFB72E5-13AF-4A11-8F17-F57889FE7EB3}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Printing.v19.2.Core.dll"/>
+    <ROW Component="DevExpress.Printing.v19.2.Core.resources.dll" ComponentId="{A97BBAF5-00B2-4CD9-A8C0-686651D2EF65}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Printing.v19.2.Core.resources.dll"/>
+    <ROW Component="DevExpress.Printing.v19.2.Core.resources.dll_4" ComponentId="{45D12158-D47E-49A9-B482-265EC0098E49}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Printing.v19.2.Core.resources.dll_4"/>
+    <ROW Component="DevExpress.Printing.v19.2.Core.resources.dll_5" ComponentId="{FE3C7A0F-07D4-406F-8C2F-72BE98C35583}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Printing.v19.2.Core.resources.dll_5"/>
+    <ROW Component="DevExpress.Printing.v19.2.Core.resources.dll_6" ComponentId="{0956B9EA-78C5-4379-980E-3B706D62547E}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Printing.v19.2.Core.resources.dll_6"/>
+    <ROW Component="DevExpress.RichEdit.v19.2.Core.dll" ComponentId="{24FE4518-3266-4B06-8379-CAE0216026F4}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.RichEdit.v19.2.Core.dll"/>
+    <ROW Component="DevExpress.RichEdit.v19.2.Core.resources.dll" ComponentId="{280E6D61-B196-4F36-8378-2DEB5B697E53}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.RichEdit.v19.2.Core.resources.dll"/>
+    <ROW Component="DevExpress.RichEdit.v19.2.Core.resources.dll_4" ComponentId="{9E3FB618-B743-46F0-8B6C-80498DE6D30A}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.RichEdit.v19.2.Core.resources.dll_4"/>
+    <ROW Component="DevExpress.RichEdit.v19.2.Core.resources.dll_5" ComponentId="{33590219-0FF0-4ADE-B518-1E9A94557BD1}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.RichEdit.v19.2.Core.resources.dll_5"/>
+    <ROW Component="DevExpress.RichEdit.v19.2.Core.resources.dll_6" ComponentId="{5D3D4B07-46FD-42FD-ADF3-C54E1274007B}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.RichEdit.v19.2.Core.resources.dll_6"/>
+    <ROW Component="DevExpress.Sparkline.v19.2.Core.dll" ComponentId="{E7B6C4A6-BCA5-48BD-92ED-87969791CA95}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Sparkline.v19.2.Core.dll"/>
+    <ROW Component="DevExpress.Sparkline.v19.2.Core.resources.dll" ComponentId="{387FAC16-5388-4D09-8AA4-52BCFD09933B}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Sparkline.v19.2.Core.resources.dll"/>
+    <ROW Component="DevExpress.Sparkline.v19.2.Core.resources.dll_4" ComponentId="{602CC261-D4C9-4E86-9405-F4A13581135A}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Sparkline.v19.2.Core.resources.dll_4"/>
+    <ROW Component="DevExpress.Sparkline.v19.2.Core.resources.dll_5" ComponentId="{B37070B9-FCEB-46D6-966B-F32D2DBC3F5C}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Sparkline.v19.2.Core.resources.dll_5"/>
+    <ROW Component="DevExpress.Sparkline.v19.2.Core.resources.dll_6" ComponentId="{13FADE72-71EB-4B48-8D35-15BE80DF3C39}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Sparkline.v19.2.Core.resources.dll_6"/>
+    <ROW Component="DevExpress.Utils.v19.2.dll" ComponentId="{21C2F14A-ECA1-4E98-A2A3-5B43D69462EB}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Utils.v19.2.dll"/>
+    <ROW Component="DevExpress.Utils.v19.2.resources.dll" ComponentId="{01D842D3-618E-4134-9163-8439506D5D7B}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Utils.v19.2.resources.dll"/>
+    <ROW Component="DevExpress.Utils.v19.2.resources.dll_4" ComponentId="{DD177D7F-5CB9-40D5-AF72-F7AB839FB50A}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Utils.v19.2.resources.dll_4"/>
+    <ROW Component="DevExpress.Utils.v19.2.resources.dll_5" ComponentId="{7AE54384-FCA0-4A1A-9FF2-5222F0C5B94F}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Utils.v19.2.resources.dll_5"/>
+    <ROW Component="DevExpress.Utils.v19.2.resources.dll_6" ComponentId="{C20A051C-4602-4D8C-BE05-5CD0D0B0FDE8}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Utils.v19.2.resources.dll_6"/>
+    <ROW Component="DevExpress.XtraBars.v19.2.dll" ComponentId="{8C349B26-12D1-4264-8EC2-DD06E162D23E}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraBars.v19.2.dll"/>
+    <ROW Component="DevExpress.XtraBars.v19.2.resources.dll" ComponentId="{5CA01D19-F0FA-4DCD-929F-FF6613AB688E}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraBars.v19.2.resources.dll"/>
+    <ROW Component="DevExpress.XtraBars.v19.2.resources.dll_4" ComponentId="{E8FBEBD6-52BF-4C6F-A194-66769E5E98A9}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraBars.v19.2.resources.dll_4"/>
+    <ROW Component="DevExpress.XtraBars.v19.2.resources.dll_5" ComponentId="{8A75FDFC-DD07-489B-ACFC-3D011D942EA5}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraBars.v19.2.resources.dll_5"/>
+    <ROW Component="DevExpress.XtraBars.v19.2.resources.dll_6" ComponentId="{316DD311-0ED7-456C-921E-7846A85DFA63}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraBars.v19.2.resources.dll_6"/>
+    <ROW Component="DevExpress.XtraEditors.v19.2.dll" ComponentId="{5AE1CCF8-68E9-4A43-A510-1CD2666BB415}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraEditors.v19.2.dll"/>
+    <ROW Component="DevExpress.XtraEditors.v19.2.resources.dll" ComponentId="{AF869AAE-03F9-40D8-99A8-C697B9145787}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraEditors.v19.2.resources.dll"/>
+    <ROW Component="DevExpress.XtraEditors.v19.2.resources.dll_4" ComponentId="{D70FE89C-0630-4E9A-AB41-B2B68D7E3E63}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraEditors.v19.2.resources.dll_4"/>
+    <ROW Component="DevExpress.XtraEditors.v19.2.resources.dll_5" ComponentId="{19F4DE5D-3C70-442B-A81E-5582B17C3668}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraEditors.v19.2.resources.dll_5"/>
+    <ROW Component="DevExpress.XtraEditors.v19.2.resources.dll_6" ComponentId="{67D7CA5B-6C87-49E0-ABB6-32D9C7923C54}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraEditors.v19.2.resources.dll_6"/>
+    <ROW Component="DevExpress.XtraGrid.v19.2.dll" ComponentId="{94250772-D21B-40D3-BC62-0574AE7E642E}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraGrid.v19.2.dll"/>
+    <ROW Component="DevExpress.XtraGrid.v19.2.resources.dll" ComponentId="{E6D0DC1F-EF72-4763-9BF3-7C8AC7D255B6}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraGrid.v19.2.resources.dll"/>
+    <ROW Component="DevExpress.XtraGrid.v19.2.resources.dll_4" ComponentId="{B0814C47-A067-4F2F-AE78-C9161FB4A9F8}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraGrid.v19.2.resources.dll_4"/>
+    <ROW Component="DevExpress.XtraGrid.v19.2.resources.dll_5" ComponentId="{2809CCDD-0133-45BE-8B57-3D32D3C7C4DD}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraGrid.v19.2.resources.dll_5"/>
+    <ROW Component="DevExpress.XtraGrid.v19.2.resources.dll_6" ComponentId="{F529D511-77E9-4BE0-96BF-9B4061B939CD}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraGrid.v19.2.resources.dll_6"/>
+    <ROW Component="DevExpress.XtraLayout.v19.2.dll" ComponentId="{7F6FCF5A-7348-45D9-B302-5ED6BE522B92}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraLayout.v19.2.dll"/>
+    <ROW Component="DevExpress.XtraLayout.v19.2.resources.dll" ComponentId="{321A1E27-051D-4B36-B56A-1F27A9D2DEA9}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraLayout.v19.2.resources.dll"/>
+    <ROW Component="DevExpress.XtraLayout.v19.2.resources.dll_4" ComponentId="{C87ECEB4-7A36-4CB0-A186-31F7E32893B0}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraLayout.v19.2.resources.dll_4"/>
+    <ROW Component="DevExpress.XtraLayout.v19.2.resources.dll_5" ComponentId="{EDA0B641-2C2D-4771-9D9E-300B88FD2B4D}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraLayout.v19.2.resources.dll_5"/>
+    <ROW Component="DevExpress.XtraLayout.v19.2.resources.dll_6" ComponentId="{67A8997A-F56D-4021-BC4C-7A64CD37A23F}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraLayout.v19.2.resources.dll_6"/>
+    <ROW Component="DevExpress.XtraPrinting.v19.2.dll" ComponentId="{FBBC4EE4-A0C2-4F4C-B662-6EBA24042C44}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraPrinting.v19.2.dll"/>
+    <ROW Component="DevExpress.XtraPrinting.v19.2.resources.dll" ComponentId="{435E7AC2-0F9F-4164-AAA9-FEFFBD66441C}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraPrinting.v19.2.resources.dll"/>
+    <ROW Component="DevExpress.XtraPrinting.v19.2.resources.dll_4" ComponentId="{3B349649-C590-4FF3-8998-A7FD56676CB2}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraPrinting.v19.2.resources.dll_4"/>
+    <ROW Component="DevExpress.XtraPrinting.v19.2.resources.dll_5" ComponentId="{C582F189-38A8-4302-946E-8FD117EB2E2A}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraPrinting.v19.2.resources.dll_5"/>
+    <ROW Component="DevExpress.XtraPrinting.v19.2.resources.dll_6" ComponentId="{E953AC56-2014-4A35-B6F8-0F8199A0CA19}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraPrinting.v19.2.resources.dll_6"/>
+    <ROW Component="DevExpress.XtraTreeList.v19.2.dll" ComponentId="{AE145E9F-541E-46CA-B8B7-3F554C319AD7}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraTreeList.v19.2.dll"/>
+    <ROW Component="DevExpress.XtraTreeList.v19.2.resources.dll" ComponentId="{85F11C1B-865F-4C1A-8D0B-887115C88B22}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraTreeList.v19.2.resources.dll"/>
+    <ROW Component="DevExpress.XtraTreeList.v19.2.resources.dll_4" ComponentId="{5C6C8BE1-13A4-422D-BDCA-6B2B6EAB9F47}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraTreeList.v19.2.resources.dll_4"/>
+    <ROW Component="DevExpress.XtraTreeList.v19.2.resources.dll_5" ComponentId="{9BDB0E84-956A-4527-A756-0873E641E310}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraTreeList.v19.2.resources.dll_5"/>
+    <ROW Component="DevExpress.XtraTreeList.v19.2.resources.dll_6" ComponentId="{8091BFCD-B867-4118-88B6-34EBB4EB6BE2}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraTreeList.v19.2.resources.dll_6"/>
+    <ROW Component="DotNetZip.dll" ComponentId="{8C7B67C3-4678-40F6-951A-5A3802FF55E9}" Directory_="APPDIR" Attributes="0" KeyPath="DotNetZip.dll"/>
+    <ROW Component="EntityFramework.dll" ComponentId="{C202DBB0-BD34-4490-B150-31E1E42CB272}" Directory_="APPDIR" Attributes="0" KeyPath="EntityFramework.dll"/>
+    <ROW Component="Enums.NET.dll" ComponentId="{AF39360A-E7B3-40F0-95EE-021476826C43}" Directory_="APPDIR" Attributes="0" KeyPath="Enums.NET.dll"/>
+    <ROW Component="FluentCommandLineParser.dll" ComponentId="{A2282AAA-E282-42EE-AC86-188865CFE1E0}" Directory_="APPDIR" Attributes="0" KeyPath="FluentCommandLineParser.dll"/>
+    <ROW Component="Microsoft.Data.Sqlite.dll" ComponentId="{F418B64F-73FE-41E5-9768-106021E8C713}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Data.Sqlite.dll"/>
+    <ROW Component="Newtonsoft.Json.dll" ComponentId="{54B1B9CE-B5E4-4869-850D-D575D86F77B8}" Directory_="APPDIR" Attributes="0" KeyPath="Newtonsoft.Json.dll"/>
+    <ROW Component="ProductInformation" ComponentId="{40994A4A-A99C-42EA-BF54-3096FD3E8940}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="Profile.db" ComponentId="{53783E7D-D3F8-4A33-83B8-F49AC1F6EF16}" Directory_="ZChangerData_Dir" Attributes="128" KeyPath="Profile.db" Type="0"/>
+    <ROW Component="SQLite.CodeFirst.dll" ComponentId="{EAFD9D67-1BD2-4E33-AF2D-4B1B0FBA9F72}" Directory_="APPDIR" Attributes="0" KeyPath="SQLite.CodeFirst.dll"/>
+    <ROW Component="SQLite.Interop.dll" ComponentId="{7D43BEB4-DD7C-4215-82C9-66399D004ED6}" Directory_="x64_Dir" Attributes="256" KeyPath="SQLite.Interop.dll"/>
+    <ROW Component="SQLite.Interop.dll_2" ComponentId="{8AFC4BBE-6E95-409E-9E15-D71285B83B3C}" Directory_="x86_Dir" Attributes="0" KeyPath="SQLite.Interop.dll_2"/>
+    <ROW Component="SQLitePCLRaw.batteries_v2.dll" ComponentId="{5136AC5F-55EE-410B-A862-F12BA84AC016}" Directory_="APPDIR" Attributes="0" KeyPath="SQLitePCLRaw.batteries_v2.dll"/>
+    <ROW Component="SQLitePCLRaw.core.dll" ComponentId="{E924DC14-F5C2-492E-B7B7-688B41B23C4F}" Directory_="APPDIR" Attributes="0" KeyPath="SQLitePCLRaw.core.dll"/>
+    <ROW Component="SQLitePCLRaw.nativelibrary.dll" ComponentId="{5703147E-05BA-4A1B-9008-54D74EB4E881}" Directory_="APPDIR" Attributes="0" KeyPath="SQLitePCLRaw.nativelibrary.dll"/>
+    <ROW Component="SQLitePCLRaw.provider.dynamic_cdecl.dll" ComponentId="{1DE975DC-AEDF-44F1-AA14-C5C3706809B4}" Directory_="APPDIR" Attributes="0" KeyPath="SQLitePCLRaw.provider.dynamic_cdecl.dll"/>
+    <ROW Component="System.Buffers.dll" ComponentId="{3644BF6D-B1DE-4005-8BC1-A7B87A6E4AC7}" Directory_="APPDIR" Attributes="0" KeyPath="System.Buffers.dll"/>
+    <ROW Component="System.ComponentModel.Annotations.dll" ComponentId="{556EAE41-15D0-4F57-B033-93C211A879FC}" Directory_="APPDIR" Attributes="0" KeyPath="System.ComponentModel.Annotations.dll"/>
+    <ROW Component="System.Data.SQLite.EF6.dll" ComponentId="{61272496-362C-4DC8-91D1-F09E1C34B1AA}" Directory_="APPDIR" Attributes="0" KeyPath="System.Data.SQLite.EF6.dll"/>
+    <ROW Component="System.Data.SQLite.Linq.dll" ComponentId="{1A30D240-767A-49B0-8D20-04FB7B3B12CD}" Directory_="APPDIR" Attributes="0" KeyPath="System.Data.SQLite.Linq.dll"/>
+    <ROW Component="System.Data.SQLite.dll" ComponentId="{DE552349-2FAF-4D93-A3A4-4E106AAB6E02}" Directory_="APPDIR" Attributes="0" KeyPath="System.Data.SQLite.dll"/>
+    <ROW Component="System.Memory.dll" ComponentId="{2AD46D90-7091-4997-A321-9BFB5CE0E3CD}" Directory_="APPDIR" Attributes="0" KeyPath="System.Memory.dll"/>
+    <ROW Component="System.Numerics.Vectors.dll" ComponentId="{A7A3C950-BFD4-47D1-8354-44DCD4206A56}" Directory_="APPDIR" Attributes="0" KeyPath="System.Numerics.Vectors.dll"/>
+    <ROW Component="System.Runtime.CompilerServices.Unsafe.dll" ComponentId="{DF5964FB-4B7C-4627-8B0B-7AA5CFAFE03C}" Directory_="APPDIR" Attributes="0" KeyPath="System.Runtime.CompilerServices.Unsafe.dll"/>
+    <ROW Component="ZChangerMMO.exe" ComponentId="{77189652-7E01-4FCA-BD4F-137B3557E819}" Directory_="APPDIR" Attributes="0" KeyPath="ZChangerMMO.exe"/>
+    <ROW Component="ZChangerMMOHost.exe" ComponentId="{908162BE-2E27-4468-A740-A96EE8FCA7E3}" Directory_="APPDIR" Attributes="0" KeyPath="ZChangerMMOHost.exe"/>
+    <ROW Component="e_sqlite3.dll" ComponentId="{A5A7EAE7-4793-4DB2-9C3C-69920F4E8691}" Directory_="native_Dir" Attributes="0" KeyPath="e_sqlite3.dll"/>
+    <ROW Component="e_sqlite3.dll_3" ComponentId="{5596EE1A-277A-42F4-91AB-12CE5ACCFD84}" Directory_="native_3_Dir" Attributes="256" KeyPath="e_sqlite3.dll_3"/>
+    <ROW Component="e_sqlite3.dll_4" ComponentId="{58A0C920-9B42-496C-8FDF-13800E2419A7}" Directory_="native_4_Dir" Attributes="0" KeyPath="e_sqlite3.dll_4"/>
+    <ROW Component="regid.199509.com.example" ComponentId="{83CB745C-1A78-439C-BB39-1FF0D5F36EA9}" Directory_="regid.199509.com.example_Dir" Attributes="0"/>
+    <ROW Component="zchanger.commanifest.json" ComponentId="{A22CC6EE-D0D4-41E1-BD88-77D422B308F2}" Directory_="APPDIR" Attributes="0" KeyPath="zchanger.commanifest.json" Type="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="Application" Title="Application" Description="Search ResultsWeb resultsDocument and file libraries" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ROW Feature="Applicationdata" Title="Application Data" Description="Application Data" Display="3" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ROW Feature="Feature" Title="Backup Profiles" Description="All backup profiles" Display="5" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ATTRIBUTE name="CurrentFeature" value="Application"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="DevExpress.Data.v19.2.dll" Component_="DevExpress.Data.v19.2.dll" FileName="DEVEXP~1.DLL|DevExpress.Data.v19.2.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\DevExpress.Data.v19.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Images.v19.2.dll" Component_="DevExpress.Images.v19.2.dll" FileName="DEVEXP~2.DLL|DevExpress.Images.v19.2.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\DevExpress.Images.v19.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Mvvm.v19.2.DataModel.dll" Component_="DevExpress.Mvvm.v19.2.DataModel.dll" FileName="DEVEXP~3.DLL|DevExpress.Mvvm.v19.2.DataModel.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\DevExpress.Mvvm.v19.2.DataModel.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Mvvm.v19.2.DataModel.EF6.dll" Component_="DevExpress.Mvvm.v19.2.DataModel.EF6.dll" FileName="DEVEXP~4.DLL|DevExpress.Mvvm.v19.2.DataModel.EF6.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\DevExpress.Mvvm.v19.2.DataModel.EF6.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Mvvm.v19.2.dll" Component_="DevExpress.Mvvm.v19.2.dll" FileName="DEVEXP~5.DLL|DevExpress.Mvvm.v19.2.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\DevExpress.Mvvm.v19.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Mvvm.v19.2.ViewModel.dll" Component_="DevExpress.Mvvm.v19.2.ViewModel.dll" FileName="DEVEXP~6.DLL|DevExpress.Mvvm.v19.2.ViewModel.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\DevExpress.Mvvm.v19.2.ViewModel.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Office.v19.2.Core.dll" Component_="DevExpress.Office.v19.2.Core.dll" FileName="DEVEXP~7.DLL|DevExpress.Office.v19.2.Core.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\DevExpress.Office.v19.2.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Pdf.v19.2.Core.dll" Component_="DevExpress.Pdf.v19.2.Core.dll" FileName="DEVEXP~8.DLL|DevExpress.Pdf.v19.2.Core.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\DevExpress.Pdf.v19.2.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v19.2.Core.dll" Component_="DevExpress.Printing.v19.2.Core.dll" FileName="DEVEXP~9.DLL|DevExpress.Printing.v19.2.Core.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\DevExpress.Printing.v19.2.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v19.2.Core.dll" Component_="DevExpress.RichEdit.v19.2.Core.dll" FileName="DEVEX~10.DLL|DevExpress.RichEdit.v19.2.Core.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\DevExpress.RichEdit.v19.2.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Sparkline.v19.2.Core.dll" Component_="DevExpress.Sparkline.v19.2.Core.dll" FileName="DEVEX~11.DLL|DevExpress.Sparkline.v19.2.Core.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\DevExpress.Sparkline.v19.2.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v19.2.dll" Component_="DevExpress.Utils.v19.2.dll" FileName="DEVEX~12.DLL|DevExpress.Utils.v19.2.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\DevExpress.Utils.v19.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraBars.v19.2.dll" Component_="DevExpress.XtraBars.v19.2.dll" FileName="DEVEX~13.DLL|DevExpress.XtraBars.v19.2.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\DevExpress.XtraBars.v19.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraEditors.v19.2.dll" Component_="DevExpress.XtraEditors.v19.2.dll" FileName="DEVEX~14.DLL|DevExpress.XtraEditors.v19.2.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\DevExpress.XtraEditors.v19.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGrid.v19.2.dll" Component_="DevExpress.XtraGrid.v19.2.dll" FileName="DEVEX~15.DLL|DevExpress.XtraGrid.v19.2.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\DevExpress.XtraGrid.v19.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraLayout.v19.2.dll" Component_="DevExpress.XtraLayout.v19.2.dll" FileName="DEVEX~16.DLL|DevExpress.XtraLayout.v19.2.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\DevExpress.XtraLayout.v19.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPrinting.v19.2.dll" Component_="DevExpress.XtraPrinting.v19.2.dll" FileName="DEVEX~17.DLL|DevExpress.XtraPrinting.v19.2.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\DevExpress.XtraPrinting.v19.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraTreeList.v19.2.dll" Component_="DevExpress.XtraTreeList.v19.2.dll" FileName="DEVEX~18.DLL|DevExpress.XtraTreeList.v19.2.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\DevExpress.XtraTreeList.v19.2.dll" SelfReg="false"/>
+    <ROW File="DotNetZip.dll" Component_="DotNetZip.dll" FileName="DOTNET~1.DLL|DotNetZip.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\DotNetZip.dll" SelfReg="false"/>
+    <ROW File="EntityFramework.dll" Component_="EntityFramework.dll" FileName="ENTITY~1.DLL|EntityFramework.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\EntityFramework.dll" SelfReg="false"/>
+    <ROW File="Enums.NET.dll" Component_="Enums.NET.dll" FileName="ENUMSN~1.DLL|Enums.NET.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\Enums.NET.dll" SelfReg="false"/>
+    <ROW File="FluentCommandLineParser.dll" Component_="FluentCommandLineParser.dll" FileName="FLUENT~1.DLL|FluentCommandLineParser.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\FluentCommandLineParser.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Data.Sqlite.dll" Component_="Microsoft.Data.Sqlite.dll" FileName="MICROS~1.DLL|Microsoft.Data.Sqlite.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\Microsoft.Data.Sqlite.dll" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.dll" Component_="Newtonsoft.Json.dll" FileName="NEWTON~1.DLL|Newtonsoft.Json.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\Newtonsoft.Json.dll" SelfReg="false"/>
+    <ROW File="SQLite.CodeFirst.dll" Component_="SQLite.CodeFirst.dll" FileName="SQLITE~1.DLL|SQLite.CodeFirst.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\SQLite.CodeFirst.dll" SelfReg="false"/>
+    <ROW File="SQLitePCLRaw.batteries_v2.dll" Component_="SQLitePCLRaw.batteries_v2.dll" FileName="SQLITE~2.DLL|SQLitePCLRaw.batteries_v2.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\SQLitePCLRaw.batteries_v2.dll" SelfReg="false"/>
+    <ROW File="SQLitePCLRaw.core.dll" Component_="SQLitePCLRaw.core.dll" FileName="SQLITE~3.DLL|SQLitePCLRaw.core.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\SQLitePCLRaw.core.dll" SelfReg="false"/>
+    <ROW File="SQLitePCLRaw.nativelibrary.dll" Component_="SQLitePCLRaw.nativelibrary.dll" FileName="SQLITE~4.DLL|SQLitePCLRaw.nativelibrary.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\SQLitePCLRaw.nativelibrary.dll" SelfReg="false"/>
+    <ROW File="SQLitePCLRaw.provider.dynamic_cdecl.dll" Component_="SQLitePCLRaw.provider.dynamic_cdecl.dll" FileName="SQLITE~5.DLL|SQLitePCLRaw.provider.dynamic_cdecl.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\SQLitePCLRaw.provider.dynamic_cdecl.dll" SelfReg="false"/>
+    <ROW File="System.Buffers.dll" Component_="System.Buffers.dll" FileName="SYSTEM~1.DLL|System.Buffers.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\System.Buffers.dll" SelfReg="false"/>
+    <ROW File="System.ComponentModel.Annotations.dll" Component_="System.ComponentModel.Annotations.dll" FileName="SYSTEM~2.DLL|System.ComponentModel.Annotations.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\System.ComponentModel.Annotations.dll" SelfReg="false"/>
+    <ROW File="System.Data.SQLite.dll" Component_="System.Data.SQLite.dll" FileName="SYSTEM~3.DLL|System.Data.SQLite.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\System.Data.SQLite.dll" SelfReg="false"/>
+    <ROW File="System.Data.SQLite.EF6.dll" Component_="System.Data.SQLite.EF6.dll" FileName="SYSTEM~4.DLL|System.Data.SQLite.EF6.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\System.Data.SQLite.EF6.dll" SelfReg="false"/>
+    <ROW File="System.Data.SQLite.Linq.dll" Component_="System.Data.SQLite.Linq.dll" FileName="SYSTEM~5.DLL|System.Data.SQLite.Linq.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\System.Data.SQLite.Linq.dll" SelfReg="false"/>
+    <ROW File="System.Memory.dll" Component_="System.Memory.dll" FileName="SYSTEM~6.DLL|System.Memory.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\System.Memory.dll" SelfReg="false"/>
+    <ROW File="System.Numerics.Vectors.dll" Component_="System.Numerics.Vectors.dll" FileName="SYSTEM~7.DLL|System.Numerics.Vectors.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\System.Numerics.Vectors.dll" SelfReg="false"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.dll" Component_="System.Runtime.CompilerServices.Unsafe.dll" FileName="SYSTEM~8.DLL|System.Runtime.CompilerServices.Unsafe.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\System.Runtime.CompilerServices.Unsafe.dll" SelfReg="false"/>
+    <ROW File="zchanger.commanifest.json" Component_="zchanger.commanifest.json" FileName="ZCHANG~1.JSO|zchanger.com-manifest.json" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\zchanger.com-manifest.json" SelfReg="false"/>
+    <ROW File="ZChangerMMO.exe" Component_="ZChangerMMO.exe" FileName="ZCHANG~1.EXE|ZChangerMMO.exe" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ZChangerMMO.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="ZChangerMMOHost.exe" Component_="ZChangerMMOHost.exe" FileName="ZCHANG~2.EXE|ZChangerMMOHost.exe" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ZChangerMMOHost.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="DevExpress.Data.v19.2.resources.dll" Component_="DevExpress.Data.v19.2.resources.dll" FileName="DEVEXP~1.DLL|DevExpress.Data.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\de\DevExpress.Data.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Mvvm.v19.2.DataModel.resources.dll" Component_="DevExpress.Mvvm.v19.2.DataModel.resources.dll" FileName="DEVEXP~2.DLL|DevExpress.Mvvm.v19.2.DataModel.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\de\DevExpress.Mvvm.v19.2.DataModel.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Office.v19.2.Core.resources.dll" Component_="DevExpress.Office.v19.2.Core.resources.dll" FileName="DEVEXP~3.DLL|DevExpress.Office.v19.2.Core.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\de\DevExpress.Office.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Pdf.v19.2.Core.resources.dll" Component_="DevExpress.Pdf.v19.2.Core.resources.dll" FileName="DEVEXP~4.DLL|DevExpress.Pdf.v19.2.Core.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\de\DevExpress.Pdf.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v19.2.Core.resources.dll" Component_="DevExpress.Printing.v19.2.Core.resources.dll" FileName="DEVEXP~5.DLL|DevExpress.Printing.v19.2.Core.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\de\DevExpress.Printing.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v19.2.Core.resources.dll" Component_="DevExpress.RichEdit.v19.2.Core.resources.dll" FileName="DEVEXP~6.DLL|DevExpress.RichEdit.v19.2.Core.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\de\DevExpress.RichEdit.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Sparkline.v19.2.Core.resources.dll" Component_="DevExpress.Sparkline.v19.2.Core.resources.dll" FileName="DEVEXP~7.DLL|DevExpress.Sparkline.v19.2.Core.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\de\DevExpress.Sparkline.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v19.2.resources.dll" Component_="DevExpress.Utils.v19.2.resources.dll" FileName="DEVEXP~8.DLL|DevExpress.Utils.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\de\DevExpress.Utils.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraBars.v19.2.resources.dll" Component_="DevExpress.XtraBars.v19.2.resources.dll" FileName="DEVEXP~9.DLL|DevExpress.XtraBars.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\de\DevExpress.XtraBars.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraEditors.v19.2.resources.dll" Component_="DevExpress.XtraEditors.v19.2.resources.dll" FileName="DEVEX~10.DLL|DevExpress.XtraEditors.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\de\DevExpress.XtraEditors.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGrid.v19.2.resources.dll" Component_="DevExpress.XtraGrid.v19.2.resources.dll" FileName="DEVEX~11.DLL|DevExpress.XtraGrid.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\de\DevExpress.XtraGrid.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraLayout.v19.2.resources.dll" Component_="DevExpress.XtraLayout.v19.2.resources.dll" FileName="DEVEX~12.DLL|DevExpress.XtraLayout.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\de\DevExpress.XtraLayout.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPrinting.v19.2.resources.dll" Component_="DevExpress.XtraPrinting.v19.2.resources.dll" FileName="DEVEX~13.DLL|DevExpress.XtraPrinting.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\de\DevExpress.XtraPrinting.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraTreeList.v19.2.resources.dll" Component_="DevExpress.XtraTreeList.v19.2.resources.dll" FileName="DEVEX~14.DLL|DevExpress.XtraTreeList.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\de\DevExpress.XtraTreeList.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v19.2.resources.dll_4" Component_="DevExpress.Data.v19.2.resources.dll_4" FileName="DEVEXP~1.DLL|DevExpress.Data.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\es\DevExpress.Data.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Mvvm.v19.2.DataModel.resources.dll_4" Component_="DevExpress.Mvvm.v19.2.DataModel.resources.dll_4" FileName="DEVEXP~2.DLL|DevExpress.Mvvm.v19.2.DataModel.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\es\DevExpress.Mvvm.v19.2.DataModel.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Office.v19.2.Core.resources.dll_4" Component_="DevExpress.Office.v19.2.Core.resources.dll_4" FileName="DEVEXP~3.DLL|DevExpress.Office.v19.2.Core.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\es\DevExpress.Office.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Pdf.v19.2.Core.resources.dll_4" Component_="DevExpress.Pdf.v19.2.Core.resources.dll_4" FileName="DEVEXP~4.DLL|DevExpress.Pdf.v19.2.Core.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\es\DevExpress.Pdf.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v19.2.Core.resources.dll_4" Component_="DevExpress.Printing.v19.2.Core.resources.dll_4" FileName="DEVEXP~5.DLL|DevExpress.Printing.v19.2.Core.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\es\DevExpress.Printing.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v19.2.Core.resources.dll_4" Component_="DevExpress.RichEdit.v19.2.Core.resources.dll_4" FileName="DEVEXP~6.DLL|DevExpress.RichEdit.v19.2.Core.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\es\DevExpress.RichEdit.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Sparkline.v19.2.Core.resources.dll_4" Component_="DevExpress.Sparkline.v19.2.Core.resources.dll_4" FileName="DEVEXP~7.DLL|DevExpress.Sparkline.v19.2.Core.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\es\DevExpress.Sparkline.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v19.2.resources.dll_4" Component_="DevExpress.Utils.v19.2.resources.dll_4" FileName="DEVEXP~8.DLL|DevExpress.Utils.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\es\DevExpress.Utils.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraBars.v19.2.resources.dll_4" Component_="DevExpress.XtraBars.v19.2.resources.dll_4" FileName="DEVEXP~9.DLL|DevExpress.XtraBars.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\es\DevExpress.XtraBars.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraEditors.v19.2.resources.dll_4" Component_="DevExpress.XtraEditors.v19.2.resources.dll_4" FileName="DEVEX~10.DLL|DevExpress.XtraEditors.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\es\DevExpress.XtraEditors.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGrid.v19.2.resources.dll_4" Component_="DevExpress.XtraGrid.v19.2.resources.dll_4" FileName="DEVEX~11.DLL|DevExpress.XtraGrid.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\es\DevExpress.XtraGrid.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraLayout.v19.2.resources.dll_4" Component_="DevExpress.XtraLayout.v19.2.resources.dll_4" FileName="DEVEX~12.DLL|DevExpress.XtraLayout.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\es\DevExpress.XtraLayout.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPrinting.v19.2.resources.dll_4" Component_="DevExpress.XtraPrinting.v19.2.resources.dll_4" FileName="DEVEX~13.DLL|DevExpress.XtraPrinting.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\es\DevExpress.XtraPrinting.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraTreeList.v19.2.resources.dll_4" Component_="DevExpress.XtraTreeList.v19.2.resources.dll_4" FileName="DEVEX~14.DLL|DevExpress.XtraTreeList.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\es\DevExpress.XtraTreeList.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v19.2.resources.dll_5" Component_="DevExpress.Data.v19.2.resources.dll_5" FileName="DEVEXP~1.DLL|DevExpress.Data.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ja\DevExpress.Data.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Mvvm.v19.2.DataModel.resources.dll_5" Component_="DevExpress.Mvvm.v19.2.DataModel.resources.dll_5" FileName="DEVEXP~2.DLL|DevExpress.Mvvm.v19.2.DataModel.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ja\DevExpress.Mvvm.v19.2.DataModel.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Office.v19.2.Core.resources.dll_5" Component_="DevExpress.Office.v19.2.Core.resources.dll_5" FileName="DEVEXP~3.DLL|DevExpress.Office.v19.2.Core.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ja\DevExpress.Office.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Pdf.v19.2.Core.resources.dll_5" Component_="DevExpress.Pdf.v19.2.Core.resources.dll_5" FileName="DEVEXP~4.DLL|DevExpress.Pdf.v19.2.Core.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ja\DevExpress.Pdf.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v19.2.Core.resources.dll_5" Component_="DevExpress.Printing.v19.2.Core.resources.dll_5" FileName="DEVEXP~5.DLL|DevExpress.Printing.v19.2.Core.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ja\DevExpress.Printing.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v19.2.Core.resources.dll_5" Component_="DevExpress.RichEdit.v19.2.Core.resources.dll_5" FileName="DEVEXP~6.DLL|DevExpress.RichEdit.v19.2.Core.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ja\DevExpress.RichEdit.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Sparkline.v19.2.Core.resources.dll_5" Component_="DevExpress.Sparkline.v19.2.Core.resources.dll_5" FileName="DEVEXP~7.DLL|DevExpress.Sparkline.v19.2.Core.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ja\DevExpress.Sparkline.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v19.2.resources.dll_5" Component_="DevExpress.Utils.v19.2.resources.dll_5" FileName="DEVEXP~8.DLL|DevExpress.Utils.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ja\DevExpress.Utils.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraBars.v19.2.resources.dll_5" Component_="DevExpress.XtraBars.v19.2.resources.dll_5" FileName="DEVEXP~9.DLL|DevExpress.XtraBars.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ja\DevExpress.XtraBars.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraEditors.v19.2.resources.dll_5" Component_="DevExpress.XtraEditors.v19.2.resources.dll_5" FileName="DEVEX~10.DLL|DevExpress.XtraEditors.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ja\DevExpress.XtraEditors.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGrid.v19.2.resources.dll_5" Component_="DevExpress.XtraGrid.v19.2.resources.dll_5" FileName="DEVEX~11.DLL|DevExpress.XtraGrid.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ja\DevExpress.XtraGrid.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraLayout.v19.2.resources.dll_5" Component_="DevExpress.XtraLayout.v19.2.resources.dll_5" FileName="DEVEX~12.DLL|DevExpress.XtraLayout.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ja\DevExpress.XtraLayout.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPrinting.v19.2.resources.dll_5" Component_="DevExpress.XtraPrinting.v19.2.resources.dll_5" FileName="DEVEX~13.DLL|DevExpress.XtraPrinting.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ja\DevExpress.XtraPrinting.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraTreeList.v19.2.resources.dll_5" Component_="DevExpress.XtraTreeList.v19.2.resources.dll_5" FileName="DEVEX~14.DLL|DevExpress.XtraTreeList.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ja\DevExpress.XtraTreeList.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v19.2.resources.dll_6" Component_="DevExpress.Data.v19.2.resources.dll_6" FileName="DEVEXP~1.DLL|DevExpress.Data.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ru\DevExpress.Data.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Mvvm.v19.2.DataModel.resources.dll_6" Component_="DevExpress.Mvvm.v19.2.DataModel.resources.dll_6" FileName="DEVEXP~2.DLL|DevExpress.Mvvm.v19.2.DataModel.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ru\DevExpress.Mvvm.v19.2.DataModel.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Office.v19.2.Core.resources.dll_6" Component_="DevExpress.Office.v19.2.Core.resources.dll_6" FileName="DEVEXP~3.DLL|DevExpress.Office.v19.2.Core.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ru\DevExpress.Office.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Pdf.v19.2.Core.resources.dll_6" Component_="DevExpress.Pdf.v19.2.Core.resources.dll_6" FileName="DEVEXP~4.DLL|DevExpress.Pdf.v19.2.Core.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ru\DevExpress.Pdf.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v19.2.Core.resources.dll_6" Component_="DevExpress.Printing.v19.2.Core.resources.dll_6" FileName="DEVEXP~5.DLL|DevExpress.Printing.v19.2.Core.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ru\DevExpress.Printing.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v19.2.Core.resources.dll_6" Component_="DevExpress.RichEdit.v19.2.Core.resources.dll_6" FileName="DEVEXP~6.DLL|DevExpress.RichEdit.v19.2.Core.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ru\DevExpress.RichEdit.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Sparkline.v19.2.Core.resources.dll_6" Component_="DevExpress.Sparkline.v19.2.Core.resources.dll_6" FileName="DEVEXP~7.DLL|DevExpress.Sparkline.v19.2.Core.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ru\DevExpress.Sparkline.v19.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v19.2.resources.dll_6" Component_="DevExpress.Utils.v19.2.resources.dll_6" FileName="DEVEXP~8.DLL|DevExpress.Utils.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ru\DevExpress.Utils.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraBars.v19.2.resources.dll_6" Component_="DevExpress.XtraBars.v19.2.resources.dll_6" FileName="DEVEXP~9.DLL|DevExpress.XtraBars.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ru\DevExpress.XtraBars.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraEditors.v19.2.resources.dll_6" Component_="DevExpress.XtraEditors.v19.2.resources.dll_6" FileName="DEVEX~10.DLL|DevExpress.XtraEditors.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ru\DevExpress.XtraEditors.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGrid.v19.2.resources.dll_6" Component_="DevExpress.XtraGrid.v19.2.resources.dll_6" FileName="DEVEX~11.DLL|DevExpress.XtraGrid.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ru\DevExpress.XtraGrid.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraLayout.v19.2.resources.dll_6" Component_="DevExpress.XtraLayout.v19.2.resources.dll_6" FileName="DEVEX~12.DLL|DevExpress.XtraLayout.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ru\DevExpress.XtraLayout.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPrinting.v19.2.resources.dll_6" Component_="DevExpress.XtraPrinting.v19.2.resources.dll_6" FileName="DEVEX~13.DLL|DevExpress.XtraPrinting.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ru\DevExpress.XtraPrinting.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraTreeList.v19.2.resources.dll_6" Component_="DevExpress.XtraTreeList.v19.2.resources.dll_6" FileName="DEVEX~14.DLL|DevExpress.XtraTreeList.v19.2.resources.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ru\DevExpress.XtraTreeList.v19.2.resources.dll" SelfReg="false"/>
+    <ROW File="e_sqlite3.dll" Component_="e_sqlite3.dll" FileName="E_SQLI~1.DLL|e_sqlite3.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\runtimes\win-arm\native\e_sqlite3.dll" SelfReg="false"/>
+    <ROW File="e_sqlite3.dll_3" Component_="e_sqlite3.dll_3" FileName="E_SQLI~1.DLL|e_sqlite3.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\runtimes\win-x64\native\e_sqlite3.dll" SelfReg="false"/>
+    <ROW File="e_sqlite3.dll_4" Component_="e_sqlite3.dll_4" FileName="E_SQLI~1.DLL|e_sqlite3.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\runtimes\win-x86\native\e_sqlite3.dll" SelfReg="false"/>
+    <ROW File="SQLite.Interop.dll" Component_="SQLite.Interop.dll" FileName="SQLITE~1.DLL|SQLite.Interop.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\x64\SQLite.Interop.dll" SelfReg="false"/>
+    <ROW File="SQLite.Interop.dll_2" Component_="SQLite.Interop.dll_2" FileName="SQLITE~1.DLL|SQLite.Interop.dll" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\x86\SQLite.Interop.dll" SelfReg="false"/>
+    <ROW File="Profile.db" Component_="Profile.db" FileName="Profile.db" Attributes="0" SourcePath="..\..\ZChangerMMO\bin\Release\ZChangerData\Profile.db" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.AiPersistentDataComponent">
+    <ROW PersistentRow="Profile.db" Type="0" Condition="1"/>
+    <ROW PersistentRow="BackupProfiles_Dir" Type="1" Condition="1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
+    <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrapperUISequenceComponent">
+    <ROW Action="AI_DetectSoftware" Sequence="151"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="1" PackageFolder="." PackageFileName="ZChangerMMO-setup" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="ZChangerMMO-setup"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="PreparePrereqDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\PreparePrereqDlg.aip"/>
+    <ROW Fragment="PrerequisitesDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\PrerequisitesDlg.aip"/>
+    <ROW Fragment="ProgressPrereqDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\ProgressPrereqDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;classic\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
+    <ROW Fragment="WelcomePrereqDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomePrereqDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
+    <ROW Action="AI_AiBackupImmediate" Description="Preparing backup operation" DescriptionLocId="ActionText.Description.AI_AiBackupImmediate" Template="Path: [1]" TemplateLocId="ActionText.Template.AI_AiBackupImmediate"/>
+    <ROW Action="AI_AiBackupRollback" Description="Rollback backup" DescriptionLocId="ActionText.Description.AI_AiBackupRollback" Template="Path: [1]" TemplateLocId="ActionText.Template.AI_AiBackupRollback"/>
+    <ROW Action="AI_AiRestoreDeferred" Description="Executing restore operation" DescriptionLocId="ActionText.Description.AI_AiRestoreDeferred" Template="Path: [1]" TemplateLocId="ActionText.Template.AI_AiRestoreDeferred"/>
+    <ROW Action="AI_AiRestoreDeferredImpersonate" Description="Executing restore operation" DescriptionLocId="ActionText.Description.AI_AiRestoreDeferred" Template="Path: [1]" TemplateLocId="ActionText.Template.AI_AiRestoreDeferred"/>
+    <ROW Action="AI_AiRestoreRollback" Description="Rollback restore" DescriptionLocId="ActionText.Description.AI_AiRestoreRollback" Template="Path: [1]" TemplateLocId="ActionText.Template.AI_AiRestoreRollback"/>
+    <ROW Action="AI_DeleteLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_DeleteRLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractFiles" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractLzma" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+    <ROW Action="AI_XmlCommit" Description="Committing XML file configurations." DescriptionLocId="ActionText.Description.AI_XmlCommit" Template="Committing XML file configurations." TemplateLocId="ActionText.Template.AI_XmlCommit"/>
+    <ROW Action="AI_XmlConfig" Description="Executing XML file configurations" DescriptionLocId="ActionText.Description.AI_XmlConfig" Template="Configuring XML file: &quot;[1]&quot;" TemplateLocId="ActionText.Template.AI_XmlConfig"/>
+    <ROW Action="AI_XmlInstall" Description="Generating actions to configure XML files" DescriptionLocId="ActionText.Description.AI_XmlInstall"/>
+    <ROW Action="AI_XmlRemove" Description="Executing XML file configurations" DescriptionLocId="ActionText.Description.AI_XmlRemove" Template="Configuring XML file: &quot;[1]&quot;" TemplateLocId="ActionText.Template.AI_XmlRemove"/>
+    <ROW Action="AI_XmlRollback" Description="Rolling back XML file configurations." DescriptionLocId="ActionText.Description.AI_XmlRollback" Template="Rolling back XML file configurations." TemplateLocId="ActionText.Template.AI_XmlRollback"/>
+    <ROW Action="AI_XmlUninstall" Description="Generating actions to configure XML files" DescriptionLocId="ActionText.Description.AI_XmlUninstall"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiAppSearchComponent">
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_LM" Builds="DefaultBuild"/>
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_CU" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="ExternalUICleaner.dll" SourcePath="&lt;AI_CUSTACTS&gt;ExternalUICleaner.dll"/>
+    <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
+    <ROW Name="ResourceCleaner.dll" SourcePath="&lt;AI_CUSTACTS&gt;ResourceCleaner.dll"/>
+    <ROW Name="SoftwareDetector.dll" SourcePath="&lt;AI_CUSTACTS&gt;SoftwareDetector.dll"/>
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+    <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
+    <ROW Name="xmlCfg.dll" SourcePath="&lt;AI_CUSTACTS&gt;xmlCfg.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="399" Options="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+    <ROW Dialog_="WelcomePrereqDlg" Control_="Next" Event="NewDialog" Argument="PrerequisitesDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+    <ROW Dialog_="PrerequisitesDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+    <ROW Dialog_="PrerequisitesDlg" Control_="Back" Event="NewDialog" Argument="WelcomePrereqDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+    <ROW Dialog_="FatalError" Control_="Finish" Event="DoAction" Argument="AI_AiBackupCleanup" Condition="1" Ordering="102"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+    <ROW Dialog_="UserExit" Control_="Finish" Event="DoAction" Argument="AI_AiBackupCleanup" Condition="1" Ordering="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
+    <ROW Directory_="regid.199509.com.example_Dir" Component_="regid.199509.com.example" ManualDelete="false"/>
+    <ROW Directory_="BackupProfiles_Dir" Component_="BackupProfiles" ManualDelete="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_AiBackupCleanup" Type="1" Source="ResourceCleaner.dll" Target="OnAiBackupCleanup" WithoutSeq="true"/>
+    <ROW Action="AI_AiBackupImmediate" Type="1" Source="ResourceCleaner.dll" Target="OnAiBackupImmediate"/>
+    <ROW Action="AI_AiBackupRollback" Type="11521" Source="ResourceCleaner.dll" Target="OnAiBackupRollback"/>
+    <ROW Action="AI_AiRestoreDeferred" Type="11265" Source="ResourceCleaner.dll" Target="OnAiRestoreDeferred"/>
+    <ROW Action="AI_AiRestoreDeferredImpersonate" Type="9217" Source="ResourceCleaner.dll" Target="OnAiRestoreDeferredImpersonate"/>
+    <ROW Action="AI_AiRestoreRollback" Type="11521" Source="ResourceCleaner.dll" Target="OnAiRestoreRollback" WithoutSeq="true"/>
+    <ROW Action="AI_AppSearchEx" Type="1" Source="Prereq.dll" Target="DoAppSearchEx"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DATA_SETTER" Type="51" Source="CustomActionData" Target="[~]"/>
+    <ROW Action="AI_DATA_SETTER_1" Type="51" Source="CustomActionData" Target="[~]"/>
+    <ROW Action="AI_DATA_SETTER_2" Type="51" Source="AI_ExtractFiles" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DeleteCadLzma" Type="51" Source="AI_DeleteLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteLzma" Type="1025" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DeleteRCadLzma" Type="51" Source="AI_DeleteRLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteRLzma" Type="1281" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DetectSoftware" Type="257" Source="SoftwareDetector.dll" Target="OnDetectSoftware"/>
+    <ROW Action="AI_DoRemoveExternalUIStub" Type="3585" Source="ExternalUICleaner.dll" Target="DoRemoveExternalUIStub" WithoutSeq="true"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_EstimateExtractFiles" Type="1" Source="Prereq.dll" Target="EstimateExtractFiles"/>
+    <ROW Action="AI_ExtractCadLzma" Type="51" Source="AI_ExtractLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_ExtractFiles" Type="1025" Source="Prereq.dll" Target="ExtractSourceFiles" AdditionalSeq="AI_DATA_SETTER_2"/>
+    <ROW Action="AI_ExtractLzma" Type="1025" Source="lzmaextractor.dll" Target="ExtractLZMAFiles"/>
+    <ROW Action="AI_FindExeLzma" Type="1" Source="lzmaextractor.dll" Target="FindEXE"/>
+    <ROW Action="AI_GetArpIconPath" Type="1" Source="aicustact.dll" Target="GetArpIconPath"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH" Target="[AI_SETUPEXEPATH_ORIGINAL]"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_RemoveExternalUIStub" Type="1" Source="ExternalUICleaner.dll" Target="RemoveExternalUIStub"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="AI_XmlCommit" Type="11777" Source="xmlCfg.dll" Target="OnXmlCommit" WithoutSeq="true"/>
+    <ROW Action="AI_XmlConfig" Type="11265" Source="xmlCfg.dll" Target="OnXmlConfig" WithoutSeq="true"/>
+    <ROW Action="AI_XmlInstall" Type="1" Source="xmlCfg.dll" Target="OnXmlInstall" AdditionalSeq="AI_DATA_SETTER"/>
+    <ROW Action="AI_XmlRemove" Type="11265" Source="xmlCfg.dll" Target="OnXmlRemove" WithoutSeq="true"/>
+    <ROW Action="AI_XmlRollback" Type="11521" Source="xmlCfg.dll" Target="OnXmlRollback" WithoutSeq="true"/>
+    <ROW Action="AI_XmlUninstall" Type="1" Source="xmlCfg.dll" Target="OnXmlUninstall" AdditionalSeq="AI_DATA_SETTER_1"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFilesFolder]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
+    <ROW Feature_="Application" Component_="APPDIR"/>
+    <ROW Feature_="Application" Component_="ProductInformation"/>
+    <ROW Feature_="Application" Component_="regid.199509.com.example"/>
+    <ROW Feature_="Application" Component_="DevExpress.Data.v19.2.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.Images.v19.2.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.Mvvm.v19.2.DataModel.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.Mvvm.v19.2.DataModel.EF6.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.Mvvm.v19.2.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.Mvvm.v19.2.ViewModel.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.Office.v19.2.Core.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.Pdf.v19.2.Core.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.Printing.v19.2.Core.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.RichEdit.v19.2.Core.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.Sparkline.v19.2.Core.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.Utils.v19.2.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraBars.v19.2.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraEditors.v19.2.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraGrid.v19.2.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraLayout.v19.2.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraPrinting.v19.2.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraTreeList.v19.2.dll"/>
+    <ROW Feature_="Application" Component_="DotNetZip.dll"/>
+    <ROW Feature_="Application" Component_="EntityFramework.dll"/>
+    <ROW Feature_="Application" Component_="Enums.NET.dll"/>
+    <ROW Feature_="Application" Component_="FluentCommandLineParser.dll"/>
+    <ROW Feature_="Application" Component_="Microsoft.Data.Sqlite.dll"/>
+    <ROW Feature_="Application" Component_="Newtonsoft.Json.dll"/>
+    <ROW Feature_="Application" Component_="SQLite.CodeFirst.dll"/>
+    <ROW Feature_="Application" Component_="SQLitePCLRaw.batteries_v2.dll"/>
+    <ROW Feature_="Application" Component_="SQLitePCLRaw.core.dll"/>
+    <ROW Feature_="Application" Component_="SQLitePCLRaw.nativelibrary.dll"/>
+    <ROW Feature_="Application" Component_="SQLitePCLRaw.provider.dynamic_cdecl.dll"/>
+    <ROW Feature_="Application" Component_="System.Buffers.dll"/>
+    <ROW Feature_="Application" Component_="System.ComponentModel.Annotations.dll"/>
+    <ROW Feature_="Application" Component_="System.Data.SQLite.dll"/>
+    <ROW Feature_="Application" Component_="System.Data.SQLite.EF6.dll"/>
+    <ROW Feature_="Application" Component_="System.Data.SQLite.Linq.dll"/>
+    <ROW Feature_="Application" Component_="System.Memory.dll"/>
+    <ROW Feature_="Application" Component_="System.Numerics.Vectors.dll"/>
+    <ROW Feature_="Application" Component_="System.Runtime.CompilerServices.Unsafe.dll"/>
+    <ROW Feature_="Application" Component_="zchanger.commanifest.json"/>
+    <ROW Feature_="Application" Component_="ZChangerMMO.exe"/>
+    <ROW Feature_="Application" Component_="ZChangerMMOHost.exe"/>
+    <ROW Feature_="Application" Component_="DevExpress.Data.v19.2.resources.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.Mvvm.v19.2.DataModel.resources.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.Office.v19.2.Core.resources.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.Pdf.v19.2.Core.resources.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.Printing.v19.2.Core.resources.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.RichEdit.v19.2.Core.resources.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.Sparkline.v19.2.Core.resources.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.Utils.v19.2.resources.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraBars.v19.2.resources.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraEditors.v19.2.resources.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraGrid.v19.2.resources.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraLayout.v19.2.resources.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraPrinting.v19.2.resources.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraTreeList.v19.2.resources.dll"/>
+    <ROW Feature_="Application" Component_="DevExpress.Data.v19.2.resources.dll_4"/>
+    <ROW Feature_="Application" Component_="DevExpress.Mvvm.v19.2.DataModel.resources.dll_4"/>
+    <ROW Feature_="Application" Component_="DevExpress.Office.v19.2.Core.resources.dll_4"/>
+    <ROW Feature_="Application" Component_="DevExpress.Pdf.v19.2.Core.resources.dll_4"/>
+    <ROW Feature_="Application" Component_="DevExpress.Printing.v19.2.Core.resources.dll_4"/>
+    <ROW Feature_="Application" Component_="DevExpress.RichEdit.v19.2.Core.resources.dll_4"/>
+    <ROW Feature_="Application" Component_="DevExpress.Sparkline.v19.2.Core.resources.dll_4"/>
+    <ROW Feature_="Application" Component_="DevExpress.Utils.v19.2.resources.dll_4"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraBars.v19.2.resources.dll_4"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraEditors.v19.2.resources.dll_4"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraGrid.v19.2.resources.dll_4"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraLayout.v19.2.resources.dll_4"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraPrinting.v19.2.resources.dll_4"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraTreeList.v19.2.resources.dll_4"/>
+    <ROW Feature_="Application" Component_="DevExpress.Data.v19.2.resources.dll_5"/>
+    <ROW Feature_="Application" Component_="DevExpress.Mvvm.v19.2.DataModel.resources.dll_5"/>
+    <ROW Feature_="Application" Component_="DevExpress.Office.v19.2.Core.resources.dll_5"/>
+    <ROW Feature_="Application" Component_="DevExpress.Pdf.v19.2.Core.resources.dll_5"/>
+    <ROW Feature_="Application" Component_="DevExpress.Printing.v19.2.Core.resources.dll_5"/>
+    <ROW Feature_="Application" Component_="DevExpress.RichEdit.v19.2.Core.resources.dll_5"/>
+    <ROW Feature_="Application" Component_="DevExpress.Sparkline.v19.2.Core.resources.dll_5"/>
+    <ROW Feature_="Application" Component_="DevExpress.Utils.v19.2.resources.dll_5"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraBars.v19.2.resources.dll_5"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraEditors.v19.2.resources.dll_5"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraGrid.v19.2.resources.dll_5"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraLayout.v19.2.resources.dll_5"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraPrinting.v19.2.resources.dll_5"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraTreeList.v19.2.resources.dll_5"/>
+    <ROW Feature_="Application" Component_="DevExpress.Data.v19.2.resources.dll_6"/>
+    <ROW Feature_="Application" Component_="DevExpress.Mvvm.v19.2.DataModel.resources.dll_6"/>
+    <ROW Feature_="Application" Component_="DevExpress.Office.v19.2.Core.resources.dll_6"/>
+    <ROW Feature_="Application" Component_="DevExpress.Pdf.v19.2.Core.resources.dll_6"/>
+    <ROW Feature_="Application" Component_="DevExpress.Printing.v19.2.Core.resources.dll_6"/>
+    <ROW Feature_="Application" Component_="DevExpress.RichEdit.v19.2.Core.resources.dll_6"/>
+    <ROW Feature_="Application" Component_="DevExpress.Sparkline.v19.2.Core.resources.dll_6"/>
+    <ROW Feature_="Application" Component_="DevExpress.Utils.v19.2.resources.dll_6"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraBars.v19.2.resources.dll_6"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraEditors.v19.2.resources.dll_6"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraGrid.v19.2.resources.dll_6"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraLayout.v19.2.resources.dll_6"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraPrinting.v19.2.resources.dll_6"/>
+    <ROW Feature_="Application" Component_="DevExpress.XtraTreeList.v19.2.resources.dll_6"/>
+    <ROW Feature_="Application" Component_="e_sqlite3.dll"/>
+    <ROW Feature_="Application" Component_="e_sqlite3.dll_3"/>
+    <ROW Feature_="Application" Component_="e_sqlite3.dll_4"/>
+    <ROW Feature_="Application" Component_="SQLite.Interop.dll"/>
+    <ROW Feature_="Application" Component_="SQLite.Interop.dll_2"/>
+    <ROW Feature_="Application" Component_="AI_ExePath"/>
+    <ROW Feature_="Application" Component_="Profile.db"/>
+    <ROW Feature_="Application" Component_="AI_CustomARPName"/>
+    <ROW Feature_="Application" Component_="BackupProfiles"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1503"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_XmlInstall" Condition="(REMOVE &lt;&gt; &quot;ALL&quot;)" Sequence="5102"/>
+    <ROW Action="AI_DATA_SETTER" Condition="(REMOVE &lt;&gt; &quot;ALL&quot;)" Sequence="5101"/>
+    <ROW Action="AI_XmlUninstall" Condition="(REMOVE)" Sequence="3102"/>
+    <ROW Action="AI_DATA_SETTER_1" Condition="(REMOVE)" Sequence="3101"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99" Builds="DefaultBuild"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="103" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="199" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="198" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="197" Builds="DefaultBuild"/>
+    <ROW Action="AI_FindExeLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="196" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1549" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1548" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="6597" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractFiles" Sequence="3998" Builds="DefaultBuild"/>
+    <ROW Action="AI_DATA_SETTER_2" Sequence="3997"/>
+    <ROW Action="AI_EstimateExtractFiles" Sequence="3999" Builds="DefaultBuild"/>
+    <ROW Action="AI_AppSearchEx" Sequence="102"/>
+    <ROW Action="AI_DetectSoftware" Sequence="101"/>
+    <ROW Action="AI_GetArpIconPath" Sequence="1402"/>
+    <ROW Action="AI_RemoveExternalUIStub" Condition="(REMOVE=&quot;ALL&quot;) AND ((VersionNT &gt; 500) OR((VersionNT = 500) AND (ServicePackLevel &gt;= 4)))" Sequence="1502"/>
+    <ROW Action="AI_AiBackupImmediate" Sequence="1401"/>
+    <ROW Action="AI_AiBackupRollback" Sequence="1501"/>
+    <ROW Action="AI_AiRestoreDeferredImpersonate" Sequence="6598"/>
+    <ROW Action="AI_AiRestoreDeferred" Sequence="6599"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_DpiContentScale" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="103"/>
+    <ROW Action="AI_AppSearchEx" Sequence="102"/>
+    <ROW Action="AI_DetectSoftware" Sequence="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="((VersionNT &lt;&gt; 501) AND (VersionNT &lt;&gt; 502))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(AI_DETECTED_SCREEN_RESOLUTION_X &gt;= AI_REQUIRED_SCREEN_RESOLUTION_X) AND (AI_DETECTED_SCREEN_RESOLUTION_Y &gt;= AI_REQUIRED_SCREEN_RESOLUTION_Y)" Description="[ProductName] cannot be installed on systems with screen resolution smaller than [AI_REQUIRED_SCREEN_RESOLUTION_X] x [AI_REQUIRED_SCREEN_RESOLUTION_Y]." DescriptionLocId="AI.LaunchCondition.Resolution" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] cannot be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="AI_DETECTED_COLOR_QUALITY &gt;= AI_REQUIRED_COLOR_QUALITY" Description="[ProductName] cannot be installed on systems with color quality lower than [AI_REQUIRED_COLOR_QUALITY] bits." DescriptionLocId="AI.LaunchCondition.ColorDepth" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="AI_DETECTED_INTERNET_CONNECTION" Description="[ProductName] requires an active Internet connection for installation. Please check your network configuration and proxy settings." DescriptionLocId="AI.LaunchCondition.Internet" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="AI_DETECTED_PHYSICAL_MEMORY &gt;= AI_REQUIRED_PHYSICAL_MEMORY" Description="[ProductName] cannot be installed on systems with less physical memory than [AI_REQUIRED_PHYSICAL_MEMORY] MB." DescriptionLocId="AI.LaunchCondition.RAM" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="SETUPEXEDIR OR (REMOVE=&quot;ALL&quot;)" Description="This package can only be run from a bootstrapper." DescriptionLocId="AI.LaunchCondition.RequireBootstrapper" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegLocatorComponent">
+    <ROW Signature_="AI_EXE_PATH_CU" Root="1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+    <ROW Signature_="AI_EXE_PATH_LM" Root="2" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="AI_ExePath" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Value="[AI_SETUPEXEPATH]" Component_="AI_ExePath"/>
+    <ROW Registry="Comments" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Comments" Value="[ARPCOMMENTS]" Component_="AI_CustomARPName"/>
+    <ROW Registry="Contact" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Contact" Value="[ARPCONTACT]" Component_="AI_CustomARPName"/>
+    <ROW Registry="DisplayIcon" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayIcon" Value="[ARP_ICON_PATH]" Component_="AI_CustomARPName"/>
+    <ROW Registry="DisplayName" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayName" Value="[AI_PRODUCTNAME_ARP]" Component_="AI_CustomARPName"/>
+    <ROW Registry="DisplayVersion" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayVersion" Value="[ProductVersion]" Component_="AI_CustomARPName"/>
+    <ROW Registry="EstimatedSize" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="EstimatedSize" Value="#[AI_ARP_SIZE]" Component_="AI_CustomARPName"/>
+    <ROW Registry="HelpLink" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="HelpLink" Value="[ARPHELPLINK]" Component_="AI_CustomARPName"/>
+    <ROW Registry="HelpTelephone" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="HelpTelephone" Value="[ARPHELPTELEPHONE]" Component_="AI_CustomARPName"/>
+    <ROW Registry="InstallLocation" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="InstallLocation" Value="[APPDIR]" Component_="AI_CustomARPName"/>
+    <ROW Registry="ModifyPath" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="ModifyPath" Value="[AI_UNINSTALLER] /i [ProductCode] AI_UNINSTALLER_CTP=1" Component_="AI_CustomARPName"/>
+    <ROW Registry="NoRepair" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="NoRepair" Value="#1" Component_="AI_CustomARPName"/>
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="Publisher" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Publisher" Value="[Manufacturer]" Component_="AI_CustomARPName"/>
+    <ROW Registry="Readme" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Readme" Value="[ARPREADME]" Component_="AI_CustomARPName"/>
+    <ROW Registry="URLInfoAbout" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="URLInfoAbout" Value="[ARPURLINFOABOUT]" Component_="AI_CustomARPName"/>
+    <ROW Registry="URLUpdateInfo" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="URLUpdateInfo" Value="[ARPURLUPDATEINFO]" Component_="AI_CustomARPName"/>
+    <ROW Registry="UninstallPath" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="UninstallPath" Value="[AI_UNINSTALLER] /x [ProductCode] AI_UNINSTALLER_CTP=1" Component_="AI_CustomARPName"/>
+    <ROW Registry="UninstallString" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="UninstallString" Value="[AI_UNINSTALLER] /x [ProductCode] AI_UNINSTALLER_CTP=1" Component_="AI_CustomARPName"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="ZChangerMMOTool" Directory_="ProgramMenuFolder" Name="ZCHANG~1|ZChanger MMO Tool" Component_="ZChangerMMO.exe" Target="[#ZChangerMMO.exe]" Description="Make use of virtual browser profiles to let you have countless computers" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="ZChangerMMOTools" Directory_="DesktopFolder" Name="ZCHANG~1|ZChanger MMO Tools" Component_="ZChangerMMO.exe" Target="[#ZChangerMMO.exe]" Description="Make use of virtual browser profiles to let you have countless computers" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="classic"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
+    <ROW PrereqKey="C676C2BD547E7A6181C255B343B7A" DisplayName=".NET Framework 4.7.2 (web installer)" SetupFileUrl="Prerequisites\.NET Framework 4.7.2\NDP472-KB4054531-Web.exe" Location="0" ExactSize="0" WinNTVersions="Windows Vista x86, Windows Server 2008 x86, Windows 7 RTM x86, Windows 10 version 1507 x86, Windows 10 version 1511 x86, Windows 10 version 1803 x86, Windows 10 version 1809 x86, Windows 10 version 1903 x86, Windows 10 version 1909 x86" WinNT64Versions="Windows Vista x64, Windows Server 2008 x64, Windows 7 RTM x64, Windows Server 2008 R2 RTM x64, Windows 10 version 1507 x64, Windows 10 version 1511 x64, Windows 10 version 1803 x64, Windows 10 version 1809 x64, Windows 10 version 1903 x64, Windows 10 version 1909 x64, Windows Server 2019 x64" Operator="1" NoUiComLine="/q /norestart" Options="xy" TargetName=".NET Framework 4.7.2\NDP472-KB4054531-Web.exe"/>
+    <ATTRIBUTE name="PrereqsOrder" value="C676C2BD547E7A6181C255B343B7A"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqSearchComponent">
+    <ROW SearchKey="C676C2BD547E7A6181C255B343B7AReleas" Prereq="C676C2BD547E7A6181C255B343B7A" SearchType="9" SearchString="HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\Release" RefContent="G461813" Order="1" Property="PreReqSearch_C676C2BD547E7A6181C255"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.SoftwareIdentificationComponent">
+    <ATTRIBUTE name="LocalFile" value="regid.199509.com.example_ProductNam"/>
+    <ATTRIBUTE name="SystemFile" value="regid.199509.com.example_ProductN_1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.XmlAttributeComponent">
+    <ROW XmlAttribute="connectionString" XmlElement="add_4" Name="connectionString" Flags="14" Order="1" Value="Data Source=.\ZChangerData\Profile.db"/>
+    <ROW XmlAttribute="description" XmlElement="add_5" Name="description" Flags="14" Order="2" Value=".NET Framework Data Provider for SQLite (Entity Framework 6)"/>
+    <ROW XmlAttribute="description_2" XmlElement="add_6" Name="description" Flags="14" Order="2" Value=".NET Framework Data Provider for SQLite"/>
+    <ROW XmlAttribute="dll" XmlElement="dllmap" Name="dll" Flags="14" Order="0" Value="SQLite.Interop"/>
+    <ROW XmlAttribute="invariant" XmlElement="remove" Name="invariant" Flags="14" Order="0" Value="System.Data.SQLite.EF6"/>
+    <ROW XmlAttribute="invariantName" XmlElement="provider" Name="invariantName" Flags="14" Order="0" Value="System.Data.SQLite"/>
+    <ROW XmlAttribute="invariantName_2" XmlElement="provider_2" Name="invariantName" Flags="14" Order="0" Value="System.Data.SQLite.EF6"/>
+    <ROW XmlAttribute="invariant_4" XmlElement="add_5" Name="invariant" Flags="14" Order="1" Value="System.Data.SQLite.EF6"/>
+    <ROW XmlAttribute="invariant_5" XmlElement="remove_2" Name="invariant" Flags="14" Order="0" Value="System.Data.SQLite"/>
+    <ROW XmlAttribute="invariant_6" XmlElement="add_6" Name="invariant" Flags="14" Order="1" Value="System.Data.SQLite"/>
+    <ROW XmlAttribute="key" XmlElement="add" Name="key" Flags="15" Order="0" Value="PreLoadSQLite_BaseDirectory"/>
+    <ROW XmlAttribute="name" XmlElement="section" Name="name" Flags="15" Order="0" Value="entityFramework"/>
+    <ROW XmlAttribute="name_4" XmlElement="add_4" Name="name" Flags="15" Order="0" Value="SQLiteProfileDbContext"/>
+    <ROW XmlAttribute="name_5" XmlElement="add_5" Name="name" Flags="15" Order="0" Value="SQLite Data Provider (Entity Framework 6)"/>
+    <ROW XmlAttribute="name_6" XmlElement="add_6" Name="name" Flags="15" Order="0" Value="SQLite Data Provider"/>
+    <ROW XmlAttribute="providerName" XmlElement="add_4" Name="providerName" Flags="14" Order="2" Value="System.Data.SQLite"/>
+    <ROW XmlAttribute="requirePermission" XmlElement="section" Name="requirePermission" Flags="14" Order="2" Value="false"/>
+    <ROW XmlAttribute="sku" XmlElement="supportedRuntime" Name="sku" Flags="14" Order="1" Value=".NETFramework,Version=v4.7.2"/>
+    <ROW XmlAttribute="sku_2" XmlElement="supportedRuntime_2" Name="sku" Flags="14" Order="1" Value=".NETFramework,Version=v4.6.1"/>
+    <ROW XmlAttribute="target" XmlElement="dllmap" Name="target" Flags="14" Order="1" Value="SQLite.Interop.dll"/>
+    <ROW XmlAttribute="type" XmlElement="section" Name="type" Flags="14" Order="1" Value="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+    <ROW XmlAttribute="type_5" XmlElement="provider" Name="type" Flags="14" Order="1" Value="System.Data.SQLite.EF6.SQLiteProviderServices, System.Data.SQLite.EF6"/>
+    <ROW XmlAttribute="type_6" XmlElement="provider_2" Name="type" Flags="14" Order="1" Value="System.Data.SQLite.EF6.SQLiteProviderServices, System.Data.SQLite.EF6"/>
+    <ROW XmlAttribute="type_7" XmlElement="add_5" Name="type" Flags="14" Order="3" Value="System.Data.SQLite.EF6.SQLiteProviderFactory, System.Data.SQLite.EF6"/>
+    <ROW XmlAttribute="type_8" XmlElement="add_6" Name="type" Flags="14" Order="3" Value="System.Data.SQLite.SQLiteFactory, System.Data.SQLite"/>
+    <ROW XmlAttribute="value" XmlElement="add" Name="value" Flags="14" Order="1" Value="%PreLoadSQLite_AssemblyDirectory%\..\..\build\%PreLoadSQLite_TargetFramework%"/>
+    <ROW XmlAttribute="version" XmlElement="supportedRuntime" Name="version" Flags="14" Order="0" Value="v4.0"/>
+    <ROW XmlAttribute="version_2" XmlElement="supportedRuntime_2" Name="version" Flags="14" Order="0" Value="v4.0"/>
+    <ROW XmlAttribute="xmlnsds" XmlElement="swidsoftware_identification_tag" Name="xmlns:ds" Flags="14" Order="0" Value="http://www.w3.org/2000/09/xmldsig#"/>
+    <ROW XmlAttribute="xmlnsswid" XmlElement="swidsoftware_identification_tag" Name="xmlns:swid" Flags="14" Order="1" Value="http://standards.iso.org/iso/19770/-2/2008/schema.xsd"/>
+    <ROW XmlAttribute="xmlnsxsi" XmlElement="swidsoftware_identification_tag" Name="xmlns:xsi" Flags="14" Order="2" Value="http://www.w3.org/2001/XMLSchema-instance"/>
+    <ROW XmlAttribute="xsischemaLocation" XmlElement="swidsoftware_identification_tag" Name="xsi:schemaLocation" Flags="14" Order="3" Value="http://standards.iso.org/iso/19770/-2/2008/schema.xsd software_identification_tag.xsd"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.XmlElementComponent">
+    <ROW XmlElement="Comment" ParentElement="configSections" Name="Comment" Condition="1" Order="1" Flags="1" Text=" For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 "/>
+    <ROW XmlElement="DbProviderFactories" ParentElement="system.data" Name="DbProviderFactories" Condition="1" Order="0" Flags="14"/>
+    <ROW XmlElement="add" ParentElement="appSettings" Name="add" Condition="1" Order="0" Flags="14"/>
+    <ROW XmlElement="add_4" ParentElement="connectionStrings" Name="add" Condition="1" Order="0" Flags="14"/>
+    <ROW XmlElement="add_5" ParentElement="DbProviderFactories" Name="add" Condition="1" Order="1" Flags="14"/>
+    <ROW XmlElement="add_6" ParentElement="DbProviderFactories" Name="add" Condition="1" Order="3" Flags="14"/>
+    <ROW XmlElement="appSettings" ParentElement="configuration" Name="appSettings" Condition="1" Order="0" Flags="14"/>
+    <ROW XmlElement="configSections" ParentElement="configuration_3" Name="configSections" Condition="1" Order="0" Flags="14"/>
+    <ROW XmlElement="configuration" Name="configuration" Condition="1" Order="0" Flags="30"/>
+    <ROW XmlElement="configuration_3" Name="configuration" Condition="1" Order="0" Flags="30"/>
+    <ROW XmlElement="configuration_4" Name="configuration" Condition="1" Order="0" Flags="30"/>
+    <ROW XmlElement="connectionStrings" ParentElement="configuration_3" Name="connectionStrings" Condition="1" Order="3" Flags="14"/>
+    <ROW XmlElement="dllmap" ParentElement="configuration" Name="dllmap" Condition="1" Order="1" Flags="14"/>
+    <ROW XmlElement="entityFramework" ParentElement="configuration_3" Name="entityFramework" Condition="1" Order="2" Flags="14"/>
+    <ROW XmlElement="provider" ParentElement="providers" Name="provider" Condition="1" Order="0" Flags="14"/>
+    <ROW XmlElement="provider_2" ParentElement="providers" Name="provider" Condition="1" Order="1" Flags="14"/>
+    <ROW XmlElement="providers" ParentElement="entityFramework" Name="providers" Condition="1" Order="0" Flags="14"/>
+    <ROW XmlElement="remove" ParentElement="DbProviderFactories" Name="remove" Condition="1" Order="0" Flags="14"/>
+    <ROW XmlElement="remove_2" ParentElement="DbProviderFactories" Name="remove" Condition="1" Order="2" Flags="14"/>
+    <ROW XmlElement="section" ParentElement="configSections" Name="section" Condition="1" Order="0" Flags="14"/>
+    <ROW XmlElement="startup" ParentElement="configuration_3" Name="startup" Condition="1" Order="1" Flags="14"/>
+    <ROW XmlElement="startup_2" ParentElement="configuration_4" Name="startup" Condition="1" Order="0" Flags="14"/>
+    <ROW XmlElement="supportedRuntime" ParentElement="startup" Name="supportedRuntime" Condition="1" Order="0" Flags="14"/>
+    <ROW XmlElement="supportedRuntime_2" ParentElement="startup_2" Name="supportedRuntime" Condition="1" Order="0" Flags="14"/>
+    <ROW XmlElement="swidbuild" ParentElement="swidnumeric" Name="swid:build" Condition="1" Order="2" Flags="14" Text="0"/>
+    <ROW XmlElement="swidentitlement_required_indicator" ParentElement="swidsoftware_identification_tag" Name="swid:entitlement_required_indicator" Condition="1" Order="0" Flags="14" Text="false"/>
+    <ROW XmlElement="swidmajor" ParentElement="swidnumeric" Name="swid:major" Condition="1" Order="0" Flags="14" Text="2"/>
+    <ROW XmlElement="swidminor" ParentElement="swidnumeric" Name="swid:minor" Condition="1" Order="1" Flags="14" Text="0"/>
+    <ROW XmlElement="swidname" ParentElement="swidproduct_version" Name="swid:name" Condition="1" Order="0" Flags="14" Text="[ProductVersion]"/>
+    <ROW XmlElement="swidname_1" ParentElement="swidsoftware_creator" Name="swid:name" Condition="1" Order="0" Flags="14" Text="[Manufacturer]"/>
+    <ROW XmlElement="swidname_2" ParentElement="swidsoftware_licensor" Name="swid:name" Condition="1" Order="0" Flags="14" Text="[Manufacturer]"/>
+    <ROW XmlElement="swidname_3" ParentElement="swidtag_creator" Name="swid:name" Condition="1" Order="0" Flags="14" Text="[Manufacturer]"/>
+    <ROW XmlElement="swidnumeric" ParentElement="swidproduct_version" Name="swid:numeric" Condition="1" Order="1" Flags="14"/>
+    <ROW XmlElement="swidproduct_title" ParentElement="swidsoftware_identification_tag" Name="swid:product_title" Condition="1" Order="1" Flags="14" Text="[ProductName]"/>
+    <ROW XmlElement="swidproduct_version" ParentElement="swidsoftware_identification_tag" Name="swid:product_version" Condition="1" Order="2" Flags="14"/>
+    <ROW XmlElement="swidregid" ParentElement="swidsoftware_creator" Name="swid:regid" Condition="1" Order="1" Flags="14" Text="regid.1995-09.com.example"/>
+    <ROW XmlElement="swidregid_1" ParentElement="swidsoftware_licensor" Name="swid:regid" Condition="1" Order="1" Flags="14" Text="regid.vilasvietnam.com"/>
+    <ROW XmlElement="swidregid_2" ParentElement="swidtag_creator" Name="swid:regid" Condition="1" Order="1" Flags="14" Text="regid.vilasvietnam.com"/>
+    <ROW XmlElement="swidreview" ParentElement="swidnumeric" Name="swid:review" Condition="1" Order="3" Flags="14" Text="0"/>
+    <ROW XmlElement="swidsoftware_creator" ParentElement="swidsoftware_identification_tag" Name="swid:software_creator" Condition="1" Order="3" Flags="14"/>
+    <ROW XmlElement="swidsoftware_id" ParentElement="swidsoftware_identification_tag" Name="swid:software_id" Condition="1" Order="5" Flags="14"/>
+    <ROW XmlElement="swidsoftware_identification_tag" Name="swid:software_identification_tag" Condition="1" Order="0" Flags="14"/>
+    <ROW XmlElement="swidsoftware_licensor" ParentElement="swidsoftware_identification_tag" Name="swid:software_licensor" Condition="1" Order="4" Flags="14"/>
+    <ROW XmlElement="swidtag_creator" ParentElement="swidsoftware_identification_tag" Name="swid:tag_creator" Condition="1" Order="6" Flags="14"/>
+    <ROW XmlElement="swidtag_creator_regid" ParentElement="swidsoftware_id" Name="swid:tag_creator_regid" Condition="1" Order="1" Flags="14" Text="regid.vilasvietnam.com"/>
+    <ROW XmlElement="swidunique_id" ParentElement="swidsoftware_id" Name="swid:unique_id" Condition="1" Order="0" Flags="14" Text="[ProductName] Tool"/>
+    <ROW XmlElement="system.data" ParentElement="configuration_3" Name="system.data" Condition="1" Order="4" Flags="14"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.XmlFileComponent">
+    <ROW XmlFile="System.Data.SQLite.dll.config" FileName="SYSTEM~1.CON|System.Data.SQLite.dll.config" DirProperty="APPDIR" Component="ProductInformation" RootElement="configuration" Flags="89" Version="1.0" Encoding="UTF-8" IndentUnits="2"/>
+    <ROW XmlFile="ZChangerMMO.exe.config" FileName="ZCHANG~1.CON|ZChangerMMO.exe.config" DirProperty="APPDIR" Component="ProductInformation" RootElement="configuration_3" Flags="89" Version="1.0" Encoding="utf-8" IndentUnits="2"/>
+    <ROW XmlFile="ZChangerMMOHost.exe.config" FileName="ZCHANG~2.CON|ZChangerMMOHost.exe.config" DirProperty="APPDIR" Component="ProductInformation" RootElement="configuration_4" Flags="89" Version="1.0" Encoding="utf-8" IndentUnits="2"/>
+    <ROW XmlFile="regid.199509.com.example_ProductN_1" FileName="REGIDV~1.SWI|regid.vilasvietnam.com_[|ProductName] Tool.swidtag" DirProperty="regid.199509.com.example_Dir" Component="ProductInformation" RootElement="swidsoftware_identification_tag" Flags="153" Version="1.0" Encoding="UTF-8" IndentUnits="2"/>
+    <ROW XmlFile="regid.199509.com.example_ProductNam" FileName="REGIDV~1.SWI|regid.vilasvietnam.com_[|ProductName] Tool.swidtag" DirProperty="APPDIR" Component="ProductInformation" RootElement="swidsoftware_identification_tag" Flags="153" Version="1.0" Encoding="UTF-8" IndentUnits="2"/>
+  </COMPONENT>
+</DOCUMENT>
