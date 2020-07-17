@@ -7,6 +7,7 @@ using System.Security.Principal;
 using System.Threading;
 using System.Windows.Forms;
 using ZChangerMMO.Licensing.Licensing;
+using ZChangerMMO.Views;
 
 namespace ZChangerMMO
 {
@@ -21,9 +22,9 @@ namespace ZChangerMMO
 
         [STAThread]
         static void Main(string[] args)
-        {      
+        {
             SetupApplicationhandlers();
-            
+
             AppDomain.CurrentDomain.SetData("BrowserData", Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Browser_Data"));
             auto = new Automation();
             auto.ParseCommandLineArgs(args);
@@ -35,7 +36,7 @@ namespace ZChangerMMO
             ShowSplash();
             SplashManager.SplashDialog.IncrementLoadStep(1);
             SplashManager.SplashDialog.SetStepText("Starting..");
-            
+
             if (IsConnectedToInternet())
             {
                 var licenceEngine = new ZLicense();
@@ -46,7 +47,7 @@ namespace ZChangerMMO
                     if (string.IsNullOrEmpty(licenceEngine.VerifyLicense(licenseKey)))
                     {
                         licenceEngine = new ZLicense(licenseKey);
-                       
+
                         RunApp(licenceEngine);
                     }
                 }
@@ -139,7 +140,7 @@ namespace ZChangerMMO
                 SplashManager.SplashDialog.IncrementLoadStep(1);
                 SplashManager.SplashDialog.SetStepText("......");
 
-                Application.Run(new frmMain(lic));
+                Application.Run(new frmMainView());
             }
         }
 

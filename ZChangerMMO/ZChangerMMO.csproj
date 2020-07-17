@@ -238,8 +238,19 @@
       <DependentUpon>BackupSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="Business\RestoreProcess.cs" />
+    <Compile Include="Common\CollectionViewModel.cs" />
+    <Compile Include="Common\CommonResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommonResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\DataModel\EntityFramework\DbConnectionFactory.cs" />
+    <Compile Include="Common\EntitiesViewModel.cs" />
+    <Compile Include="Common\ReadOnlyCollectionViewModel.cs" />
+    <Compile Include="Common\SingleObjectViewModel.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="ControlDelegateExtensions.cs" />
+    <Compile Include="DataBase\DataDirectoryHelper.cs" />
     <Compile Include="DataModels\ActionLog.cs" />
     <Compile Include="DataModels\BackupItem.cs" />
     <Compile Include="DataModels\Device.cs" />
@@ -266,8 +277,38 @@
     </Compile>
     <Compile Include="ISplashDialog.cs" />
     <Compile Include="ISplashHost.cs" />
+    <Compile Include="Models\Device.cs" />
+    <Compile Include="Models\Email.cs" />
+    <Compile Include="DataBase\DbContext.cs" />
+    <Compile Include="MyDbContextDataModel\IMyDbContextUnitOfWork.cs" />
+    <Compile Include="MyDbContextDataModel\MyDbContextUnitOfWork.cs" />
+    <Compile Include="MyDbContextDataModel\UnitOfWorkSource.cs" />
     <Compile Include="SplashManager.cs" />
     <Compile Include="TimeLock.cs" />
+    <Compile Include="Utils\ExpressionHelper.cs" />
+    <Compile Include="ViewModels\Device\DeviceCollectionViewModel.cs" />
+    <Compile Include="ViewModels\Device\DeviceViewModel.cs" />
+    <Compile Include="ViewModels\Email\EmailCollectionViewModel.cs" />
+    <Compile Include="ViewModels\Email\EmailViewModel.cs" />
+    <Compile Include="ViewModels\MyDbContextViewModel.cs" />
+    <Compile Include="Views\Email\EmailsEditFormView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Email\EmailsEditFormView.Designer.cs">
+      <DependentUpon>EmailsEditFormView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Email\EmailsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Email\EmailsView.Designer.cs">
+      <DependentUpon>EmailsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmMainView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmMainView.Designer.cs">
+      <DependentUpon>frmMainView.cs</DependentUpon>
+    </Compile>
     <Compile Include="ZLicense.cs" />
     <Compile Include="Licensing\CheckSum.cs" />
     <Compile Include="Licensing\CheckSumAppender.cs" />
@@ -400,6 +441,10 @@
     <EmbeddedResource Include="Business\BackupSettings.resx">
       <DependentUpon>BackupSettings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Common\CommonResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommonResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -460,12 +505,20 @@
     <EmbeddedResource Include="Views\Controls\TestProxies.resx">
       <DependentUpon>TestProxies.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Email\EmailsEditFormView.resx">
+      <DependentUpon>EmailsEditFormView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Email\EmailsView.resx">
+      <DependentUpon>EmailsView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\ManageProxy.resx">
       <DependentUpon>ManageProxy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmMainView.resx">
+      <DependentUpon>frmMainView.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\ZChangerMMO.DataModels.Profile.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -475,9 +528,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="ZChangerData\Profile.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -485,7 +535,9 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>

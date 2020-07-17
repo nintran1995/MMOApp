@@ -1,6 +1,5 @@
 ﻿using Clifton.Core.Pipes;
 using CommandModel;
-using ZChangerMMO.BaseHost;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using EnumsNET;
@@ -10,24 +9,23 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Deployment.Application;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using ZChangerMMO.BackupAndRestore;
+using ZChangerMMO.BaseHost;
 using ZChangerMMO.DataModels;
 using ZChangerMMO.Events;
 using ZChangerMMO.Model;
-using ZChangerMMO.Utility;
 using ZChangerMMO.Views.Forms;
 using Screen = CommandModel.Screen;
-using System.Deployment.Application;
-using System.Reflection;
-using ZChangerMMO.Licensing.Licensing;
-using System.Threading.Tasks;
 
 namespace ZChangerMMO
 {
