@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace ZChangerMMO.Models
@@ -13,7 +14,7 @@ namespace ZChangerMMO.Models
         public string Name { get; set; }
 
         [Required, StringLength(30, MinimumLength = 4)]
-        [Display(Name = "ACCOUNT")]
+        [Display(Name = "EMAILACCOUNT")]
         public string EmailAccount { get; set; }
 
         public virtual ICollection<Device> Devices { get; set; }

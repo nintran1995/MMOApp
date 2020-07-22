@@ -1,51 +1,130 @@
-﻿using System;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using DevExpress.Mvvm;
+﻿using DevExpress.Mvvm;
+using DevExpress.Mvvm.DataAnnotations;
 using DevExpress.Mvvm.POCO;
-using DevExpress.Mvvm.DataModel;
-using DevExpress.Mvvm.ViewModel;
-using ZChangerMMO.MyDbContextDataModel;
+using System;
+using System.Threading.Tasks;
 using ZChangerMMO.Common;
 using ZChangerMMO.Models;
 
-namespace ZChangerMMO.ViewModels {
+namespace ZChangerMMO.ViewModels
+{
+    public class DeviceViewModel : EntityViewModel<Models.Device>
+    {
+        protected DeviceViewModel()
+        { }
 
-    /// <summary>
-    /// Represents the single Device object view model.
-    /// </summary>
-    public partial class DeviceViewModel : SingleObjectViewModel<Device, long, IMyDbContextUnitOfWork> {
-
-        /// <summary>
-        /// Creates a new instance of DeviceViewModel as a POCO view model.
-        /// </summary>
-        /// <param name="unitOfWorkFactory">A factory used to create a unit of work instance.</param>
-        public static DeviceViewModel Create(IUnitOfWorkFactory<IMyDbContextUnitOfWork> unitOfWorkFactory = null) {
-            return ViewModelSource.Create(() => new DeviceViewModel(unitOfWorkFactory));
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the DeviceViewModel class.
-        /// This constructor is declared protected to avoid undesired instantiation of the DeviceViewModel type without the POCO proxy factory.
-        /// </summary>
-        /// <param name="unitOfWorkFactory">A factory used to create a unit of work instance.</param>
-        protected DeviceViewModel(IUnitOfWorkFactory<IMyDbContextUnitOfWork> unitOfWorkFactory = null)
-            : base(unitOfWorkFactory ?? UnitOfWorkSource.GetUnitOfWorkFactory(), x => x.Devices, x => x.Name) {
+        protected override async void OnParameterChanged(object parameter)
+        {
+            base.OnParameterChanged(parameter);
+            if (parameter is long id)
+            {
+                var item = new Device()
+                {
+                    EmailID = id
+                };
+                SetItem(item);
+            }
+            else if (parameter is Device device)
+            {
+                SetLoading(true);
+                var item = await Task.Run(() => _uoW.Devices.Get(device.ID));
+                if (item == null)
+                {
+                    item = new Device()
+                    {
+                        EmailID = device.EmailID
+                    };
                 }
-
-
-        /// <summary>
-        /// The view model that contains a look-up collection of Emails for the corresponding navigation property in the view.
-        /// </summary>
-        public IEntitiesViewModel<Email> LookUpEmails {
-            get {
-                return GetLookUpEntitiesViewModel(
-                    propertyExpression: (DeviceViewModel x) => x.LookUpEmails,
-                    getRepositoryFunc: x => x.Emails);
+                SetItem(item);
+                SetLoading(false);
             }
         }
 
+        [AsyncCommand]
+        public async Task Save()
+        {
+            SetLoading(true);
+            try
+            {
+                await Task.Run(() =>
+                {
+                    _uoW.Devices.Update(Item);
+                    _uoW.Commit();
+                });
+                ShowNotification("Saved!");
+            }
+            catch (Exception e)
+            {
+                MessageBoxService.ShowMessage(e.Message, "Error", MessageButton.OK);
+            }
+            finally
+            {
+                SetLoading(false);
+            }
+        }
+
+        public bool UpdateCommands()
+        {
+            this.RaiseCanExecuteChanged(x => x.CreateNew());
+            return Item?.ID > 0;
+        }
+
+        [AsyncCommand]
+        public async Task Delete()
+        {
+            SetLoading(true);
+            try
+            {
+                await Task.Run(() =>
+                {
+                    _uoW.Devices.Update(Item);
+                    _uoW.Commit();
+                });
+                ShowNotification("Deleted!");
+                Navigation.GoBack();
+            }
+            catch (Exception e)
+            {
+                MessageBoxService.ShowMessage(e.Message, "Error", MessageButton.OK);
+            }
+            finally
+            {
+                SetLoading(false);
+            }
+        }
+
+        public bool CanDelete()
+        {
+            return Item?.ID > 0;
+        }
+
+        [AsyncCommand]
+        public async Task CreateNew()
+        {
+            SetLoading(true);
+            this.RaisePropertiesChanged();
+            try
+            {
+                await Task.Run(() =>
+                {
+                    _uoW.Devices.Add(Item);
+                    _uoW.Commit();
+                });
+                ShowNotification("Created!");
+            }
+            catch (Exception e)
+            {
+                MessageBoxService.ShowMessage(e.Message, "Error", MessageButton.OK);
+            }
+            finally
+            {
+                SetLoading(false);
+            }
+        }
+
+        public bool CanCreate()
+        {
+            return Item?.ID == 0;
+        }
     }
 }

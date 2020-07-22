@@ -61,6 +61,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
+    <Reference Include="Autofac, Version=5.2.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.5.2.0\lib\net461\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Data.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Data.v19.2.dll</HintPath>
@@ -122,8 +125,14 @@
     <Reference Include="Enums.NET, Version=3.0.0.0, Culture=neutral, PublicKeyToken=7ea1c1650d506225, processorArchitecture=MSIL">
       <HintPath>..\packages\Enums.NET.3.0.3\lib\net45\Enums.NET.dll</HintPath>
     </Reference>
+    <Reference Include="FastMember, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FastMember.1.5.0\lib\net461\FastMember.dll</HintPath>
+    </Reference>
     <Reference Include="FluentCommandLineParser, Version=1.4.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentCommandLineParser.1.4.3\lib\net35\FluentCommandLineParser.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Data.Sqlite, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Data.Sqlite.Core.3.1.3\lib\netstandard2.0\Microsoft.Data.Sqlite.dll</HintPath>
@@ -159,6 +168,7 @@
     <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -188,6 +198,9 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -210,6 +223,15 @@
   <ItemGroup>
     <Compile Include="Automation\Automation.cs" />
     <Compile Include="Automation\CDevice.cs" />
+    <Compile Include="ControlDelegateExtensions.cs" />
+    <Compile Include="Domain\IDeviceRepository.cs" />
+    <Compile Include="Domain\IEmailRepository.cs" />
+    <Compile Include="Infrastructure\Repositories\EmailRepository.cs" />
+    <Compile Include="Infrastructure\Repositories\GenericRepository.cs" />
+    <Compile Include="Infrastructure\Repositories\DeviceRepository.cs" />
+    <Compile Include="Infrastructure\ZChangerContext.cs" />
+    <Compile Include="Infrastructure\Repositories\UoW.cs" />
+    <Compile Include="UI\Bootstrapper.cs" />
     <Compile Include="Business\Backup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,24 +260,17 @@
       <DependentUpon>BackupSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="Business\RestoreProcess.cs" />
+    <Compile Include="Common\BaseViewModel.cs" />
     <Compile Include="Common\CollectionViewModel.cs" />
-    <Compile Include="Common\CommonResources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CommonResources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Common\DataModel\EntityFramework\DbConnectionFactory.cs" />
-    <Compile Include="Common\EntitiesViewModel.cs" />
-    <Compile Include="Common\ReadOnlyCollectionViewModel.cs" />
-    <Compile Include="Common\SingleObjectViewModel.cs" />
+    <Compile Include="Common\EntityViewModel.cs" />
     <Compile Include="Constants.cs" />
-    <Compile Include="ControlDelegateExtensions.cs" />
     <Compile Include="DataBase\DataDirectoryHelper.cs" />
     <Compile Include="DataModels\ActionLog.cs" />
     <Compile Include="DataModels\BackupItem.cs" />
     <Compile Include="DataModels\Device.cs" />
     <Compile Include="DataModels\Profile.cs" />
     <Compile Include="DataModels\SQLiteProfileDbContext.cs" />
+    <Compile Include="Domain\IRepository.cs" />
     <Compile Include="Events\ApplyNewLicenceEventArgs.cs" />
     <Compile Include="Events\AddNewProfileEventArgs.cs" />
     <Compile Include="Events\BackUpFormEventArgs.cs" />
@@ -286,22 +301,33 @@
     <Compile Include="SplashManager.cs" />
     <Compile Include="TimeLock.cs" />
     <Compile Include="Utils\ExpressionHelper.cs" />
-    <Compile Include="ViewModels\Device\DeviceCollectionViewModel.cs" />
-    <Compile Include="ViewModels\Device\DeviceViewModel.cs" />
-    <Compile Include="ViewModels\Email\EmailCollectionViewModel.cs" />
+    <Compile Include="ViewModels\EmailAccountViewModel.cs" />
     <Compile Include="ViewModels\Email\EmailViewModel.cs" />
-    <Compile Include="ViewModels\MyDbContextViewModel.cs" />
-    <Compile Include="Views\Email\EmailsEditFormView.cs">
+    <Compile Include="ViewModels\Email\EmailListViewModel.cs" />
+    <Compile Include="ViewModels\Device\DeviceViewModel.cs" />
+    <Compile Include="Views\Device\DeviceView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Email\EmailsEditFormView.Designer.cs">
-      <DependentUpon>EmailsEditFormView.cs</DependentUpon>
+    <Compile Include="Views\Device\DeviceView.Designer.cs">
+      <DependentUpon>DeviceView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Email\EmailsView.cs">
+    <Compile Include="Views\EmailAccountView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Email\EmailsView.Designer.cs">
-      <DependentUpon>EmailsView.cs</DependentUpon>
+    <Compile Include="Views\EmailAccountView.Designer.cs">
+      <DependentUpon>EmailAccountView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Email\EmailListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Email\EmailListView.Designer.cs">
+      <DependentUpon>EmailListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Email\EmailView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Email\EmailView.Designer.cs">
+      <DependentUpon>EmailView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\frmMainView.cs">
       <SubType>Form</SubType>
@@ -441,10 +467,6 @@
     <EmbeddedResource Include="Business\BackupSettings.resx">
       <DependentUpon>BackupSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Common\CommonResources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>CommonResources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -505,11 +527,17 @@
     <EmbeddedResource Include="Views\Controls\TestProxies.resx">
       <DependentUpon>TestProxies.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Email\EmailsEditFormView.resx">
-      <DependentUpon>EmailsEditFormView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Device\DeviceView.resx">
+      <DependentUpon>DeviceView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Email\EmailsView.resx">
-      <DependentUpon>EmailsView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\EmailAccountView.resx">
+      <DependentUpon>EmailAccountView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Email\EmailListView.resx">
+      <DependentUpon>EmailListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Email\EmailView.resx">
+      <DependentUpon>EmailView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\ManageProxy.resx">
       <DependentUpon>ManageProxy.cs</DependentUpon>
@@ -519,6 +547,8 @@
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\ZChangerMMO.Models.Device.datasource" />
+    <None Include="Properties\DataSources\ZChangerMMO.Models.Email.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -535,9 +565,7 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
@@ -559,6 +587,14 @@
   <ItemGroup>
     <Content Include="app.ico" />
     <Content Include="chromium.ico" />
+    <None Include="Resources\synchronize_16px.png" />
+    <None Include="Resources\stop_16px.png" />
+    <None Include="Resources\run_random_16px.png" />
+    <None Include="Resources\refresh_16px.png" />
+    <None Include="Resources\play_16px.png" />
+    <None Include="Resources\edit_16px.png" />
+    <None Include="Resources\delete_16px.png" />
+    <None Include="Resources\add_16px.png" />
     <None Include="Resources\fingerprint.png" />
     <None Include="Images\Logo.png" />
   </ItemGroup>

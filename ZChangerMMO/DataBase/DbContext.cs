@@ -3,13 +3,9 @@ using System.Data.Entity;
 
 namespace ZChangerMMO.Models
 {
-    //[DbConfigurationType(typeof(ZChangerMMO.Common.DataModel.EntityFramework.MyDbSQLiteConfiguration))]
     public class MyDbContext : DbContext
     {
-        public MyDbContext() : base("SQLiteProfileDbContext")
-        {
-            //Database.SetInitializer<MyDbContext>(null);
-        }
+        public MyDbContext() : base("SQLiteProfileDbContext") { }
         public DbSet<Email> Emails { get; set; }
         public DbSet<Device> Devices { get; set; }
 

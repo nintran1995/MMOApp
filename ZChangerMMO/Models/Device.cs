@@ -17,7 +17,7 @@ namespace ZChangerMMO.Models
         [Display(AutoGenerateField = false)]
         public long EmailID { get; set; }
 
-        [Display(Name = "EMAIL")]
+        [Display(AutoGenerateField = false)]
         public virtual Email Email { get; set; }
 
         [Required, StringLength(30, MinimumLength = 4)]
@@ -26,10 +26,6 @@ namespace ZChangerMMO.Models
 
         [EnumDataType(typeof(DeviceType))]
         [Display(Name = "DEVICE TYPE")]
-        public DeviceType Type { get; set; }
-
-        [DataType(DataType.Date)]
-        [Display(Name = "DATE")]
-        public DateTime Date { get; set; }
+        public DeviceType Type { get; set; }        
     }
 }

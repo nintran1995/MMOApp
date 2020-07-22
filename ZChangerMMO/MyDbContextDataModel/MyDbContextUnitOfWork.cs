@@ -1,11 +1,10 @@
 ﻿using DevExpress.Mvvm.DataModel;
 using DevExpress.Mvvm.DataModel.EF6;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using ZChangerMMO.Models;
 
-namespace ZChangerMMO.MyDbContextDataModel {
+namespace ZChangerMMO.MyDbContextDataModel
+{
 
     /// <summary>
     /// A MyDbContextUnitOfWork instance that represents the run-time implementation of the IMyDbContextUnitOfWork interface.

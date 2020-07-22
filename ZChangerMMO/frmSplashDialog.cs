@@ -1,7 +1,5 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Globalization;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace ZChangerMMO
@@ -25,10 +23,10 @@ namespace ZChangerMMO
             //version.ForeColor = Color.FromArgb(255, 0, 192, 0);
             //status.ForeColor = Color.FromArgb(255, 0, 192, 0);
             version.Text = string.Format(CultureInfo.InvariantCulture,
-                "Version {0}", 
+                "Version {0}",
                 Application.ProductVersion);
         }
-        
+
         /// <summary>
         ///
         /// </summary>
@@ -36,7 +34,7 @@ namespace ZChangerMMO
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-           // e.Graphics.DrawImage(Images.splash_background, 0, 0, Width, Height);
+            // e.Graphics.DrawImage(Images.splash_background, 0, 0, Width, Height);
             //ControlPaint.DrawBorder3D ( e.Graphics, this.ClientRectangle, Border3DStyle.Raised );
         }
 
@@ -47,17 +45,23 @@ namespace ZChangerMMO
         /// </summary>
         /// <value><c>true</c> if running; otherwise, <c>false</c>.</value>
         public bool Running { get; set; }
-        
+
         /// <summary>
         /// 
         /// </summary>
         /// <param name="value"></param>
         public void SetLoadSteps(int value)
         {
-            progress.Properties.Minimum = 0;
-            progress.Properties.Maximum =value;
-            
-            progress.EditValue = 0;
+            try
+            {
+                progress.Properties.Minimum = 0;
+                progress.Properties.Maximum = value;
+
+                progress.EditValue = 0;
+            }
+            catch (System.Exception)
+            {
+            }
         }
 
         /// <summary>
@@ -65,7 +69,7 @@ namespace ZChangerMMO
         /// </summary>
         /// <param name="value"></param>
         public void IncrementLoadStep(int value) => progress.IncrementExt(value);
-        
+
         /// <summary>
         /// 
         /// </summary>
