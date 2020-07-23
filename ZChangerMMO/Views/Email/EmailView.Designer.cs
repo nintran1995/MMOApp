@@ -32,7 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmailView));
             this.emailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mvvmContext1 = new DevExpress.Utils.MVVM.MVVMContext(this.components);
-            this.btnSave = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiSave = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiCancel = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -65,17 +66,26 @@
             // mvvmContext1
             // 
             this.mvvmContext1.BindingExpressions.AddRange(new DevExpress.Utils.MVVM.BindingExpression[] {
-            DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(typeof(ZChangerMMO.ViewModels.EmailViewModel), "Save", this.btnSave)});
+            DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(typeof(ZChangerMMO.ViewModels.EmailViewModel), "Save", this.bbiSave),
+            DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(typeof(ZChangerMMO.ViewModels.EmailViewModel), "Cancel", this.bbiCancel)});
             this.mvvmContext1.ContainerControl = this;
             this.mvvmContext1.ViewModelType = typeof(ZChangerMMO.ViewModels.EmailViewModel);
             // 
-            // btnSave
+            // bbiSave
             // 
-            this.btnSave.Caption = "Save";
-            this.btnSave.Id = 1;
-            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.LargeImage")));
-            this.btnSave.Name = "btnSave";
+            this.bbiSave.Caption = "Save";
+            this.bbiSave.Id = 1;
+            this.bbiSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiSave.ImageOptions.Image")));
+            this.bbiSave.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiSave.ImageOptions.LargeImage")));
+            this.bbiSave.Name = "bbiSave";
+            // 
+            // bbiCancel
+            // 
+            this.bbiCancel.Caption = "Cancel";
+            this.bbiCancel.Id = 2;
+            this.bbiCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiCancel.ImageOptions.Image")));
+            this.bbiCancel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiCancel.ImageOptions.LargeImage")));
+            this.bbiCancel.Name = "bbiCancel";
             // 
             // ribbonControl1
             // 
@@ -83,9 +93,10 @@
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.ribbonControl1.SearchEditItem,
-            this.btnSave});
+            this.bbiSave,
+            this.bbiCancel});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 2;
+            this.ribbonControl1.MaxItemId = 3;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -100,7 +111,8 @@
             // 
             // ribbonPageGroup1
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnSave);
+            this.ribbonPageGroup1.ItemLinks.Add(this.bbiSave);
+            this.ribbonPageGroup1.ItemLinks.Add(this.bbiCancel);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
@@ -119,21 +131,21 @@
             // 
             // NameTextEdit
             // 
-            this.NameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.emailBindingSource, "Name", true));
-            this.NameTextEdit.Location = new System.Drawing.Point(94, 12);
+            this.NameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.emailBindingSource, "Name", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.NameTextEdit.Location = new System.Drawing.Point(42, 12);
             this.NameTextEdit.Name = "NameTextEdit";
             this.NameTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.NameTextEdit.Size = new System.Drawing.Size(553, 20);
+            this.NameTextEdit.Size = new System.Drawing.Size(605, 20);
             this.NameTextEdit.StyleController = this.dataLayoutControl1;
             this.NameTextEdit.TabIndex = 4;
             // 
             // EmailAccountTextEdit
             // 
-            this.EmailAccountTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.emailBindingSource, "EmailAccount", true));
-            this.EmailAccountTextEdit.Location = new System.Drawing.Point(94, 36);
+            this.EmailAccountTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.emailBindingSource, "EmailAccount", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.EmailAccountTextEdit.Location = new System.Drawing.Point(42, 36);
             this.EmailAccountTextEdit.Name = "EmailAccountTextEdit";
             this.EmailAccountTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.EmailAccountTextEdit.Size = new System.Drawing.Size(553, 20);
+            this.EmailAccountTextEdit.Size = new System.Drawing.Size(605, 20);
             this.EmailAccountTextEdit.StyleController = this.dataLayoutControl1;
             this.EmailAccountTextEdit.TabIndex = 5;
             // 
@@ -164,7 +176,7 @@
             this.ItemForName.Location = new System.Drawing.Point(0, 0);
             this.ItemForName.Name = "ItemForName";
             this.ItemForName.Size = new System.Drawing.Size(639, 24);
-            this.ItemForName.TextSize = new System.Drawing.Size(79, 13);
+            this.ItemForName.TextSize = new System.Drawing.Size(27, 13);
             // 
             // ItemForEmailAccount
             // 
@@ -172,7 +184,7 @@
             this.ItemForEmailAccount.Location = new System.Drawing.Point(0, 24);
             this.ItemForEmailAccount.Name = "ItemForEmailAccount";
             this.ItemForEmailAccount.Size = new System.Drawing.Size(639, 202);
-            this.ItemForEmailAccount.TextSize = new System.Drawing.Size(79, 13);
+            this.ItemForEmailAccount.TextSize = new System.Drawing.Size(27, 13);
             // 
             // toastNotificationsManager1
             // 
@@ -216,7 +228,8 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem ItemForName;
         private DevExpress.XtraLayout.LayoutControlItem ItemForEmailAccount;
-        private DevExpress.XtraBars.BarButtonItem btnSave;
+        private DevExpress.XtraBars.BarButtonItem bbiSave;
         private DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager toastNotificationsManager1;
+        private DevExpress.XtraBars.BarButtonItem bbiCancel;
     }
 }

@@ -37,7 +37,7 @@
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.EmailName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.EmailAccount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.mvvmContext1 = new DevExpress.Utils.MVVM.MVVMContext(this.components);
+            this.mvvmContextEmailList = new DevExpress.Utils.MVVM.MVVMContext(this.components);
             this.btnNew = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbtnDeleteProfile = new DevExpress.XtraBars.BarButtonItem();
@@ -65,16 +65,18 @@
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.toastNotificationsManager1 = new DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager(this.components);
+            this.mvvmContextDeviceList = new DevExpress.Utils.MVVM.MVVMContext(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.deviceGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mvvmContext1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mvvmContextEmailList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mvvmContextDeviceList)).BeginInit();
             this.SuspendLayout();
             // 
             // deviceGridView
@@ -133,17 +135,17 @@
             this.EmailAccount.Visible = true;
             this.EmailAccount.VisibleIndex = 2;
             // 
-            // mvvmContext1
+            // mvvmContextEmailList
             // 
-            this.mvvmContext1.BindingExpressions.AddRange(new DevExpress.Utils.MVVM.BindingExpression[] {
-            DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(typeof(ZChangerMMO.ViewModels.EmailListViewModel), "Create", this.btnNew)});
-            this.mvvmContext1.ContainerControl = this;
-            this.mvvmContext1.ViewModelType = typeof(ZChangerMMO.ViewModels.EmailListViewModel);
+            this.mvvmContextEmailList.ContainerControl = this;
+            this.mvvmContextEmailList.ViewModelType = typeof(ZChangerMMO.ViewModels.EmailListViewModel);
             // 
             // btnNew
             // 
-            this.btnNew.Caption = "barButtonItem2";
+            this.btnNew.Caption = "Add";
             this.btnNew.Id = 33;
+            this.btnNew.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.ImageOptions.Image")));
+            this.btnNew.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNew.ImageOptions.LargeImage")));
             this.btnNew.Name = "btnNew";
             // 
             // ribbonControl1
@@ -295,9 +297,9 @@
             // 
             // rpgProfile
             // 
-            this.rpgProfile.ItemLinks.Add(this.bbtnDeleteProfile);
-            this.rpgProfile.ItemLinks.Add(this.bbtnEditProfile);
             this.rpgProfile.ItemLinks.Add(this.btnNew);
+            this.rpgProfile.ItemLinks.Add(this.bbtnEditProfile);
+            this.rpgProfile.ItemLinks.Add(this.bbtnDeleteProfile);
             this.rpgProfile.Name = "rpgProfile";
             this.rpgProfile.Text = "Profile";
             // 
@@ -378,6 +380,11 @@
             // 
             this.toastNotificationsManager1.ApplicationId = "e43001e1-b3ad-4e18-91fb-ede621a41c94";
             // 
+            // mvvmContext1
+            // 
+            this.mvvmContextDeviceList.ContainerControl = this;
+            this.mvvmContextDeviceList.ViewModelType = typeof(ZChangerMMO.ViewModels.DeviceListViewModel);
+            // 
             // EmailListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,20 +396,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.deviceGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mvvmContext1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mvvmContextEmailList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mvvmContextDeviceList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private DevExpress.Utils.MVVM.MVVMContext mvvmContext1;
+        private DevExpress.Utils.MVVM.MVVMContext mvvmContextEmailList;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraBars.BarButtonItem bbtnDeleteProfile;
         private DevExpress.XtraBars.BarButtonItem bbtnEditProfile;
@@ -436,5 +444,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraBars.BarButtonItem btnNew;
         private DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager toastNotificationsManager1;
+        private DevExpress.Utils.MVVM.MVVMContext mvvmContextDeviceList;
     }
 }

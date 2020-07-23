@@ -1,6 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using DevExpress.Utils.MVVM.Services;
 using ZChangerMMO.UI;
-using ZChangerMMO.Views.Email;
+using ZChangerMMO.ViewModels;
 
 namespace ZChangerMMO.Views
 {
@@ -8,10 +8,25 @@ namespace ZChangerMMO.Views
     {
         public frmMainView()
         {
-            Bootstrapper.BuildContainer();
             InitializeComponent();
             if (!DesignMode)
-                new EmailListView { Dock = DockStyle.Fill, Parent = this };
+            {
+                Bootstrapper.BuildContainer();
+                InitializeNavigation();
+            }
+        }
+
+        void InitializeNavigation()
+        {
+            // creating the NavigationFrame as INavigationService
+            var navigationService = NavigationService.Create(navigationFrame);
+            // registering the service instance
+            mvvmContext1.RegisterService(navigationService);
+            // Initialize the Fluent API
+            var fluent = mvvmContext1.OfType<MainViewModel>();
+            // Bind the OnShown command to the Shown event
+            fluent.WithEvent(this, "Shown")
+                .EventToCommand(x => x.OnShown());
         }
     }
 }

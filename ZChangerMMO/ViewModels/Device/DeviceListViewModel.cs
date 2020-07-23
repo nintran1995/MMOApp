@@ -1,9 +1,12 @@
 ﻿using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using ZChangerMMO.Business;
 using ZChangerMMO.Common;
 using ZChangerMMO.Models;
 
@@ -12,21 +15,23 @@ namespace ZChangerMMO.ViewModels
     /// <summary>
     /// Represents the single Email object view model.
     /// </summary>
-    public class EmailListViewModel : CollectionViewModel<Models.Email>
+    public class DeviceListViewModel : CollectionViewModel<Models.Device>
     {
-        public EmailListViewModel()
+        public DeviceListViewModel()
         { }
 
         [Command]
-        public void CreateDevice()
+        public void Run()
         {
-            Navigation.Navigate(nameof(Views.Device.DeviceView), SelectedItem.ID, this);
-        }
-
-        [Command]
-        public void Create()
-        {
-            Navigation.Navigate(nameof(Views.Email.EmailView), null, this);
+            try
+            {
+                var runner = new Runner(SelectedItem);
+                runner.Play();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message, "Run Browser", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         [Command]
@@ -46,7 +51,7 @@ namespace ZChangerMMO.ViewModels
                     var emailDelete = _uoW.Emails.Get(SelectedItem.ID);
                     if (emailDelete != null)
                     {
-                        _uoW.Emails.Delete(SelectedItem);
+                        _uoW.Devices.Delete(SelectedItem);
                         _uoW.Commit();
                     }
                 });
@@ -61,25 +66,12 @@ namespace ZChangerMMO.ViewModels
             {
                 SetLoading(false);
             }
-
-
-            //_uoW.Emails.Update(Item);
-            //_uoW.Commit();
-            //var deleteItem = _emailRepository.Get(SelectedItem.ID);
-            //if (deleteItem != null)
-            //    _emailRepository.Delete(deleteItem);
-        }
-
-        public List<Email> GetEmails()
-        {
-            var result = _uoW.Emails.GetAll().ToList();
-            SetItems(result);
-            return result;
         }
 
         public List<Device> GetDevices()
         {
             var result = _uoW.Devices.GetAll().ToList();
+            SetItems(result);
             return result;
         }
     }

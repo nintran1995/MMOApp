@@ -223,6 +223,7 @@
   <ItemGroup>
     <Compile Include="Automation\Automation.cs" />
     <Compile Include="Automation\CDevice.cs" />
+    <Compile Include="Business\Runner.cs" />
     <Compile Include="ControlDelegateExtensions.cs" />
     <Compile Include="Domain\IDeviceRepository.cs" />
     <Compile Include="Domain\IEmailRepository.cs" />
@@ -264,7 +265,6 @@
     <Compile Include="Common\CollectionViewModel.cs" />
     <Compile Include="Common\EntityViewModel.cs" />
     <Compile Include="Constants.cs" />
-    <Compile Include="DataBase\DataDirectoryHelper.cs" />
     <Compile Include="DataModels\ActionLog.cs" />
     <Compile Include="DataModels\BackupItem.cs" />
     <Compile Include="DataModels\Device.cs" />
@@ -294,14 +294,10 @@
     <Compile Include="ISplashHost.cs" />
     <Compile Include="Models\Device.cs" />
     <Compile Include="Models\Email.cs" />
-    <Compile Include="DataBase\DbContext.cs" />
-    <Compile Include="MyDbContextDataModel\IMyDbContextUnitOfWork.cs" />
-    <Compile Include="MyDbContextDataModel\MyDbContextUnitOfWork.cs" />
-    <Compile Include="MyDbContextDataModel\UnitOfWorkSource.cs" />
     <Compile Include="SplashManager.cs" />
     <Compile Include="TimeLock.cs" />
-    <Compile Include="Utils\ExpressionHelper.cs" />
-    <Compile Include="ViewModels\EmailAccountViewModel.cs" />
+    <Compile Include="ViewModels\Device\DeviceListViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\Email\EmailViewModel.cs" />
     <Compile Include="ViewModels\Email\EmailListViewModel.cs" />
     <Compile Include="ViewModels\Device\DeviceViewModel.cs" />
@@ -310,12 +306,6 @@
     </Compile>
     <Compile Include="Views\Device\DeviceView.Designer.cs">
       <DependentUpon>DeviceView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EmailAccountView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\EmailAccountView.Designer.cs">
-      <DependentUpon>EmailAccountView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Email\EmailListView.cs">
       <SubType>UserControl</SubType>
@@ -529,9 +519,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Device\DeviceView.resx">
       <DependentUpon>DeviceView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\EmailAccountView.resx">
-      <DependentUpon>EmailAccountView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Email\EmailListView.resx">
       <DependentUpon>EmailListView.cs</DependentUpon>

@@ -6,6 +6,7 @@ using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using FastMember;
+using System;
 using System.Data;
 using ZChangerMMO.ViewModels;
 
@@ -13,36 +14,34 @@ namespace ZChangerMMO.Views.Email
 {
     public partial class EmailListView : XtraUserControl
     {
-        MVVMContextFluentAPI<EmailListViewModel> fluentAPI;
+        MVVMContextFluentAPI<EmailListViewModel> fluentAPIEmailList;
+        MVVMContextFluentAPI<DeviceListViewModel> fluentAPIDeviceList;
 
         public EmailListView()
         {
             InitializeComponent();
-            if (!mvvmContext1.IsDesignMode)
+            if (!mvvmContextEmailList.IsDesignMode)
                 InitializeBindings();
-
-            emailGridView.OptionsSelection.MultiSelect = true;
-            emailGridView.OptionsSelection.MultiSelectMode = GridMultiSelectMode.RowSelect;
-            emailGridView.OptionsView.ShowGroupPanel = false;
-            emailGridView.OptionsDetail.ShowDetailTabs = false;
-            
         }
 
         private void InitializeBindings()
         {
-            fluentAPI = mvvmContext1.OfType<EmailListViewModel>();
-            mvvmContext1.RegisterService(NotificationService.Create(toastNotificationsManager1));
-            //fluentAPI.SetBinding(emailGridView, gView => gView.LoadingPanelVisible, x => x.IsLoading);
+            fluentAPIEmailList = mvvmContextEmailList.OfType<EmailListViewModel>();
+            fluentAPIDeviceList = mvvmContextDeviceList.OfType<DeviceListViewModel>();
+
+            mvvmContextEmailList.RegisterService(NotificationService.Create(toastNotificationsManager1));
+
+            fluentAPIEmailList.BindCommand(btnNew, x => x.Create());
 
             DataSet dataSet11 = new DataSet();
             DataTable tableEmail = dataSet11.Tables.Add("Emails");
             DataTable tableDevice = dataSet11.Tables.Add("Devices");
-            var emails = fluentAPI.ViewModel.GetEmails();
+            var emails = fluentAPIEmailList.ViewModel.GetEmails();
             using (var reader = ObjectReader.Create(emails))
             {
                 tableEmail.Load(reader);
             }
-            var devices = fluentAPI.ViewModel.GetDevices();
+            var devices = fluentAPIDeviceList.ViewModel.GetDevices();
             using (var reader = ObjectReader.Create(devices))
             {
                 tableDevice.Load(reader);
@@ -56,6 +55,11 @@ namespace ZChangerMMO.Views.Email
             //Bind the grid control to the data source
             gridControl1.DataSource = dataSet11.Tables["Emails"];
             gridControl1.ForceInitialize();
+
+            //Master grid
+            emailGridView.OptionsSelection.MultiSelect = true;
+            emailGridView.OptionsView.ShowGroupPanel = false;
+            emailGridView.OptionsDetail.ShowDetailTabs = false;
 
             //Assign a CardView to the relationship
             GridView deviceGridView = new GridView(gridControl1);
@@ -73,16 +77,20 @@ namespace ZChangerMMO.Views.Email
             deviceGridView.Columns["ID"].VisibleIndex = -1;
 
             //Handle select row event
-            fluentAPI.WithEvent<ColumnView, FocusedRowObjectChangedEventArgs>(emailGridView, "FocusedRowObjectChanged")
+            fluentAPIEmailList.WithEvent<ColumnView, FocusedRowObjectChangedEventArgs>(emailGridView, "FocusedRowObjectChanged")
               .SetBinding(x => x.SelectedItem,
                   args => GetEmailItem(args),
+                  (gView, entity) => gView.FocusedRowHandle = gView.FindRow(entity));
+
+            fluentAPIDeviceList.WithEvent<ColumnView, FocusedRowObjectChangedEventArgs>(deviceGridView, "FocusedRowObjectChanged")
+              .SetBinding(x => x.SelectedItem,
+                  args => GetDeviceItem(args),
                   (gView, entity) => gView.FocusedRowHandle = gView.FindRow(entity));
 
             //fluentAPI.WithEvent<RowCellClickEventArgs>(emailGridView, "RowCellClick")
             //   .EventToCommand(
             //       x => x.Edit(null), x => x.SelectedItem,
             //       args => (args.Clicks == 2) && (args.Button == System.Windows.Forms.MouseButtons.Left));
-
 
             AddMasterGridOptionButtons();
             AddDetailGridOptionButtons(deviceGridView);
@@ -102,6 +110,22 @@ namespace ZChangerMMO.Views.Email
             return email;
         }
 
+        private Models.Device GetDeviceItem(FocusedRowObjectChangedEventArgs e)
+        {
+            var dataRowView = e.Row as DataRowView;
+            var itemArray = dataRowView.Row.ItemArray;
+            var device = new Models.Device()
+            {
+                ID = (long)itemArray[2],
+                Name = (string)itemArray[3],
+                Type = (Models.DeviceType)Enum.ToObject(typeof(Models.DeviceType), itemArray[4]),
+                EmailID = (long)itemArray[1],
+                Email = (Models.Email)itemArray[0],
+            };
+
+            return device;
+        }
+
         #region Option Buttons
 
         private RepositoryItem GetMasterRepositoryItem()
@@ -115,10 +139,9 @@ namespace ZChangerMMO.Views.Email
             riButtonEdit.Buttons.Add(new EditorButton() { Kind = ButtonPredefines.Glyph, Image = Properties.Resources.edit_16px });
             riButtonEdit.Buttons.Add(new EditorButton() { Kind = ButtonPredefines.Glyph, Image = Properties.Resources.delete_16px });
 
-            var fluentAPI = mvvmContext1.OfType<EmailListViewModel>();
-            fluentAPI.BindCommand(riButtonEdit.Buttons[0], x => x.CreateDevice());
-            fluentAPI.BindCommand(riButtonEdit.Buttons[1], x => x.Update());
-            fluentAPI.BindCommand(riButtonEdit.Buttons[2], x => x.Delete());
+            fluentAPIEmailList.BindCommand(riButtonEdit.Buttons[0], x => x.CreateDevice());
+            fluentAPIEmailList.BindCommand(riButtonEdit.Buttons[1], x => x.Update());
+            fluentAPIEmailList.BindCommand(riButtonEdit.Buttons[2], x => x.Delete());
 
             return riButtonEdit;
         }
@@ -144,8 +167,8 @@ namespace ZChangerMMO.Views.Email
             riButtonEdit.Buttons.Add(new EditorButton() { Kind = ButtonPredefines.Glyph, Image = Properties.Resources.edit_16px });
             riButtonEdit.Buttons.Add(new EditorButton() { Kind = ButtonPredefines.Glyph, Image = Properties.Resources.delete_16px });
 
-            var fluentAPI = mvvmContext1.OfType<EmailListViewModel>();
-            fluentAPI.BindCommand(riButtonEdit.Buttons[0], x => x.CreateDevice());
+            fluentAPIDeviceList.BindCommand(riButtonEdit.Buttons[0], x => x.Run());
+            fluentAPIEmailList.BindCommand(riButtonEdit.Buttons[1], x => x.CreateDevice());
 
             return riButtonEdit;
         }

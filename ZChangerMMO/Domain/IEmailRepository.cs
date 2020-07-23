@@ -2,7 +2,5 @@
 
 namespace ZChangerMMO.Domain
 {
-    public interface IEmailRepository : IRepository<Email>
-    {
-    }
+    public interface IEmailRepository : IRepository<Email> { }
 }

@@ -9,7 +9,7 @@ namespace ZChangerMMO.Common
             get { return GetProperty(() => IsLoading); }
             private set { SetProperty(() => IsLoading, value); }
         }
-
+       
         protected INavigationService Navigation => GetService<INavigationService>();
         protected IMessageBoxService MessageBoxService => GetService<IMessageBoxService>();
         protected INotificationService NotificationService => GetService<INotificationService>();

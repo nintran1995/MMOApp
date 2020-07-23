@@ -52,6 +52,7 @@ namespace ZChangerMMO.ViewModels
                     _uoW.Commit();
                 });
                 ShowNotification("Saved!");
+                Navigation.GoBack();
             }
             catch (Exception e)
             {
@@ -81,7 +82,6 @@ namespace ZChangerMMO.ViewModels
                     _uoW.Commit();
                 });
                 ShowNotification("Deleted!");
-                Navigation.GoBack();
             }
             catch (Exception e)
             {
@@ -111,6 +111,7 @@ namespace ZChangerMMO.ViewModels
                     _uoW.Commit();
                 });
                 ShowNotification("Created!");
+                Navigation.GoBack();
             }
             catch (Exception e)
             {
@@ -125,6 +126,12 @@ namespace ZChangerMMO.ViewModels
         public bool CanCreate()
         {
             return Item?.ID == 0;
+        }
+
+        [Command]
+        public void Cancel()
+        {
+            Navigation.GoBack();
         }
     }
 }
