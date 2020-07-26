@@ -1,6 +1,5 @@
 ﻿using Autofac;
-using ZChangerMMO.Domain;
-using ZChangerMMO.UI;
+using ZChangerMMO.Infrastructure;
 
 namespace ZChangerMMO.Common
 {

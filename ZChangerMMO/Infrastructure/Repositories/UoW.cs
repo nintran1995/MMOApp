@@ -1,6 +1,4 @@
-﻿using ZChangerMMO.Domain;
-
-namespace ZChangerMMO.Infrastructure.Repositories
+﻿namespace ZChangerMMO.Infrastructure
 {
     public class UoW : IUoW
     {

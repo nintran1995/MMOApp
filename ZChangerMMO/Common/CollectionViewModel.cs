@@ -1,8 +1,7 @@
 ﻿using Autofac;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using ZChangerMMO.Domain;
-using ZChangerMMO.UI;
+using ZChangerMMO.Infrastructure;
 
 namespace ZChangerMMO.Common
 {

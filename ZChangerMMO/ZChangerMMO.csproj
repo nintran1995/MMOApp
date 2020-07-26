@@ -225,14 +225,14 @@
     <Compile Include="Automation\CDevice.cs" />
     <Compile Include="Business\Runner.cs" />
     <Compile Include="ControlDelegateExtensions.cs" />
-    <Compile Include="Domain\IDeviceRepository.cs" />
-    <Compile Include="Domain\IEmailRepository.cs" />
+    <Compile Include="Infrastructure\Repositories\IDeviceRepository.cs" />
+    <Compile Include="Infrastructure\Repositories\IEmailRepository.cs" />
     <Compile Include="Infrastructure\Repositories\EmailRepository.cs" />
     <Compile Include="Infrastructure\Repositories\GenericRepository.cs" />
     <Compile Include="Infrastructure\Repositories\DeviceRepository.cs" />
     <Compile Include="Infrastructure\ZChangerContext.cs" />
     <Compile Include="Infrastructure\Repositories\UoW.cs" />
-    <Compile Include="UI\Bootstrapper.cs" />
+    <Compile Include="Infrastructure\Bootstrapper.cs" />
     <Compile Include="Business\Backup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,7 +270,7 @@
     <Compile Include="DataModels\Device.cs" />
     <Compile Include="DataModels\Profile.cs" />
     <Compile Include="DataModels\SQLiteProfileDbContext.cs" />
-    <Compile Include="Domain\IRepository.cs" />
+    <Compile Include="Infrastructure\Repositories\IRepository.cs" />
     <Compile Include="Events\ApplyNewLicenceEventArgs.cs" />
     <Compile Include="Events\AddNewProfileEventArgs.cs" />
     <Compile Include="Events\BackUpFormEventArgs.cs" />

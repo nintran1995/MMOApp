@@ -13,9 +13,18 @@ namespace ZChangerMMO.ViewModels
     /// Represents the single Email object view model.
     /// </summary>
     public class EmailListViewModel : CollectionViewModel<Models.Email>
-    {
+    {     
         public EmailListViewModel()
         { }
+
+        protected override void OnNavigatedTo()
+        {
+            // do something if needed
+        }
+        protected override void OnNavigatedFrom()
+        {
+            // do something if needed
+        }
 
         [Command]
         public void CreateDevice()
@@ -74,12 +83,6 @@ namespace ZChangerMMO.ViewModels
         {
             var result = _uoW.Emails.GetAll().ToList();
             SetItems(result);
-            return result;
-        }
-
-        public List<Device> GetDevices()
-        {
-            var result = _uoW.Devices.GetAll().ToList();
             return result;
         }
     }

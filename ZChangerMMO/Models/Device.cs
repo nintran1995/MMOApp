@@ -28,6 +28,9 @@ namespace ZChangerMMO.Models
         public DeviceType Type { get; set; }
 
         [Display(AutoGenerateField = false)]
+        public bool Running { get; set; }
+
+        [Display(AutoGenerateField = false)]
         public long EmailID { get; set; }
 
         [Display(AutoGenerateField = false)]

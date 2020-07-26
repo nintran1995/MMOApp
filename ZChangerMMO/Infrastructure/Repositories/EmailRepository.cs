@@ -2,17 +2,14 @@
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
-using ZChangerMMO.Domain;
 using ZChangerMMO.Models;
 
-namespace ZChangerMMO.Infrastructure.Repositories
+namespace ZChangerMMO.Infrastructure
 {
     public class EmailRepository : GenericRepository<Email>, IEmailRepository
     {
-
         public EmailRepository(ZChangerContext context) : base(context)
-        {
-        }
+        { }
 
         public async Task<IEnumerable<Device>> GetDevices(long emailID)
         {

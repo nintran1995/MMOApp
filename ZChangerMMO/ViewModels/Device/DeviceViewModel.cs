@@ -64,10 +64,9 @@ namespace ZChangerMMO.ViewModels
             }
         }
 
-        public bool UpdateCommands()
+        public void UpdateCommands()
         {
             this.RaiseCanExecuteChanged(x => x.CreateNew());
-            return Item?.ID > 0;
         }
 
         [AsyncCommand]
@@ -121,6 +120,11 @@ namespace ZChangerMMO.ViewModels
             {
                 SetLoading(false);
             }
+        }
+
+        public bool CanCreateNew()
+        {
+            return !string.IsNullOrEmpty(Item?.Name);
         }
 
         public bool CanCreate()

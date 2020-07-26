@@ -1,6 +1,6 @@
 ﻿using ZChangerMMO.Models;
 
-namespace ZChangerMMO.Domain
+namespace ZChangerMMO.Infrastructure
 {
     public interface IEmailRepository : IRepository<Email> { }
 }

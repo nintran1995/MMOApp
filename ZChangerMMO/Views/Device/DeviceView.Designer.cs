@@ -67,7 +67,8 @@
             // mvvmContext1
             // 
             this.mvvmContext1.BindingExpressions.AddRange(new DevExpress.Utils.MVVM.BindingExpression[] {
-            DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(typeof(ZChangerMMO.ViewModels.DeviceViewModel), "CreateNew", this.btnSave)});
+            DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(typeof(ZChangerMMO.ViewModels.DeviceViewModel), "CreateNew", this.btnSave),
+            DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(typeof(ZChangerMMO.ViewModels.DeviceViewModel), "Cancel", this.bbiCancel)});
             this.mvvmContext1.ContainerControl = this;
             this.mvvmContext1.ViewModelType = typeof(ZChangerMMO.ViewModels.DeviceViewModel);
             // 

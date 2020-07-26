@@ -1,5 +1,5 @@
 ﻿using DevExpress.Utils.MVVM.Services;
-using ZChangerMMO.UI;
+using ZChangerMMO.Infrastructure;
 using ZChangerMMO.ViewModels;
 
 namespace ZChangerMMO.Views

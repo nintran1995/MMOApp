@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace ZChangerMMO.Domain
+namespace ZChangerMMO.Infrastructure
 {
     public interface IUoW : IDisposable
     {

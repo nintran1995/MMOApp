@@ -190,7 +190,7 @@ namespace ZChangerMMO.DataModels
 
             #region Proxy
             ProxyEnabled = true;
-            //Proxies = proxies,
+            Proxies = new List<Proxy>();
             ByPassProxySites = new List<string>();
             #endregion
         }
@@ -234,7 +234,7 @@ namespace ZChangerMMO.DataModels
 
             #region Proxy
             ProxyEnabled = true;
-            //Proxies = proxies,
+            Proxies = new List<Proxy>();
             ByPassProxySites = new List<string>();
             #endregion
         }
@@ -278,7 +278,7 @@ namespace ZChangerMMO.DataModels
 
             #region Proxy
             ProxyEnabled = true;
-            //Proxies = proxies,
+            Proxies = new List<Proxy>();
             ByPassProxySites = new List<string>();
             #endregion
         }
@@ -322,7 +322,7 @@ namespace ZChangerMMO.DataModels
 
             #region Proxy
             ProxyEnabled = true;
-            //Proxies = proxies,
+            Proxies = new List<Proxy>();
             ByPassProxySites = new List<string>();
             #endregion
         }
@@ -366,7 +366,7 @@ namespace ZChangerMMO.DataModels
 
             #region Proxy
             ProxyEnabled = true;
-            //Proxies = proxies,
+            Proxies = new List<Proxy>();
             ByPassProxySites = new List<string>();
             #endregion
         }
@@ -410,7 +410,7 @@ namespace ZChangerMMO.DataModels
 
             #region Proxy
             ProxyEnabled = true;
-            //Proxies = proxies,
+            Proxies = new List<Proxy>();
             ByPassProxySites = new List<string>();
             #endregion
         }
@@ -454,7 +454,7 @@ namespace ZChangerMMO.DataModels
 
             #region Proxy
             ProxyEnabled = true;
-            //Proxies = proxies,
+            Proxies = new List<Proxy>();
             ByPassProxySites = new List<string>();
             #endregion
         }

@@ -44,6 +44,11 @@ namespace ZChangerMMO.ViewModels
             }
         }
 
+        public bool CanSave()
+        {
+            return !string.IsNullOrEmpty(Item?.Name) && !string.IsNullOrEmpty(Item?.EmailAccount);
+        }
+
         [AsyncCommand]
         public async Task CreateNew()
         {
@@ -126,10 +131,9 @@ namespace ZChangerMMO.ViewModels
             return Item?.ID > 0;
         }
 
-        public bool UpdateCommands()
+        public void UpdateCommands()
         {
-            this.RaiseCanExecuteChanged(x => x.CreateNew());
-            return Item?.ID > 0;
+            this.RaiseCanExecuteChanged(x => x.Save());
         }
 
         [Command]

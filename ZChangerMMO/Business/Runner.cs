@@ -1,6 +1,5 @@
 ﻿using Clifton.Core.Pipes;
 using CommandModel;
-using DevExpress.Utils;
 using Microsoft.Win32;
 using Newtonsoft.Json;
 using System;
@@ -18,85 +17,30 @@ namespace ZChangerMMO.Business
     {
         public Runner(Models.Device device)
         {
+            _profile = new Profile(device);
+            _serverPipes = new Dictionary<long, ServerPipe>();
+            _browserProcessDic = new Dictionary<long, int>();
+            _anonymousProfileDic = new Dictionary<long, Profile>();
 
-            profile = new Profile(device);
-            serverPipes = new Dictionary<long, ServerPipe>();
-            browserProcessDic = new Dictionary<long, int>();
-            anonymousProfileDic = new Dictionary<long, Profile>();
+            BrowserInstallPath = GetInstalledBrowserPath();
         }
 
-        Profile profile;
-        // contact with host
-        Dictionary<long, ServerPipe> serverPipes;
-        Dictionary<long, int> browserProcessDic;
-        Dictionary<long, Profile> anonymousProfileDic;
+        #region Private Properties 
 
-        private static Random _random = new Random();
-        private Random _rnd = new Random(DateTime.Now.Second);
+        private readonly Profile _profile;
+        // Contact with host
+        private readonly Dictionary<long, ServerPipe> _serverPipes;
+        private readonly Dictionary<long, int> _browserProcessDic;
+        private readonly Dictionary<long, Profile> _anonymousProfileDic;
 
-        public string BrowserInstallPath { get; set; }
+        private static readonly Random _random = new Random();
+        private readonly Random _rnd = new Random(DateTime.Now.Second);
 
+        private string BrowserInstallPath { get; set; }
 
+        #endregion Private Properties 
 
-        internal static string GetRandomString(int length, bool upper = false)
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            if (upper)
-            {
-                return (new string(Enumerable.Repeat(chars, length)
-                    .Select(s => s[_random.Next(s.Length)]).ToArray())).ToUpper();
-            }
-            else
-            {
-                return new string(Enumerable.Repeat(chars, length)
-                  .Select(s => s[_random.Next(s.Length)]).ToArray());
-            }
-        }
-
-
-
-
-
-        Fonts getFontOSMapping(string OSName)
-        {
-            switch (OSName.ToLower())
-            {
-                case "windowspc":
-                    return Fonts.Windows10;
-                case "macintosh":
-                    return Fonts.MacOS;
-                case "iphone":
-                    return Fonts.MacOS;
-                case "ipad":
-                    return Fonts.MacOS;
-                default:
-                    return Fonts.Linux;
-            }
-        }
-
-        private void DissposeHostConnection(long profileId)
-        {
-            if (browserProcessDic.ContainsKey(profileId))
-            {
-                int browserProcessId;
-                if (browserProcessDic.TryGetValue(profileId, out browserProcessId))
-                {
-                    browserProcessDic.Remove(profileId);
-
-                    var process = Process.GetProcessById(browserProcessId);
-                    if (process != null)
-                    {
-                        process.Kill();
-                    }
-                }
-            }
-            if (serverPipes.ContainsKey(profileId))
-            {
-                serverPipes.Remove(profileId);
-            }
-
-            //UpdateActionGroupButton();
-        }
+        #region PipeServer
 
         public void DataRecievedHandler(ServerPipe serverPipe, PipeEventArgs arguments, bool isAnonymous)
         {
@@ -111,11 +55,11 @@ namespace ZChangerMMO.Business
                         if (response != null && response.IsSuccess)
                         {
                             //Profile selectedObject = GetSelectedProfile();
-                            Profile selectedObject = profile;
+                            Profile selectedObject = _profile;
                             if (isAnonymous)
                             {
                                 Profile anonymousProfile;
-                                anonymousProfileDic.TryGetValue(selectedObject.Id, out anonymousProfile);
+                                _anonymousProfileDic.TryGetValue(selectedObject.Id, out anonymousProfile);
                                 selectedObject = anonymousProfile;
                                 //selectedObject.Fonts = Fonts.Windows10;
                             }
@@ -138,7 +82,7 @@ namespace ZChangerMMO.Business
                                     EnableAudioApi = selectedObject.EnableAudioApi,
                                     EnablePlugins = selectedObject.EnablePlugins,
                                     EnableMediaPlugins = selectedObject.EnableMediaPlugins,
-                                    Fonts = getFontOSMapping(selectedObject.OperatingSystem),//selectedObject.Fonts,
+                                    Fonts = GetFontOSMapping(selectedObject.OperatingSystem),//selectedObject.Fonts,
                                     RandomTimersEnabled = selectedObject.RandomTimersEnabled,
                                     UserAgent = selectedObject.UserAgent,
                                     Screen = selectedObject.Screen,
@@ -193,11 +137,11 @@ namespace ZChangerMMO.Business
             };
             serverPipe.Connected += (sndr, args) =>
             {
-                Profile selectedObject = profile;
-                if (!serverPipes.ContainsKey(selectedObject.Id))
+                Profile selectedObject = _profile;
+                if (!_serverPipes.ContainsKey(selectedObject.Id))
                 {
                     serverPipe.Id = selectedObject.Id;
-                    serverPipes.Add(selectedObject.Id, serverPipe);
+                    _serverPipes.Add(selectedObject.Id, serverPipe);
                 }
             };
             serverPipe.PipeClosed += (sndr, args) =>
@@ -212,6 +156,39 @@ namespace ZChangerMMO.Business
 
             serverThread.Start(isAnonymous);
         }
+
+        private void DissposeHostConnection(long profileId)
+        {
+            if (_browserProcessDic.ContainsKey(profileId))
+            {
+                int browserProcessId;
+                if (_browserProcessDic.TryGetValue(profileId, out browserProcessId))
+                {
+                    _browserProcessDic.Remove(profileId);
+
+                    Process process = null;
+                    try
+                    {
+                        process = Process.GetProcessById(browserProcessId);
+                    }
+                    catch (Exception)
+                    { }
+
+                    if (process != null)
+                    {
+                        process.Kill();
+                    }
+                }
+            }
+            if (_serverPipes.ContainsKey(profileId))
+            {
+                _serverPipes.Remove(profileId);
+            }
+
+            //UpdateActionGroupButton();
+        }
+
+        #endregion PipeServer
 
         #region Browser
 
@@ -238,6 +215,21 @@ namespace ZChangerMMO.Business
             return requestValue;
         }
 
+        private static string GetRandomString(int length, bool upper = false)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            if (upper)
+            {
+                return (new string(Enumerable.Repeat(chars, length)
+                    .Select(s => s[_random.Next(s.Length)]).ToArray())).ToUpper();
+            }
+            else
+            {
+                return new string(Enumerable.Repeat(chars, length)
+                  .Select(s => s[_random.Next(s.Length)]).ToArray());
+            }
+        }
+
         private string GetInstalledBrowserPath()
         {
             RegistryKey regKey = Registry.LocalMachine.OpenSubKey(Constants.ZChangerLocationReg, true);
@@ -253,36 +245,6 @@ namespace ZChangerMMO.Business
         }
 
         #endregion Browser
-
-        public void Play()
-        {
-            try
-            {
-                BrowserInstallPath = GetInstalledBrowserPath();
-                string profileFolder = GetProfileFolder(profile.Id, profile.Name);
-                profileFolder = expireValue(profileFolder, "C:\\Windows\\System32\\AppData");
-                CreateThreadToHandlerPipeServer(false);
-                Process process = new Process();
-                process.StartInfo.FileName = BrowserExecute;
-                process.StartInfo.Arguments = $"--user-data-dir=\"{profileFolder}\"";
-                process.Start();
-                browserProcessDic.Add(profile.Id, process.Id);
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException(ex.Message, ex);
-            }
-
-            if (_rnd.Next(6) > 3)
-            {
-                var fuckingHacker = new Task(() =>
-                {
-                    TimeLock.PerformOverflowIfExpired(profile.Name);
-                });
-                fuckingHacker.Start();
-            }
-        }
-        public void Stop() { }
 
         #region Profile
 
@@ -303,6 +265,53 @@ namespace ZChangerMMO.Business
             return expireValue(profileFolder, "C:\\Windows\\System32\\chiwawa");
         }
 
+        private Fonts GetFontOSMapping(string OSName)
+        {
+            switch (OSName.ToLower())
+            {
+                case "windowspc":
+                    return Fonts.Windows10;
+                case "macintosh":
+                    return Fonts.MacOS;
+                case "iphone":
+                    return Fonts.MacOS;
+                case "ipad":
+                    return Fonts.MacOS;
+                default:
+                    return Fonts.Linux;
+            }
+        }
+
         #endregion Profile
+
+        public void Play()
+        {
+            try
+            {
+                string profileFolder = GetProfileFolder(_profile.Id, _profile.Name);
+                profileFolder = expireValue(profileFolder, "C:\\Windows\\System32\\AppData");
+                CreateThreadToHandlerPipeServer(false);
+                Process process = new Process();
+                process.StartInfo.FileName = BrowserExecute;
+                process.StartInfo.Arguments = $"--user-data-dir=\"{profileFolder}\"";
+                process.Start();
+                _browserProcessDic.Add(_profile.Id, process.Id);
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message, ex);
+            }
+
+            if (_rnd.Next(6) > 3)
+            {
+                var fuckingHacker = new Task(() =>
+                {
+                    TimeLock.PerformOverflowIfExpired(_profile.Name);
+                });
+                fuckingHacker.Start();
+            }
+        }
+
+        public void Stop() { }
     }
 }

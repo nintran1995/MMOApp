@@ -1,18 +1,15 @@
 ﻿using Autofac;
-using ZChangerMMO.Domain;
-using ZChangerMMO.Infrastructure;
-using ZChangerMMO.Infrastructure.Repositories;
 using ZChangerMMO.ViewModels;
 
-namespace ZChangerMMO.UI
+namespace ZChangerMMO.Infrastructure
 {
     public class Bootstrapper
     {
-        public static Autofac.IContainer Container { get; set; }
+        public static IContainer Container { get; set; }
 
         public static void BuildContainer()
         {
-            var builder = new Autofac.ContainerBuilder();
+            var builder = new ContainerBuilder();
 
             builder.RegisterType<UoW>().As<IUoW>();
             builder.RegisterType<ZChangerContext>();
@@ -21,10 +18,9 @@ namespace ZChangerMMO.UI
             builder.RegisterType<DeviceRepository>().As<IDeviceRepository>();
 
             builder.RegisterType<EmailListViewModel>();
+            builder.RegisterType<EmailViewModel>();
+            builder.RegisterType<DeviceListViewModel>();
             builder.RegisterType<DeviceViewModel>();
-            //builder.RegisterType<VisitViewModel>().As<IVisitViewModel>();
-            //builder.RegisterType<CustomerSelectViewModel>();
-            //builder.RegisterType<PhoneViewModel>();
 
             Container = builder.Build();
         }
