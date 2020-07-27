@@ -15,9 +15,8 @@ namespace ZChangerMMO.Business
 {
     public class Runner
     {
-        public Runner(Models.Device device)
+        public Runner()
         {
-            _profile = new Profile(device);
             _serverPipes = new Dictionary<long, ServerPipe>();
             _browserProcessDic = new Dictionary<long, int>();
             _anonymousProfileDic = new Dictionary<long, Profile>();
@@ -27,7 +26,7 @@ namespace ZChangerMMO.Business
 
         #region Private Properties 
 
-        private readonly Profile _profile;
+        private Profile _profile;
         // Contact with host
         private readonly Dictionary<long, ServerPipe> _serverPipes;
         private readonly Dictionary<long, int> _browserProcessDic;
@@ -39,6 +38,12 @@ namespace ZChangerMMO.Business
         private string BrowserInstallPath { get; set; }
 
         #endregion Private Properties 
+
+        #region Public Events
+
+        public event EventHandler<long> DisconnectEvent;
+
+        #endregion Public Events
 
         #region PipeServer
 
@@ -121,7 +126,7 @@ namespace ZChangerMMO.Business
                     }
                 case ZC_Command.DISCONNECT:
                     {
-                        DissposeHostConnection(serverPipe.Id);
+                        DisconnectEvent.Invoke(this, serverPipe.Id);
                         break;
                     }
             }
@@ -146,7 +151,7 @@ namespace ZChangerMMO.Business
             };
             serverPipe.PipeClosed += (sndr, args) =>
             {
-                DissposeHostConnection(serverPipe.Id);
+                DisconnectEvent.Invoke(this, serverPipe.Id);
             };
         }
 
@@ -184,8 +189,6 @@ namespace ZChangerMMO.Business
             {
                 _serverPipes.Remove(profileId);
             }
-
-            //UpdateActionGroupButton();
         }
 
         #endregion PipeServer
@@ -284,10 +287,11 @@ namespace ZChangerMMO.Business
 
         #endregion Profile
 
-        public void Play()
+        public void Play(Models.Device device)
         {
             try
             {
+                _profile = new Profile(device);
                 string profileFolder = GetProfileFolder(_profile.Id, _profile.Name);
                 profileFolder = expireValue(profileFolder, "C:\\Windows\\System32\\AppData");
                 CreateThreadToHandlerPipeServer(false);
@@ -312,6 +316,9 @@ namespace ZChangerMMO.Business
             }
         }
 
-        public void Stop() { }
+        public void Stop(long deviceID)
+        {
+            DissposeHostConnection(deviceID);
+        }
     }
 }

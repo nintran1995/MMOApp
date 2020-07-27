@@ -296,7 +296,6 @@
     <Compile Include="Models\Email.cs" />
     <Compile Include="SplashManager.cs" />
     <Compile Include="TimeLock.cs" />
-    <Compile Include="ViewModels\Device\DeviceListViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\Email\EmailViewModel.cs" />
     <Compile Include="ViewModels\Email\EmailListViewModel.cs" />
@@ -574,6 +573,7 @@
   <ItemGroup>
     <Content Include="app.ico" />
     <Content Include="chromium.ico" />
+    <None Include="Resources\data_backup_16px.png" />
     <None Include="Resources\synchronize_16px.png" />
     <None Include="Resources\stop_16px.png" />
     <None Include="Resources\run_random_16px.png" />

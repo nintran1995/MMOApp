@@ -9,6 +9,11 @@ namespace ZChangerMMO.Views.Email
         public EmailView()
         {
             InitializeComponent();
+            if (!DesignMode) InitBindings();
+        }
+
+        private void InitBindings()
+        {
             var fluent = mvvmContext1.OfType<EmailViewModel>();
             fluent.SetObjectDataSourceBinding(
                 emailBindingSource, x => x.Item, x => x.UpdateCommands());

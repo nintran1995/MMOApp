@@ -17,9 +17,9 @@ namespace ZChangerMMO.Infrastructure
             builder.RegisterType<EmailRepository>().As<IEmailRepository>();
             builder.RegisterType<DeviceRepository>().As<IDeviceRepository>();
 
+            builder.RegisterType<MainViewModel>();
             builder.RegisterType<EmailListViewModel>();
             builder.RegisterType<EmailViewModel>();
-            builder.RegisterType<DeviceListViewModel>();
             builder.RegisterType<DeviceViewModel>();
 
             Container = builder.Build();

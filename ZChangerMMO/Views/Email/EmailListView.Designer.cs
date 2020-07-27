@@ -380,11 +380,6 @@
             // 
             this.toastNotificationsManager1.ApplicationId = "e43001e1-b3ad-4e18-91fb-ede621a41c94";
             // 
-            // mvvmContext1
-            // 
-            this.mvvmContextDeviceList.ContainerControl = this;
-            this.mvvmContextDeviceList.ViewModelType = typeof(ZChangerMMO.ViewModels.DeviceListViewModel);
-            // 
             // EmailListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

@@ -20,6 +20,7 @@ namespace ZChangerMMO
         [STAThread]
         static void Main(string[] args)
         {
+            DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection = true;
             //SetupApplicationhandlers();
 
             //AppDomain.CurrentDomain.SetData("BrowserData", Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Browser_Data"));

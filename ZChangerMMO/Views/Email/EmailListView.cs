@@ -1,5 +1,4 @@
-﻿using DevExpress.Mvvm.POCO;
-using DevExpress.Utils.MVVM;
+﻿using DevExpress.Utils.MVVM;
 using DevExpress.Utils.MVVM.Services;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
@@ -8,10 +7,7 @@ using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using FastMember;
 using System;
-using System.ComponentModel;
 using System.Data;
-using System.Threading;
-using System.Windows.Documents;
 using ZChangerMMO.ViewModels;
 
 namespace ZChangerMMO.Views.Email
@@ -26,14 +22,11 @@ namespace ZChangerMMO.Views.Email
         }
 
         MVVMContextFluentAPI<EmailListViewModel> fluentAPIEmailList;
-        MVVMContextFluentAPI<DeviceListViewModel> fluentAPIDeviceList;
 
         DataTable emailDataTable;
         DataTable deviceDataTable;
 
-        RepositoryItemButtonEdit masterButtons;
-        RepositoryItemButtonEdit detailNormalButtons;
-        RepositoryItemButtonEdit detailRuningButtons;
+        RepositoryItemButtonEdit detailGridButtons;
 
         //private BindingList<GridDataSource> _gridDataSource = new BindingList<GridDataSource>();
 
@@ -48,7 +41,7 @@ namespace ZChangerMMO.Views.Email
             {
                 emailDataTable.Load(reader);
             }
-            var devices = fluentAPIDeviceList.ViewModel.GetDevices();
+            var devices = fluentAPIEmailList.ViewModel.GetDevices();
             using (var reader = ObjectReader.Create(devices))
             {
                 deviceDataTable.Load(reader);
@@ -89,7 +82,6 @@ namespace ZChangerMMO.Views.Email
         {
             // Init FluentAPI
             fluentAPIEmailList = mvvmContextEmailList.OfType<EmailListViewModel>();
-            fluentAPIDeviceList = mvvmContextDeviceList.OfType<DeviceListViewModel>();
 
             // Register Service
             mvvmContextEmailList.RegisterService(NotificationService.Create(toastNotificationsManager1));
@@ -105,10 +97,19 @@ namespace ZChangerMMO.Views.Email
                   args => GetEmailItem(args),
                   (gView, entity) => gView.FocusedRowHandle = gView.FindRow(entity));
 
-            fluentAPIDeviceList.WithEvent<ColumnView, FocusedRowObjectChangedEventArgs>(deviceGridView, "FocusedRowObjectChanged")
-              .SetBinding(x => x.SelectedItem,
+            fluentAPIEmailList.WithEvent<ColumnView, FocusedRowObjectChangedEventArgs>(deviceGridView, "FocusedRowObjectChanged")
+              .SetBinding(x => x.SelectedDevice,
                   args => GetDeviceItem(args),
                   (gView, entity) => gView.FocusedRowHandle = gView.FindRow(entity));
+
+            fluentAPIEmailList.SetTrigger(x => x.DisconectID, x =>
+            {
+                fluentAPIEmailList.ViewModel.StopException(deviceDataTable);
+                gridControl1.Invoke(new Action(() =>
+                {
+                    deviceGridView.LayoutChanged();
+                }));
+            });
 
             //fluentAPI.WithEvent<RowCellClickEventArgs>(emailGridView, "RowCellClick")
             //   .EventToCommand(
@@ -122,32 +123,28 @@ namespace ZChangerMMO.Views.Email
 
         private Models.Email GetEmailItem(FocusedRowObjectChangedEventArgs e)
         {
-            var dataRowView = e.Row as DataRowView;
-            var itemArray = dataRowView.Row.ItemArray;
-            var email = new Models.Email()
-            {
-                ID = (long)itemArray[2],
-                Name = (string)itemArray[3],
-                EmailAccount = (string)itemArray[1]
-            };
+            var dataRow = (e.Row as DataRowView).Row;
 
-            return email;
+            return new Models.Email()
+            {
+                ID = (long)dataRow["ID"],
+                Name = (string)dataRow["Name"],
+                EmailAccount = (string)dataRow["EmailAccount"]
+            };
         }
 
         private Models.Device GetDeviceItem(FocusedRowObjectChangedEventArgs e)
         {
-            var dataRowView = e.Row as DataRowView;
-            var itemArray = dataRowView.Row.ItemArray;
-            var device = new Models.Device()
-            {
-                ID = (long)itemArray[2],
-                Name = (string)itemArray[3],
-                Type = (Models.DeviceType)Enum.ToObject(typeof(Models.DeviceType), itemArray[4]),
-                EmailID = (long)itemArray[1],
-                Email = (Models.Email)itemArray[0],
-            };
+            var dataRow = (e.Row as DataRowView).Row;
 
-            return device;
+            return new Models.Device()
+            {
+                ID = (long)dataRow["ID"],
+                Name = (string)dataRow["Name"],
+                Type = (Models.DeviceType)Enum.ToObject(typeof(Models.DeviceType), dataRow["Type"]),
+                EmailID = (long)dataRow["EmailID"],
+                Email = (Models.Email)dataRow["Email"],
+            };
         }
 
         #region Master Buttons
@@ -176,53 +173,54 @@ namespace ZChangerMMO.Views.Email
             unboundColumn.MaxWidth = 120;
             unboundColumn.MinWidth = 120;
 
-            var repositoryItem = GetMasterRepositoryItem();
-            gridControl1.RepositoryItems.Add(repositoryItem);
+            var masterGridButtons = GetMasterRepositoryItem();
+            gridControl1.RepositoryItems.Add(masterGridButtons);
 
-            unboundColumn.ColumnEdit = repositoryItem;
+            unboundColumn.ColumnEdit = masterGridButtons;
         }
 
         #endregion Master Buttons
 
         #region Detail Buttons
+        public void SetNormalButton(EditorButtonCollection editorButtons)
+        {
+            editorButtons[0].Kind = ButtonPredefines.Glyph;
+            editorButtons[0].Image = Properties.Resources.play_16px;
 
-        private RepositoryItemButtonEdit GetDetailGridNormalRepositoryItem()
+            fluentAPIEmailList.BindCommand(editorButtons[0], (x, p) => x.Run(p), x => deviceDataTable);
+            fluentAPIEmailList.WithCommand(x => x.Run(null)).After(() => deviceGridView.LayoutChanged());
+        }
+
+        public void SetRunningButton(EditorButtonCollection editorButtons)
+        {
+            editorButtons[0].Kind = ButtonPredefines.Glyph;
+            editorButtons[0].Image = Properties.Resources.stop_16px;
+
+            fluentAPIEmailList.BindCommand(editorButtons[0], (x, d) => x.Stop(d), x => deviceDataTable);
+            fluentAPIEmailList.WithCommand(x => x.Stop(null)).After(() => deviceGridView.LayoutChanged());
+        }
+
+        private RepositoryItemButtonEdit GetDetailGridRepositoryItem(bool isRunning)
         {
             var normalRiButtonEdit = new RepositoryItemButtonEdit();
             normalRiButtonEdit.TextEditStyle = TextEditStyles.HideTextEditor;
-            normalRiButtonEdit.Buttons[0].Kind = ButtonPredefines.Glyph;
-            normalRiButtonEdit.Buttons[0].Image = Properties.Resources.play_16px;
+            if (isRunning == true)
+            {
+                SetRunningButton(normalRiButtonEdit.Buttons);
+            }
+            else
+            {
+                SetNormalButton(normalRiButtonEdit.Buttons);
+            }
             normalRiButtonEdit.Buttons.Add(new EditorButton() { Kind = ButtonPredefines.Glyph, Image = Properties.Resources.edit_16px });
+            normalRiButtonEdit.Buttons.Add(new EditorButton() { Kind = ButtonPredefines.Glyph, Image = Properties.Resources.data_backup_16px });
             normalRiButtonEdit.Buttons.Add(new EditorButton() { Kind = ButtonPredefines.Glyph, Image = Properties.Resources.delete_16px });
 
-            fluentAPIDeviceList.BindCommand(normalRiButtonEdit.Buttons[0], (x, p) => x.Run(p), x => deviceDataTable);
-            fluentAPIDeviceList.WithCommand(x => x.Run(null)).After(() => deviceGridView.LayoutChanged());
-            fluentAPIEmailList.BindCommand(normalRiButtonEdit.Buttons[1], x => x.CreateDevice());
+            fluentAPIEmailList.BindCommand(normalRiButtonEdit.Buttons[1], x => x.UpdateDevice());
+            fluentAPIEmailList.BindCommand(normalRiButtonEdit.Buttons[2], x => x.DeleteDevice());
+            fluentAPIEmailList.BindCommand(normalRiButtonEdit.Buttons[3], x => x.DeleteDevice());
 
-            normalRiButtonEdit.Buttons[0].Click += EmailListView_Click;
             return normalRiButtonEdit;
-        }
-
-        private RepositoryItemButtonEdit GetDetailGridRunningRepositoryItem()
-        {
-            var runningRiButtonEdit = new RepositoryItemButtonEdit();
-            runningRiButtonEdit.TextEditStyle = TextEditStyles.HideTextEditor;
-            runningRiButtonEdit.Buttons[0].Kind = ButtonPredefines.Glyph;
-            runningRiButtonEdit.Buttons[0].Image = Properties.Resources.stop_16px;
-            runningRiButtonEdit.Buttons.Add(new EditorButton() { Kind = ButtonPredefines.Glyph, Image = Properties.Resources.edit_16px });
-            runningRiButtonEdit.Buttons.Add(new EditorButton() { Kind = ButtonPredefines.Glyph, Image = Properties.Resources.delete_16px });
-
-            fluentAPIDeviceList.BindCommand(runningRiButtonEdit.Buttons[0], (x, d) => x.Stop(d), x => deviceDataTable);
-            fluentAPIDeviceList.WithCommand(x => x.Stop(null)).After(() => deviceGridView.LayoutChanged());
-            fluentAPIEmailList.BindCommand(runningRiButtonEdit.Buttons[1], x => x.CreateDevice());
-            runningRiButtonEdit.Buttons[0].Click += EmailListView_Click;
-
-            return runningRiButtonEdit;
-        }
-
-        private void EmailListView_Click(object sender, EventArgs e)
-        {
-            gridControl1.Refresh();
         }
 
         private void DeviceGridView_CustomRowCellEdit(object sender, CustomRowCellEditEventArgs e)
@@ -231,14 +229,7 @@ namespace ZChangerMMO.Views.Email
             if (e.Column.Name == "colOptions")
             {
                 var running = (bool)View.GetRowCellValue(e.RowHandle, "Running");
-                if (running == true)
-                {
-                    e.RepositoryItem = detailRuningButtons;
-                }
-                else
-                {
-                    e.RepositoryItem = detailNormalButtons;
-                }
+                e.RepositoryItem = GetDetailGridRepositoryItem(running);
             }
         }
 
@@ -250,11 +241,8 @@ namespace ZChangerMMO.Views.Email
             unboundColumn.MaxWidth = 120;
             unboundColumn.MinWidth = 120;
 
-            detailNormalButtons = GetDetailGridNormalRepositoryItem();
-            detailRuningButtons = GetDetailGridRunningRepositoryItem();
-
-            gridControl1.RepositoryItems.Add(detailNormalButtons);
-            gridControl1.RepositoryItems.Add(detailRuningButtons);
+            detailGridButtons = GetDetailGridRepositoryItem(false);
+            gridControl1.RepositoryItems.Add(detailGridButtons);
 
             deviceGridView.CustomRowCellEdit += DeviceGridView_CustomRowCellEdit;
         }

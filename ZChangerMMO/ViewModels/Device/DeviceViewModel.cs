@@ -26,17 +26,7 @@ namespace ZChangerMMO.ViewModels
             }
             else if (parameter is Device device)
             {
-                SetLoading(true);
-                var item = await Task.Run(() => _uoW.Devices.Get(device.ID));
-                if (item == null)
-                {
-                    item = new Device()
-                    {
-                        EmailID = device.EmailID
-                    };
-                }
-                SetItem(item);
-                SetLoading(false);
+                SetItem(device);
             }
         }
 
